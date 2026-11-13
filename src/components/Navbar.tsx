@@ -22,7 +22,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   ];
 
   return (
-    <div className="w-full flex justify-center pt-0 px-0 bg-[#f4f7ff]">
+    <div className="w-full flex justify-center pt-0 px-0 bg-[#f4f7ff] relative z-40">
       {/* Primary Navigation Header Container (1040px wide on desktop as per Figma) */}
       <header
         className="relative w-full max-w-[1040px] h-[65px] bg-black flex items-center justify-between px-4 sm:px-6 z-30"
@@ -41,7 +41,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
         </a>
 
         {/* Main Desktop Navigation Items */}
-        <nav aria-label="Main navigation" className="hidden lg:flex items-center space-x-7">
+        <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navigationItems.map((item) => {
             const isActive = activeNavigation === item.label;
             return (
@@ -50,7 +50,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                 href={item.href}
                 onClick={() => setActiveNavigation(item.label)}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-base font-bold leading-[16.8px] tracking-[-0.28px] transition-colors ${
+                className={`text-sm lg:text-base font-bold leading-[16.8px] tracking-[-0.28px] transition-colors ${
                   isActive ? "text-blue-600" : "text-[#fefefe] hover:text-white"
                 }`}
               >
