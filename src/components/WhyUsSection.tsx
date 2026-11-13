@@ -24,16 +24,16 @@ export default function WhyUsSection() {
 
   return (
     <section
-      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-10 relative bg-[#f4f7ff] px-4 sm:px-8 lg:px-[120px] py-16 overflow-hidden"
+      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-10 relative bg-[#f4f7ff] px-4 sm:px-8 lg:px-[120px] pt-16 pb-12 overflow-hidden"
       aria-labelledby="why-us-heading"
     >
-      {/* 3D Faceted Sphere floating on the right border */}
-      <div className="hidden lg:block absolute -right-16 top-1/2 -translate-y-1/2 w-[180px] h-[180px] pointer-events-none select-none z-10 opacity-90">
+      {/* 3D Faceted Sphere floating prominently on the right border */}
+      <div className="hidden lg:block absolute -right-24 xl:-right-28 top-[52%] -translate-y-1/2 w-[240px] xl:w-[280px] h-[240px] xl:h-[280px] pointer-events-none select-none z-10 opacity-95">
         <Image
           src="/images/service_sphere_faceted_clean.png"
           alt="3D Faceted sphere"
-          width={180}
-          height={180}
+          width={280}
+          height={280}
           className="w-full h-full object-contain"
         />
       </div>
@@ -64,20 +64,20 @@ export default function WhyUsSection() {
       </div>
 
       {/* 3 Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative self-stretch w-full mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative self-stretch w-full mt-2 z-20">
         {features.map((item) => (
           <div
             key={item.title}
-            className="flex flex-col items-start gap-4 p-7 bg-white rounded-2xl shadow-xs border border-gray-100 hover:shadow-md transition-shadow relative"
+            className="flex flex-col items-start gap-4 p-8 bg-white rounded-2xl shadow-xs border border-gray-100 hover:shadow-md transition-shadow relative"
           >
             {/* Person Icon in soft light-blue circle */}
-            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-1">
+            <div className="w-11 h-11 rounded-full bg-[#edf5ff] flex items-center justify-center text-blue-600 mb-1">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 text-blue-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={2}
+                strokeWidth={1.8}
               >
                 <path
                   strokeLinecap="round"

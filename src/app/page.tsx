@@ -10,7 +10,6 @@ import TechGridSection from "@/components/TechGridSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import ProjectModal from "@/components/ProjectModal";
@@ -51,18 +50,12 @@ export default function Home() {
       {/* Why Businesses Choose Duhzine IT Solutions ? */}
       <WhyUsSection />
 
-      {/* What Our Clients Say */}
+      {/* What Our Clients Say (Testimonials) */}
       <TestimonialsSection
         onActionClick={() => setProjectModalOpen(true)}
       />
 
-      {/* Custom Quote / Callback Block */}
-      <CtaSection
-        onStartProject={() => setProjectModalOpen(true)}
-        onBookCall={() => setBookingModalOpen(true)}
-      />
-
-      {/* Duhzine Footer */}
+      {/* Custom Quote Callback Block & Duhzine Footer */}
       <Footer />
 
       {/* Interactive Booking Modal */}
