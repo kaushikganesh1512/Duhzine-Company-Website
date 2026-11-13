@@ -45,31 +45,32 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="flex-col items-start gap-3 px-0 py-4 flex-1 grow bg-white flex relative">
-      <div className="items-center self-stretch w-full flex-[0_0_auto] flex relative">
-        <div className="flex h-0.5 items-start relative flex-1 grow">
-          {connectorBefore && (
-            <div className="relative flex-1 grow h-0.5 bg-blue-600" />
-          )}
+    <article className="flex flex-col items-start gap-3 px-0 pt-4 pb-6 flex-1 grow bg-white relative self-stretch">
+      {/* Connector line and step circle row (Fixed 28px height, perfectly centered across all 4 steps) */}
+      <div className="flex items-center self-stretch w-full relative h-7">
+        <div className="flex-1 h-0.5 flex items-center">
+          {connectorBefore && <div className="w-full h-0.5 bg-blue-600" />}
         </div>
-        <div className="inline-flex flex-col items-end justify-center relative flex-[0_0_auto]">
+
+        <div className="inline-flex flex-col items-center justify-center relative shrink-0">
           <div
-            className="relative w-7 h-7 bg-white rounded-3xl overflow-hidden border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] flex items-center justify-center"
+            className="relative w-7 h-7 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] flex items-center justify-center z-10"
             aria-label={`Step ${number}: ${title}`}
           >
-            <div className="text-blue-600 text-[12px] font-medium text-center tracking-tight leading-none">
+            <span className="text-blue-600 text-[12px] font-medium text-center tracking-tight leading-none">
               {number}
-            </div>
+            </span>
           </div>
         </div>
-        <div className="flex items-center justify-center relative flex-1 grow">
-          {connectorAfter && (
-            <div className="relative flex-1 grow h-0.5 bg-blue-600" />
-          )}
+
+        <div className="flex-1 h-0.5 flex items-center">
+          {connectorAfter && <div className="w-full h-0.5 bg-blue-600" />}
         </div>
       </div>
-      <div className="flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex flex-col items-start gap-1 px-4 sm:px-6 py-0 relative self-stretch w-full flex-[0_0_auto]">
+
+      {/* Step Title & Description */}
+      <div className="flex flex-col items-start gap-2.5 relative self-stretch w-full flex-1">
+        <div className="flex flex-col items-start gap-1 px-4 sm:px-6 py-0 relative self-stretch w-full">
           <h3 className="relative self-stretch mt-[-1.00px] font-semibold text-black text-xs text-center tracking-[0] leading-[14px]">
             {title}
           </h3>
@@ -115,9 +116,11 @@ export default function ProcessSection(): React.ReactNode {
             </div>
           </div>
         </div>
+
+        {/* 4 Process Steps Bar with items-stretch ensuring perfectly aligned horizontal line */}
         <div className="w-full max-w-[1076px] p-4 flex-[0_0_auto] flex flex-col items-center justify-center relative">
           <div
-            className="flex flex-col sm:flex-row items-center justify-center relative self-stretch w-full flex-[0_0_auto] bg-white rounded-xl shadow-xs overflow-hidden"
+            className="flex flex-col sm:flex-row items-stretch justify-center relative self-stretch w-full bg-white rounded-xl shadow-xs overflow-hidden"
             role="list"
             aria-label="Development process steps"
           >
@@ -129,6 +132,8 @@ export default function ProcessSection(): React.ReactNode {
           </div>
         </div>
       </div>
+
+      {/* Digital Solutions Across Industries header */}
       <div className="flex w-[292px] max-w-full items-center justify-center gap-2.5 px-3 py-2 relative flex-[0_0_auto] bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm mt-4">
         <div className="relative flex items-center justify-center w-fit mt-[-0.20px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
           Digital Solutions Across Industries
