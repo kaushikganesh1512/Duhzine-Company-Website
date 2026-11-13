@@ -18,7 +18,7 @@ export default function Home() {
   const [projectModalOpen, setProjectModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#f8faff] text-[#0f172a] relative">
+    <main className="min-h-screen bg-[#f4f7ff] text-[#0f172a] relative">
       {/* Navigation Header */}
       <Navbar onBookCall={() => setBookingModalOpen(true)} />
 
