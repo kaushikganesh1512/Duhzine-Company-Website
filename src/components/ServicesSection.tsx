@@ -56,19 +56,19 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 relative bg-[#f8faff] overflow-hidden">
-      {/* Decorative Wireframe Globes */}
-      <div className="absolute -left-16 top-48 hidden lg:block opacity-60">
+    <section id="services" className="w-full py-20 md:py-28 relative bg-[#f4f7ff] overflow-hidden">
+      {/* Decorative Wireframe Globes on sides */}
+      <div className="absolute -left-14 top-40 hidden xl:block opacity-60 pointer-events-none">
         <WireframeGlobe size={180} />
       </div>
-      <div className="absolute -right-16 top-3/4 hidden lg:block opacity-60">
+      <div className="absolute -right-14 top-2/3 hidden xl:block opacity-60 pointer-events-none">
         <WireframeGlobe size={190} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-[#2563eb] text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             Services
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0b0f19] tracking-tight mb-4">
@@ -84,9 +84,9 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
           <div className="flex items-center justify-center gap-3 mt-8">
             <button
               onClick={() => setActiveTab("dev")}
-              className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all inline-flex items-center gap-1.5 ${
+              className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "dev"
-                  ? "bg-[#2563eb] text-white shadow-md shadow-blue-500/25"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
                   : "bg-white text-slate-700 border border-slate-200 hover:border-blue-400"
               }`}
             >
@@ -96,9 +96,9 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
 
             <button
               onClick={() => setActiveTab("design")}
-              className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all inline-flex items-center gap-1.5 ${
+              className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all inline-flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "design"
-                  ? "bg-[#2563eb] text-white shadow-md shadow-blue-500/25"
+                  ? "bg-blue-600 text-white shadow-md shadow-blue-500/25"
                   : "bg-white text-slate-700 border border-slate-200 hover:border-blue-400"
               }`}
             >
@@ -114,19 +114,18 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
               key={svc.id}
               className={`flex flex-col ${
                 svc.align === "image-left" ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-8 lg:gap-14 bg-white/40 p-6 md:p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300`}
+              } items-center gap-8 lg:gap-16 bg-white/70 backdrop-blur-sm p-6 sm:p-10 rounded-3xl border border-blue-100/60 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300`}
             >
               {/* Graphic Mockup Container */}
               <div className="w-full lg:w-1/2 flex items-center justify-center">
-                <div className="relative w-full max-w-md h-64 md:h-72 rounded-2xl bg-gradient-to-tr from-blue-50/80 via-white to-sky-50/60 p-4 border border-blue-100/60 shadow-lg shadow-blue-900/5 flex items-center justify-center overflow-hidden group">
-                  {/* Subtle radial aura */}
+                <div className="relative w-full max-w-lg h-64 sm:h-72 md:h-80 rounded-2xl bg-gradient-to-tr from-blue-50/90 via-white to-sky-50/60 p-5 border border-blue-100/80 shadow-lg shadow-blue-900/5 flex items-center justify-center overflow-hidden group">
                   <div className="absolute inset-0 bg-radial from-blue-400/10 to-transparent pointer-events-none group-hover:scale-110 transition-transform duration-500" />
                   
                   <Image
                     src={svc.image}
                     alt={svc.title}
-                    width={420}
-                    height={280}
+                    width={460}
+                    height={300}
                     className="object-contain max-h-full w-auto drop-shadow-md transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -135,24 +134,24 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
               {/* Text Description Container */}
               <div className="w-full lg:w-1/2 text-left">
                 {/* Pill Badge */}
-                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#2563eb] text-white text-[11px] font-semibold tracking-wide mb-3 shadow-sm">
+                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-blue-600 text-white text-[11px] font-semibold tracking-wide mb-3.5 shadow-sm">
                   {svc.badge}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl font-bold text-[#0b0f19] tracking-tight mb-4">
+                <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0b0f19] tracking-tight mb-4 leading-tight">
                   {svc.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-7 font-normal">
                   {svc.description}
                 </p>
 
                 {/* Action Link */}
                 <button
                   onClick={() => onServiceSelect(svc.title)}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2563eb] hover:text-[#1d4ed8] group transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 group transition-colors cursor-pointer"
                 >
                   <span>{svc.linkText}</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -165,4 +164,3 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
     </section>
   );
 }
-

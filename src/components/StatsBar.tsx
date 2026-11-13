@@ -10,7 +10,6 @@ export default function StatsBar() {
     { value: "2+", label: "Years of Experience" },
   ];
 
-  // 16 stylized partner / client logos matching the grid in the screenshot
   const logosRow1 = [
     {
       id: "brand-1",
@@ -184,16 +183,16 @@ export default function StatsBar() {
   ];
 
   return (
-    <section className="py-12 bg-white/60 border-y border-slate-100/80 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 4 Stats Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-200 text-center mb-12">
+    <section className="w-full py-16 md:py-20 bg-white border-y border-slate-100/90 relative">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* 4 Stats Cards with Equal Spacing */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-slate-200 text-center mb-14">
           {stats.map((item, idx) => (
-            <div key={idx} className="px-4 py-2">
-              <div className="text-3xl md:text-4xl font-extrabold text-[#2563eb] tracking-tight mb-1">
+            <div key={idx} className="px-4 py-2 sm:py-3">
+              <div className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-blue-600 tracking-tight mb-1.5">
                 {item.value}
               </div>
-              <div className="text-xs md:text-sm font-medium text-slate-600">
+              <div className="text-xs sm:text-sm font-medium text-slate-500 tracking-wide">
                 {item.label}
               </div>
             </div>
@@ -201,8 +200,8 @@ export default function StatsBar() {
         </div>
 
         {/* Client Logos Header */}
-        <div className="text-center mb-6">
-          <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">
+        <div className="text-center mb-8">
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-slate-400">
             Trusted by Leading Global Brands
           </span>
         </div>
@@ -239,4 +238,3 @@ export default function StatsBar() {
     </section>
   );
 }
-

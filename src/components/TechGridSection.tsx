@@ -78,14 +78,14 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[#f8faff] relative overflow-hidden">
-      {/* Iridescent Accent on the left */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-48 h-96 bg-gradient-to-r from-blue-300/20 via-indigo-200/10 to-transparent blur-2xl pointer-events-none" />
+    <section className="w-full py-20 md:py-28 bg-[#f4f7ff] relative overflow-hidden">
+      {/* Subtle Iridescent Side Accent */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-96 bg-gradient-to-r from-blue-300/20 via-indigo-200/10 to-transparent blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-[#2563eb] text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             Tailored Industry Solutions
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0b0f19] tracking-tight mb-4">
@@ -98,9 +98,9 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
           </p>
         </div>
 
-        {/* Big Dark Card Container */}
-        <div className="bg-[#05070f] rounded-3xl p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-2xl border border-slate-800">
-          {/* Bottom Right Glowing Blue Orb */}
+        {/* Big Dark Card Container with Equal Margins */}
+        <div className="max-w-4xl mx-auto bg-[#05070f] rounded-3xl p-6 sm:p-10 md:p-14 relative overflow-hidden shadow-2xl border border-neutral-800">
+          {/* Bottom Right Glowing Blue Accent */}
           <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
 
           {/* 3x3 Grid of 9 White Cards */}
@@ -121,8 +121,8 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
                   }`}
                 >
                   {/* Blue Circular Icon Container */}
-                  <div className="w-12 h-12 rounded-full bg-[#2563eb] flex items-center justify-center text-white mb-4 shadow-md shadow-blue-600/30">
-                    <Icon className="w-5 h-5" />
+                  <div className="w-13 h-13 rounded-full bg-blue-600 flex items-center justify-center text-white mb-4 shadow-md shadow-blue-600/30">
+                    <Icon className="w-6 h-6" />
                   </div>
 
                   {/* Title */}
@@ -138,4 +138,3 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
     </section>
   );
 }
-
