@@ -41,7 +41,7 @@ const services: Service[] = [
     image: "/images/service_figma_card_1.png",
     imageAlt:
       "High-performance website design displayed across multiple devices",
-    imageClassName: "relative w-[376px] h-auto max-h-[254px] object-contain drop-shadow-md",
+    imageClassName: "relative w-[376px] h-[254px] object-contain drop-shadow-sm",
     imageWidth: 376,
     imageHeight: 254,
     linkLabel: "Explore Web Development",
@@ -62,7 +62,7 @@ const services: Service[] = [
     ),
     image: "/images/service_figma_card_2.png",
     imageAlt: "E-commerce mobile application displayed on a smartphone",
-    imageClassName: "relative w-[314px] h-auto max-h-[254px] object-contain drop-shadow-md",
+    imageClassName: "relative w-[314px] h-[254px] object-contain drop-shadow-sm",
     imageWidth: 314,
     imageHeight: 254,
     linkLabel: "View our work",
@@ -83,7 +83,7 @@ const services: Service[] = [
     ),
     image: "/images/service_figma_card_3.png",
     imageAlt: "Mobile analytics and digital marketing dashboard",
-    imageClassName: "relative w-[305px] h-auto max-h-[254px] object-contain drop-shadow-md",
+    imageClassName: "relative w-[305px] h-[254px] object-contain drop-shadow-sm",
     imageWidth: 305,
     imageHeight: 254,
     linkLabel: "View our work",
@@ -104,7 +104,7 @@ const services: Service[] = [
     ),
     image: "/images/service_figma_card_4.png",
     imageAlt: "CRM and business management software dashboard",
-    imageClassName: "relative w-[524px] h-auto max-h-[266px] object-contain drop-shadow-md",
+    imageClassName: "relative w-[524px] h-[266px] object-contain drop-shadow-sm",
     imageWidth: 524,
     imageHeight: 266,
     linkLabel: "View our work",
@@ -121,29 +121,34 @@ const ArrowLink = ({
   onClick?: () => void;
 }): React.ReactNode => {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="inline-flex items-center justify-center gap-1.5 px-3 py-2 relative flex-[0_0_auto] group cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff]"
+    <a
+      href="#contact"
+      onClick={(e) => {
+        if (onClick) {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      className="inline-flex items-center justify-center gap-1 px-3 py-2 relative flex-[0_0_auto] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] group cursor-pointer"
       aria-label={label}
     >
-      <span className="relative flex items-center justify-center w-fit font-semibold text-[#007aff] hover:text-blue-700 text-[15px] text-center tracking-[-0.60px] leading-[18px] underline whitespace-nowrap transition-colors">
+      <span className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold text-blue-600 group-hover:text-blue-700 text-[15px] text-center tracking-[-0.60px] leading-[18px] underline whitespace-nowrap transition-colors">
         {label}
       </span>
-      <span className="relative w-4 h-4 flex items-center justify-center text-[#007aff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
+      <span className="relative w-4 h-4 flex items-center justify-center text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
         <svg
           className="w-3.5 h-3.5"
           viewBox="0 0 16 16"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
           <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" />
         </svg>
       </span>
-    </button>
+    </a>
   );
 };
 
@@ -174,8 +179,8 @@ const ServiceContent = ({
             isRightAligned ? "items-start lg:items-end" : "items-start"
           } gap-2 relative self-stretch w-full flex-[0_0_auto]`}
         >
-          <div className="inline-flex items-center justify-center pt-[3px] pb-1 px-3 relative flex-[0_0_auto] bg-[#2563eb] rounded-xl overflow-hidden shadow-xs">
-            <span className="relative flex items-center w-fit font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
+          <div className="inline-flex items-center justify-center pt-[3px] pb-1 px-2.5 relative flex-[0_0_auto] bg-blue-600 rounded-xl overflow-hidden shadow-xs">
+            <span className="relative flex items-center w-fit mt-[-1.00px] font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
               {service.category}
             </span>
           </div>
@@ -184,7 +189,7 @@ const ServiceContent = ({
             <h2
               className={`relative flex items-center ${
                 isRightAligned ? "justify-start lg:justify-end text-left lg:text-right" : "text-left"
-              } flex-1 font-semibold text-black text-[28px] sm:text-[32px] tracking-[-1.5px] lg:tracking-[-2.00px] leading-[1.2]`}
+              } flex-1 mt-[-1.00px] font-semibold text-black text-[28px] sm:text-[32px] tracking-[-2.00px] leading-[normal]`}
             >
               {service.title}
             </h2>
@@ -194,13 +199,9 @@ const ServiceContent = ({
         <div
           className={`${
             service.descriptionClassName ?? ""
-          } self-stretch flex items-start ${isRightAligned ? "justify-start lg:justify-end" : "justify-start"} relative flex-[0_0_auto]`}
+          } self-stretch flex items-start justify-center relative flex-[0_0_auto]`}
         >
-          <p
-            className={`relative flex-1 font-normal text-black/90 text-[13px] tracking-[0] leading-[16.4px] ${
-              isRightAligned ? "text-left lg:text-right" : "text-left"
-            }`}
-          >
+          <p className="relative flex-1 mt-[-1.00px] font-normal text-black text-[13px] tracking-[0] leading-[16.4px] text-left">
             {service.description}
           </p>
         </div>
@@ -215,11 +216,11 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
   return (
     <section
       id="services"
-      className="w-full bg-[#f4f7ff] py-14 sm:py-20 relative overflow-hidden flex flex-col items-center gap-12"
+      className="flex flex-col items-center gap-10 relative self-stretch w-full bg-[#f4f7ff] py-14 sm:py-20 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* 3D Faceted Sphere floating on the left edge (Figma artwork) */}
-      <div className="absolute -left-2 top-20 sm:top-28 w-16 sm:w-20 md:w-24 lg:w-28 select-none pointer-events-none z-10 opacity-90">
+      {/* 3D Faceted Sphere floating on left border (Figma layout) */}
+      <div className="absolute -left-2 top-24 sm:top-32 w-16 sm:w-20 md:w-24 lg:w-28 select-none pointer-events-none z-10 opacity-90">
         <Image
           src="/images/service_sphere_faceted_clean.png"
           alt="3D Geometric Artwork"
@@ -229,8 +230,8 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
         />
       </div>
 
-      {/* 3D Translucent Rainbow Ribbon artwork on right margin (Figma artwork) */}
-      <div className="absolute right-0 bottom-44 sm:bottom-56 w-16 sm:w-20 md:w-24 select-none pointer-events-none z-10 opacity-80">
+      {/* 3D Translucent Rainbow Ribbon on right border (Figma layout) */}
+      <div className="absolute right-0 bottom-40 sm:bottom-52 w-16 sm:w-20 md:w-24 select-none pointer-events-none z-10 opacity-80">
         <Image
           src="/images/service_ribbon_clean.png"
           alt="3D Ribbon Artwork"
@@ -241,27 +242,26 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
       </div>
 
       {/* Section Header */}
-      <header className="flex flex-col items-center gap-6 relative self-stretch w-full max-w-5xl mx-auto px-6 z-20">
+      <header className="flex flex-col items-center gap-6 relative self-stretch w-full max-w-[1280px] mx-auto z-20">
         <div className="flex flex-col items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          {/* Service badge */}
           <div className="flex w-[148px] items-center justify-center gap-2.5 px-3 py-2 relative flex-[0_0_auto] bg-[#007aff] rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
-            <span className="relative flex items-center justify-center w-fit text-white text-[15px] text-center font-medium leading-[18px] whitespace-nowrap tracking-[-0.6px]">
+            <span className="relative flex items-center justify-center w-fit mt-[-0.20px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Service
             </span>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-2 px-4 sm:px-8 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+          <div className="flex flex-col items-center justify-center gap-2 px-6 sm:px-12 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]">
             <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
               <h1
                 id="services-heading"
-                className="relative flex items-center justify-center flex-1 font-semibold text-black text-[32px] sm:text-[40px] text-center tracking-[-2.00px] leading-[44px] sm:leading-[61px]"
+                className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-semibold text-black text-[32px] sm:text-[40px] text-center tracking-[-2.00px] leading-[44px] sm:leading-[61px]"
               >
                 Our Core Digital Services
               </h1>
             </div>
 
             <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-              <p className="relative flex items-center justify-center flex-1 font-normal text-black text-base sm:text-lg text-center tracking-[0] leading-[23px] max-w-2xl">
+              <p className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-normal text-black text-base sm:text-lg text-center tracking-[0] leading-[22.7px] max-w-2xl">
                 We design, develop, and scale digital solutions that help
                 businesses improve their online presence, streamline operations,
                 engage customers, and achieve measurable growth.
@@ -270,50 +270,51 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
           </div>
         </div>
 
-        {/* Navigation Action Buttons */}
         <nav
           className="inline-flex items-center gap-4 sm:gap-6 relative flex-[0_0_auto]"
           aria-label="Service actions"
         >
-          <button
-            type="button"
-            onClick={() => onServiceSelect && onServiceSelect("All Services")}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 relative flex-[0_0_auto] bg-[#007aff] hover:bg-blue-700 text-white rounded-[22px] overflow-hidden shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              if (onServiceSelect) {
+                e.preventDefault();
+                onServiceSelect("All Services");
+              }
+            }}
+            className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 relative flex-[0_0_auto] bg-blue-600 hover:bg-blue-700 text-white rounded-[22px] overflow-hidden shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
           >
-            <span className="relative flex items-center justify-center w-fit font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
+            <span className="relative flex items-center justify-center w-fit mt-[-1.00px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               View all services
             </span>
-            <span className="relative w-4 h-4 flex items-center justify-center" aria-hidden="true">
-              <svg
-                className="w-3.5 h-3.5"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+            <span className="relative w-4 h-4 flex items-center justify-center text-white" aria-hidden="true">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" />
               </svg>
             </span>
-          </button>
+          </a>
 
-          <button
-            type="button"
-            onClick={() => onServiceSelect && onServiceSelect("Talk to Our Team")}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 relative flex-[0_0_auto] rounded-[22px] overflow-hidden border border-solid border-[#007aff] bg-white hover:bg-blue-50/50 shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              if (onServiceSelect) {
+                e.preventDefault();
+                onServiceSelect("Talk to Our Team");
+              }
+            }}
+            className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 relative flex-[0_0_auto] rounded-[22px] overflow-hidden border border-solid border-[#007aff] bg-white hover:bg-blue-50/50 shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
           >
             <span className="relative flex items-center justify-center w-fit font-medium text-[#007aff] text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Talk to Our Team
             </span>
-          </button>
+          </a>
         </nav>
       </header>
 
-      {/* Services List matching Figma exactly */}
+      {/* Services List with Gap 36px (gap-9) matching Figma exactly */}
       <div
         id="services-list"
-        className="flex flex-col items-start gap-12 sm:gap-14 relative self-stretch w-full max-w-[1280px] mx-auto z-20"
+        className="flex flex-col items-start gap-9 relative self-stretch w-full max-w-[1280px] mx-auto z-20"
       >
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
@@ -323,27 +324,37 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
               key={service.title}
               className={`${
                 service.containerClassName ?? "justify-center px-6 sm:px-12 lg:px-[120px] py-0"
-              } flex-[0_0_auto] flex flex-col ${
-                isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-8 lg:gap-12 relative self-stretch w-full`}
+              } flex-[0_0_auto] flex flex-col lg:flex-row items-center gap-6 relative self-stretch w-full`}
             >
-              {/* Image Container */}
-              <div className="flex items-center justify-center shrink-0">
-                <Image
-                  className={service.imageClassName}
-                  alt={service.imageAlt}
-                  src={service.image}
-                  width={service.imageWidth}
-                  height={service.imageHeight}
-                  priority={isImageLeft}
-                />
-              </div>
+              {isImageLeft && (
+                <div className="shrink-0 flex items-center justify-center">
+                  <Image
+                    className={service.imageClassName}
+                    alt={service.imageAlt}
+                    src={service.image}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
+                    priority={isImageLeft}
+                  />
+                </div>
+              )}
 
-              {/* Service Text Content */}
               <ServiceContent
                 service={service}
                 onSelect={() => onServiceSelect && onServiceSelect(service.title)}
               />
+
+              {!isImageLeft && (
+                <div className="shrink-0 flex items-center justify-center">
+                  <Image
+                    className={service.imageClassName}
+                    alt={service.imageAlt}
+                    src={service.image}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
+                  />
+                </div>
+              )}
             </article>
           );
         })}
