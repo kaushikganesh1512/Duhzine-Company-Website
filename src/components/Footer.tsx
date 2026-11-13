@@ -1,164 +1,194 @@
 "use client";
 
 import React from "react";
-import DuhzineLogo from "./DuhzineLogo";
-import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
+  const websiteServices = [
+    "Business Website Development",
+    "Landing Page Development",
+    "Ecommerce Development",
+    "Custom Website Development",
+    "Website Redesign & Maintenance",
+  ];
+
+  const marketingServices = [
+    "Search Engine Optimization",
+    "Social Media Marketing",
+    "Google Ads Management",
+    "Video Editing & Marketing",
+    "Lead Generation",
+  ];
+
+  const crmSolutions = ["Salon OS", "Gym OS", "Clinic OS"];
+
   return (
-    <footer id="contact" className="w-full bg-[#05070f] text-white pt-16 pb-12 border-t border-neutral-850 relative">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-neutral-800">
-          {/* Brand Info (2 cols) */}
-          <div className="lg:col-span-2">
-            <DuhzineLogo theme="dark" showTagline={true} className="mb-4" />
-            <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed max-w-sm mb-6 mt-3 font-normal">
-              Duhzine IT Solutions Pvt. Ltd. is a Chennai-based software and digital technology company helping businesses innovate, build, and scale world-class digital experiences.
-            </p>
-            <div className="flex items-center gap-3">
+    <footer
+      id="contact"
+      className="w-full bg-[#05070f] text-white pt-16 pb-12 relative overflow-hidden"
+    >
+      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-[120px]">
+        {/* Main 4 Columns Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
+          {/* Column 1: Contact Us & Brand */}
+          <div className="flex flex-col items-start">
+            {/* Duhzine Logo */}
+            <div className="mb-4">
+              <Image
+                src="/images/header_logo.png"
+                alt="Duhzine IT Solutions Pvt. Ltd."
+                width={170}
+                height={48}
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+
+            <h3 className="text-sm font-bold text-white tracking-wider uppercase mt-2 mb-3">
+              CONTACT US
+            </h3>
+
+            <div className="flex flex-col gap-2.5 text-xs sm:text-sm text-gray-300">
+              {/* Address */}
+              <div className="flex items-start gap-2.5">
+                <span className="text-base leading-none">📍</span>
+                <span>OMR, Navalur, Chennai - 600130</span>
+              </div>
+
+              {/* Phone */}
+              <div className="flex items-center gap-2.5">
+                <span className="text-base leading-none">📞</span>
+                <a
+                  href="tel:+919841483195"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  +91 98414 83195
+                </a>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-2.5">
+                <span className="text-base leading-none">✉️</span>
+                <a
+                  href="mailto:info@duhzineitsolutions.com"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  info@duhzineitsolutions.com
+                </a>
+              </div>
+            </div>
+
+            {/* Social Icons Row */}
+            <div className="flex items-center gap-3 mt-6">
               {/* LinkedIn */}
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 hover:border-blue-500 hover:text-blue-400 flex items-center justify-center text-neutral-400 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#0077b5] flex items-center justify-center text-white hover:opacity-90 transition-opacity"
                 aria-label="LinkedIn"
               >
-                <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                </svg>
+                <span className="font-bold text-sm">in</span>
               </a>
-              {/* Twitter / X */}
+
+              {/* WhatsApp */}
               <a
-                href="https://twitter.com"
+                href="https://wa.me/919841483195"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 hover:border-blue-500 hover:text-blue-400 flex items-center justify-center text-neutral-400 transition-colors"
-                aria-label="Twitter"
+                className="w-8 h-8 rounded-full bg-[#25d366] flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                aria-label="WhatsApp"
               >
-                <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                  <path d="M12.031 2C6.5 2 2 6.5 2 12.031c0 1.906.531 3.687 1.453 5.219L2 22l4.906-1.422c1.469.844 3.172 1.344 5.125 1.344 5.531 0 10.031-4.5 10.031-10.031S17.562 2 12.031 2zm0 18.25c-1.688 0-3.266-.469-4.609-1.281l-.328-.188-3.047.891.891-2.969-.219-.344C3.844 14.984 3.375 13.562 3.375 12c0-4.766 3.891-8.625 8.656-8.625 4.766 0 8.625 3.859 8.625 8.625 0 4.781-3.859 8.625-8.625 8.625z" />
                 </svg>
               </a>
-              {/* GitHub */}
+
+              {/* Facebook */}
               <a
-                href="https://github.com"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 hover:border-blue-500 hover:text-blue-400 flex items-center justify-center text-neutral-400 transition-colors"
-                aria-label="GitHub"
+                className="w-8 h-8 rounded-full bg-[#1877f2] flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                aria-label="Facebook"
               >
-                <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                <span className="font-bold text-sm">f</span>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white hover:opacity-90 transition-opacity"
+                aria-label="Instagram"
+              >
+                <svg
+                  className="w-4 h-4 fill-none stroke-white"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                 </svg>
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Column 2: Website Services */}
           <div>
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-400">
-              <li>
-                <a href="#home" className="hover:text-blue-400 transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="hover:text-blue-400 transition-colors">
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#blogs" className="hover:text-blue-400 transition-colors">
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-blue-400 transition-colors">
-                  About Us
-                </a>
-              </li>
+            <h3 className="text-base font-semibold text-white tracking-tight mb-4">
+              Website Services
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
+              {websiteServices.map((service) => (
+                <li key={service} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block shrink-0" />
+                  <span>{service}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Column 3: Marketing Services */}
           <div>
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
-              Services
-            </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-neutral-400">
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  High-Performance Websites
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  Smart Mobile Apps
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  Custom CRM &amp; Software
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  Digital Marketing &amp; SEO
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-blue-400 transition-colors">
-                  Cloud Infrastructure
-                </a>
-              </li>
+            <h3 className="text-base font-semibold text-white tracking-tight mb-4">
+              Marketing Services
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
+              {marketingServices.map((service) => (
+                <li key={service} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block shrink-0" />
+                  <span>{service}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Details */}
+          {/* Column 4: CRM Solutions */}
           <div>
-            <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-4">
-              Contact
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-sm text-neutral-400 font-normal">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                <span>Navalur, Chennai, Tamil Nadu, India</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
-                <span>+91 98414 83195</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
-                <span>duhzineitsolutions@gmail.com</span>
-              </li>
+            <div className="relative inline-block mb-4">
+              <h3 className="text-base font-semibold text-white tracking-tight">
+                CRM Solutions
+              </h3>
+              <div className="w-full h-0.5 bg-blue-600 mt-1" />
+            </div>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
+              {crmSolutions.map((solution) => (
+                <li key={solution} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 inline-block shrink-0" />
+                  <span>{solution}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 gap-4">
-          <p>© 2026 Duhzine IT Solutions Pvt. Ltd. All rights reserved.</p>
-          <div className="flex items-center space-x-6">
-            <a href="#" className="hover:text-neutral-400 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">
-              Cookie Policy
-            </a>
-          </div>
+        {/* Bottom Divider & Copyright */}
+        <div className="border-t border-neutral-800 pt-8 text-center">
+          <p className="text-xs sm:text-sm text-gray-400 font-normal">
+            &copy; 2026 Duhzine IT Solutions Pvt Ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

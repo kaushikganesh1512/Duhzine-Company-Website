@@ -35,7 +35,7 @@ const services: Service[] = [
         devices.
       </>
     ),
-    image: "/images/service_card_1_clean.png",
+    image: "/images/drive/Core Digital Services image 1.jpg",
     imageAlt:
       "High-performance website design displayed across multiple devices",
     imageClassName: "relative w-[376px] lg:w-[420px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
@@ -55,7 +55,7 @@ const services: Service[] = [
         world.
       </>
     ),
-    image: "/images/service_card_2_clean.png",
+    image: "/images/drive/Core Digital Services image 2.jpg",
     imageAlt: "E-commerce mobile application displayed on a smartphone",
     imageClassName: "relative w-[314px] lg:w-[350px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
@@ -74,7 +74,7 @@ const services: Service[] = [
         quality leads, and achieve better conversions.
       </>
     ),
-    image: "/images/service_card_3_clean.png",
+    image: "/images/drive/Core Digital Services image 3.jpg",
     imageAlt: "Mobile analytics and digital marketing dashboard",
     imageClassName: "relative w-[305px] lg:w-[340px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
@@ -93,7 +93,7 @@ const services: Service[] = [
         platform.
       </>
     ),
-    image: "/images/service_card_4_clean.png",
+    image: "/images/drive/Core Digital Services image 4.jpg",
     imageAlt: "CRM and business management software dashboard",
     imageClassName: "relative w-[524px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
