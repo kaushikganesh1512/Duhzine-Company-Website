@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface HeroProps {
   onStartProject: () => void;
@@ -14,6 +15,36 @@ export default function Hero({ onStartProject }: HeroProps) {
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[520px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      {/* Left 3D Chrome Torus Floating Artwork (Interactive, strictly positioned flush to edge to prevent overlap) */}
+      <div className="hidden lg:block absolute left-0 top-8 xl:top-12 w-[130px] xl:w-[190px] 2xl:w-[230px] pointer-events-auto select-none z-10">
+        <div className="animate-float transition-all duration-700 ease-out hover:scale-105 hover:rotate-2 cursor-pointer">
+          <Image
+            src="/images/side_hero_left.png"
+            alt="Abstract 3D Chrome Torus Artwork"
+            width={250}
+            height={406}
+            priority
+            quality={100}
+            className="w-full h-auto object-contain drop-shadow-md"
+          />
+        </div>
+      </div>
+
+      {/* Right 3D Glassmorphic Interface Floating Artwork (Interactive, strictly positioned flush to edge) */}
+      <div className="hidden lg:block absolute right-0 top-8 xl:top-12 w-[140px] xl:w-[210px] 2xl:w-[250px] pointer-events-auto select-none z-10">
+        <div className="animate-float-reverse transition-all duration-700 ease-out hover:scale-105 hover:-rotate-2 cursor-pointer">
+          <Image
+            src="/images/side_hero_right.png"
+            alt="Abstract 3D Glassmorphic Interface Artwork"
+            width={290}
+            height={406}
+            priority
+            quality={100}
+            className="w-full h-auto object-contain drop-shadow-md"
+          />
+        </div>
+      </div>
 
       {/* Hero Central Content (Scaled up, beautifully centered with generous responsive padding) */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-20">

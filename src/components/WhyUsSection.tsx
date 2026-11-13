@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function WhyUsSection() {
   const features = [
@@ -26,6 +27,20 @@ export default function WhyUsSection() {
       className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-20 md:py-28 overflow-hidden"
       aria-labelledby="why-us-heading"
     >
+      {/* Right 3D Faceted Sphere (Interactive, strictly positioned at right edge) */}
+      <div className="hidden xl:block absolute -right-6 2xl:right-0 top-1/2 -translate-y-1/2 w-[130px] 2xl:w-[170px] pointer-events-auto select-none z-10 opacity-90 hover:opacity-100">
+        <div className="animate-float-slow transition-all duration-700 ease-out hover:scale-110 hover:rotate-6 cursor-pointer">
+          <Image
+            src="/images/side_why_us_sphere.png"
+            alt="3D Faceted Sphere Artwork"
+            width={220}
+            height={500}
+            quality={100}
+            className="w-full h-auto object-contain drop-shadow-md"
+          />
+        </div>
+      </div>
+
       {/* Header */}
       <div className="flex flex-col items-center gap-5 relative self-stretch w-full text-center">
         {/* Pill Badge */}

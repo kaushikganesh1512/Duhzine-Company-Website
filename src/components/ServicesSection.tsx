@@ -137,6 +137,34 @@ export default function ServicesSection({
       className="flex flex-col w-full max-w-7xl mx-auto items-center gap-16 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-20 md:py-28 overflow-hidden"
       aria-labelledby="services-heading"
     >
+      {/* Left 3D Iridescent Faceted Sphere (Interactive, strictly positioned at edge) */}
+      <div className="hidden lg:block absolute left-0 top-[320px] w-[100px] xl:w-[150px] 2xl:w-[180px] pointer-events-auto select-none z-10">
+        <div className="animate-float-slow transition-all duration-700 ease-out hover:scale-110 hover:rotate-6 cursor-pointer">
+          <Image
+            src="/images/side_services_sphere.png"
+            alt="3D Iridescent Faceted Sphere"
+            width={190}
+            height={460}
+            quality={100}
+            className="w-full h-auto object-contain drop-shadow-md"
+          />
+        </div>
+      </div>
+
+      {/* Right 3D Prism Ribbon (Interactive, strictly positioned at edge near lower services) */}
+      <div className="hidden lg:block absolute right-0 bottom-[400px] w-[95px] xl:w-[140px] 2xl:w-[170px] pointer-events-auto select-none z-10">
+        <div className="animate-float transition-all duration-700 ease-out hover:scale-110 hover:-rotate-6 cursor-pointer">
+          <Image
+            src="/images/side_services_ribbon.png"
+            alt="3D Prism Ribbon Artwork"
+            width={210}
+            height={290}
+            quality={100}
+            className="w-full h-auto object-contain drop-shadow-md"
+          />
+        </div>
+      </div>
+
       {/* Header */}
       <div className="flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
