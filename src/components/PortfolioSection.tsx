@@ -108,13 +108,13 @@ export default function PortfolioSection({
   return (
     <section
       id="portfolio"
-      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-12 relative bg-[#f4f7ff] px-4 sm:px-8 lg:px-[120px] py-16 overflow-hidden"
+      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-12 lg:px-16 xl:px-[100px] py-20 overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
       {/* Section Header */}
       <div className="flex flex-col items-center gap-6 relative self-stretch w-full">
         {/* Pill Badge */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-4 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Our Recent Work
           </span>
@@ -124,7 +124,7 @@ export default function PortfolioSection({
         <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full text-center">
           <h2
             id="portfolio-heading"
-            className="font-semibold text-black text-[32px] sm:text-[40px] tracking-[-2.00px] leading-[39px] sm:leading-[48px]"
+            className="font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] tracking-[-2.00px] leading-[42px] sm:leading-[52px]"
           >
             Real Projects. Digital Solutions.
           </h2>
@@ -140,14 +140,14 @@ export default function PortfolioSection({
           <button
             type="button"
             onClick={() => onProjectClick?.("All Projects")}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>View all works</span>
             <span className="text-sm font-normal">↗</span>
           </button>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-5 py-2.5 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
           >
             Talk to Our Team
           </a>
@@ -155,14 +155,14 @@ export default function PortfolioSection({
       </div>
 
       {/* 3 Projects Stack matching exact Figma layout & alternating orientations */}
-      <div className="flex flex-col items-center gap-9 relative self-stretch w-full mt-4">
+      <div className="flex flex-col items-center gap-12 lg:gap-16 relative self-stretch w-full mt-4">
         {projects.map((project, index) => {
           const isImageLeft = project.imagePosition === "left";
 
           return (
             <article
               key={project.title}
-              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full min-h-[300px] px-6 sm:px-10 lg:px-12 py-8 bg-transparent rounded-2xl gap-8 transition-transform hover:-translate-y-0.5 duration-200"
+              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-8 lg:gap-12"
               aria-label={`${project.category} - ${project.title}`}
             >
               {/* Left Column */}
@@ -176,23 +176,24 @@ export default function PortfolioSection({
                     height={300}
                     className={project.imageClassName}
                     priority={index === 0}
+                    quality={100}
                   />
                 </div>
               ) : (
                 /* Card 2: Content on Left (Left-aligned badge, title, desc, link) */
-                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[480px]">
+                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[490px]">
                   <div className="flex items-center justify-start w-full">
-                    <span className="inline-flex items-center px-3.5 py-1 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-black text-[26px] sm:text-[32px] tracking-tight leading-[32px] sm:leading-[38px]">
+                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px]">
                     {project.title}
                   </h3>
-                  <p className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed">
+                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed">
                     {project.description}
-                  </p>
-                  <div className="pt-2">
+                  </div>
+                  <div className="pt-2 flex justify-start w-full">
                     <ArrowLink
                       label="View Project"
                       onClick={() => onProjectClick?.(project.title)}
@@ -204,18 +205,18 @@ export default function PortfolioSection({
               {/* Right Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Content on Right (Right badge, left text, right link) */
-                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[480px]">
+                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[490px]">
                   <div className="flex items-center justify-end w-full">
-                    <span className="inline-flex items-center px-3.5 py-1 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
                       {project.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-black text-[26px] sm:text-[32px] tracking-tight leading-[32px] sm:leading-[38px] text-left">
+                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px] text-left">
                     {project.title}
                   </h3>
-                  <p className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
+                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
                     {project.description}
-                  </p>
+                  </div>
                   <div className="flex justify-end pt-2 w-full">
                     <ArrowLink
                       label="View Project"
@@ -232,6 +233,7 @@ export default function PortfolioSection({
                     width={460}
                     height={300}
                     className={project.imageClassName}
+                    quality={100}
                   />
                 </div>
               )}

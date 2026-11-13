@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 
 const stats = [
   { value: "800+", label: "Completed Projects" },
@@ -36,21 +35,21 @@ const row2Logos = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full py-10 sm:py-14 bg-[#f4f7ff] relative overflow-hidden">
-      <div className="w-full max-w-[1058px] mx-auto px-4 sm:px-6">
+    <section className="w-full py-12 sm:py-16 bg-[#f4f7ff] relative overflow-hidden">
+      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-[100px]">
         {/* Key Numerical Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-6 md:gap-0 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-6 md:gap-0 pb-12">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
               className={`flex flex-col items-center justify-center text-center px-4 ${
-                idx < stats.length - 1 ? "md:border-r md:border-gray-400" : ""
+                idx < stats.length - 1 ? "md:border-r md:border-gray-300" : ""
               }`}
             >
-              <span className="text-[40px] sm:text-[48px] font-bold text-blue-600 tracking-tight leading-none mb-2">
+              <span className="text-[44px] sm:text-[52px] font-bold text-blue-600 tracking-tight leading-none mb-2.5">
                 {stat.value}
               </span>
-              <span className="text-sm font-medium text-gray-700 leading-snug">
+              <span className="text-sm sm:text-[15px] font-medium text-gray-700 leading-snug">
                 {stat.label}
               </span>
             </div>
@@ -58,41 +57,41 @@ export default function StatsBar() {
         </div>
 
         {/* Section Heading */}
-        <div className="text-center pt-2 pb-6">
-          <p className="text-sm font-semibold text-gray-700 tracking-tight">
+        <div className="text-center pt-2 pb-7">
+          <p className="text-[15px] font-semibold text-gray-700 tracking-tight">
             Over 50+ Business Trust Us
           </p>
         </div>
 
         {/* 2 Rows of 9 Partner Logos from Google Drive */}
-        <div className="flex flex-col gap-4 sm:gap-6 items-center">
+        <div className="flex flex-col gap-5 sm:gap-6 items-center">
           {/* Row 1 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
             {row1Logos.map((logo, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white flex items-center justify-center p-1.5 shadow-xs border border-gray-100/80 hover:scale-105 transition-transform"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain rounded-xl"
                 />
               </div>
             ))}
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
             {row2Logos.map((logo, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-white flex items-center justify-center p-1.5 shadow-xs border border-gray-100/80 hover:scale-105 transition-transform"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain rounded-xl"
                 />
               </div>
             ))}

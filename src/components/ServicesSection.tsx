@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface ServicesSectionProps {
   onServiceSelect?: (serviceName: string) => void;
@@ -12,12 +13,11 @@ type Service = {
   description: React.ReactNode;
   image: string;
   imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
   imageClassName: string;
   linkLabel: string;
   imagePosition: "left" | "right";
-  containerClassName?: string;
-  contentClassName?: string;
-  descriptionClassName?: string;
 };
 
 const services: Service[] = [
@@ -30,15 +30,17 @@ const services: Service[] = [
         user-friendly websites designed for performance, search visibility, and
         business growth.
         <br />
+        <br />
         From corporate websites and business websites to customized web
         platforms, we create digital experiences that work seamlessly across
         devices.
       </>
     ),
     image: "/images/drive/Core Digital Services image 1.jpg",
-    imageAlt:
-      "High-performance website design displayed across multiple devices",
-    imageClassName: "relative w-[376px] lg:w-[420px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageAlt: "High-performance website design displayed across multiple devices",
+    imageWidth: 376,
+    imageHeight: 254,
+    imageClassName: "w-[380px] lg:w-[410px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "Explore Web Development",
     imagePosition: "left",
   },
@@ -57,7 +59,9 @@ const services: Service[] = [
     ),
     image: "/images/drive/Core Digital Services image 2.jpg",
     imageAlt: "E-commerce mobile application displayed on a smartphone",
-    imageClassName: "relative w-[314px] lg:w-[350px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageWidth: 628,
+    imageHeight: 508,
+    imageClassName: "w-[320px] lg:w-[350px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -76,11 +80,11 @@ const services: Service[] = [
     ),
     image: "/images/drive/Core Digital Services image 3.jpg",
     imageAlt: "Mobile analytics and digital marketing dashboard",
-    imageClassName: "relative w-[305px] lg:w-[340px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageWidth: 305,
+    imageHeight: 254,
+    imageClassName: "w-[310px] lg:w-[340px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "left",
-    contentClassName: "w-full lg:w-[457px]",
-    descriptionClassName: "w-full lg:w-[423px]",
   },
   {
     category: "SaaS & Cloud Solutions",
@@ -95,10 +99,11 @@ const services: Service[] = [
     ),
     image: "/images/drive/Core Digital Services image 4.jpg",
     imageAlt: "CRM and business management software dashboard",
-    imageClassName: "relative w-[524px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageWidth: 524,
+    imageHeight: 266,
+    imageClassName: "w-[500px] lg:w-[540px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
-    containerClassName: "min-h-[290px] px-6 sm:px-12 lg:pl-[120px] lg:pr-8 py-0",
   },
 ];
 
@@ -108,205 +113,176 @@ const ArrowLink = ({
 }: {
   label: string;
   onClick?: () => void;
-}): React.ReactNode => {
-  return (
-    <a
-      href="#contact"
-      onClick={(e) => {
-        if (onClick) {
-          e.preventDefault();
-          onClick();
-        }
-      }}
-      className="inline-flex items-center justify-center gap-1 px-3 py-2 relative flex-[0_0_auto] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] group cursor-pointer"
-      aria-label={label}
-    >
-      <span className="relative flex items-center justify-center w-fit mt-[-1.00px] font-semibold text-blue-600 group-hover:text-blue-700 text-[15px] text-center tracking-[-0.60px] leading-[18px] underline whitespace-nowrap transition-colors">
-        {label}
-      </span>
-      <span className="relative w-4 h-4 flex items-center justify-center text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true">
-        <svg
-          className="w-3.5 h-3.5"
-          viewBox="0 0 16 16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" />
-        </svg>
-      </span>
-    </a>
-  );
-};
+}) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className="inline-flex items-center gap-1.5 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
+  >
+    <span className="font-semibold text-blue-600 text-sm sm:text-[15px] tracking-tight leading-normal group-hover:underline">
+      {label}
+    </span>
+    <span className="text-blue-600 text-base font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+      ↗
+    </span>
+  </button>
+);
 
-const ServiceContent = ({
-  service,
-  onSelect,
-}: {
-  service: Service;
-  onSelect?: () => void;
-}): React.ReactNode => {
-  const isRightAligned = service.imagePosition === "left";
-
-  return (
-    <div
-      className={`flex flex-col ${
-        isRightAligned ? "items-start lg:items-end" : "items-start"
-      } justify-center gap-6 relative flex-1 grow w-full ${
-        service.contentClassName ?? ""
-      }`}
-    >
-      <div
-        className={`flex flex-col ${
-          isRightAligned ? "items-start lg:items-end" : "items-start"
-        } gap-4 relative self-stretch w-full flex-[0_0_auto]`}
-      >
-        <div
-          className={`flex flex-col ${
-            isRightAligned ? "items-start lg:items-end" : "items-start"
-          } gap-2 relative self-stretch w-full flex-[0_0_auto]`}
-        >
-          <div className="inline-flex items-center justify-center pt-[3px] pb-1 px-2.5 relative flex-[0_0_auto] bg-blue-600 rounded-xl overflow-hidden shadow-xs">
-            <span className="relative flex items-center w-fit mt-[-1.00px] font-medium text-white text-sm tracking-[-0.28px] leading-[16.8px] whitespace-nowrap">
-              {service.category}
-            </span>
-          </div>
-          <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-            <h2
-              className={`relative flex items-center ${
-                isRightAligned ? "justify-start lg:justify-end text-left lg:text-right" : "text-left"
-              } flex-1 mt-[-1.00px] font-semibold text-black text-[28px] sm:text-[32px] tracking-[-2.00px] leading-[normal]`}
-            >
-              {service.title}
-            </h2>
-          </div>
-        </div>
-        <div
-          className={`${
-            service.descriptionClassName ?? ""
-          } self-stretch flex items-start justify-center relative flex-[0_0_auto]`}
-        >
-          <p className="relative flex-1 mt-[-1.00px] font-normal text-black text-[13px] tracking-[0] leading-[16.4px] text-left">
-            {service.description}
-          </p>
-        </div>
-      </div>
-      <ArrowLink label={service.linkLabel} onClick={onSelect} />
-    </div>
-  );
-};
-
-export default function ServicesSection({ onServiceSelect }: ServicesSectionProps): React.ReactNode {
+export default function ServicesSection({
+  onServiceSelect,
+}: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="flex flex-col items-center gap-10 relative self-stretch w-full bg-[#f4f7ff] py-14 sm:py-20 overflow-hidden"
+      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-12 lg:px-16 xl:px-[100px] py-20 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      <header className="flex flex-col items-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex flex-col items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex w-[148px] items-center justify-center gap-2.5 px-3 py-2 relative flex-[0_0_auto] bg-[#007aff] rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
-            <span className="relative flex items-center justify-center w-fit mt-[-0.20px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-              Service
-            </span>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2 px-6 sm:px-12 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-            <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-              <h1
-                id="services-heading"
-                className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-semibold text-black text-[32px] sm:text-[40px] text-center tracking-[-2.00px] leading-[44px] sm:leading-[61px]"
-              >
-                Our Core Digital Services
-              </h1>
-            </div>
-            <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-              <p className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-normal text-black text-base sm:text-lg text-center tracking-[0] leading-[22.7px] max-w-2xl">
-                We design, develop, and scale digital solutions that help
-                businesses improve their online presence, streamline operations,
-                engage customers, and achieve measurable growth.
-              </p>
-            </div>
-          </div>
+      {/* 3D Faceted metallic sphere floating on left border */}
+      <div className="hidden lg:block absolute -left-16 xl:-left-20 top-36 w-[180px] xl:w-[220px] h-[180px] xl:h-[220px] pointer-events-none select-none z-10 opacity-90">
+        <Image
+          src="/images/service_sphere_faceted_clean.png"
+          alt="3D Faceted Sphere"
+          width={220}
+          height={220}
+          className="w-full h-full object-contain"
+          quality={100}
+        />
+      </div>
+
+      {/* 3D Translucent ribbon floating on right border */}
+      <div className="hidden lg:block absolute -right-16 xl:-right-20 top-[45%] w-[180px] xl:w-[220px] h-[360px] xl:h-[400px] pointer-events-none select-none z-10 opacity-90">
+        <Image
+          src="/images/service_ribbon_clean.png"
+          alt="3D Translucent Ribbon"
+          width={220}
+          height={400}
+          className="w-full h-full object-contain"
+          quality={100}
+        />
+      </div>
+
+      {/* Header */}
+      <div className="flex flex-col items-center gap-6 relative self-stretch w-full text-center">
+        {/* Pill Badge */}
+        <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+          <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
+            Service
+          </span>
         </div>
-        <nav
-          className="inline-flex items-start gap-4 sm:gap-6 relative flex-[0_0_auto]"
-          aria-label="Service actions"
-        >
+
+        {/* Heading & Subtitle */}
+        <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full">
+          <h2
+            id="services-heading"
+            className="font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] tracking-[-2.00px] leading-[42px] sm:leading-[52px]"
+          >
+            Our Core Digital Services
+          </h2>
+          <p className="font-medium text-black text-base sm:text-lg tracking-[-0.36px] leading-[27px] max-w-3xl">
+            We design, develop, and scale digital solutions that help businesses
+            improve their online presence, streamline operations, engage
+            customers, and achieve measurable growth.
+          </p>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="inline-flex items-center gap-4 relative">
+          <button
+            type="button"
+            onClick={() => onServiceSelect?.("All Services")}
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <span>View all services</span>
+            <span className="text-sm font-normal">↗</span>
+          </button>
           <a
             href="#contact"
-            onClick={(e) => {
-              if (onServiceSelect) {
-                e.preventDefault();
-                onServiceSelect("All Services");
-              }
-            }}
-            className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 relative flex-[0_0_auto] bg-blue-600 hover:bg-blue-700 text-white rounded-[22px] overflow-hidden shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center px-6 py-2.5 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="relative flex items-center justify-center w-fit mt-[-1.00px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-              View all services
-            </span>
-            <span className="relative w-4 h-4 flex items-center justify-center text-white" aria-hidden="true">
-              <svg className="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4.5 11.5L11.5 4.5M11.5 4.5H5.5M11.5 4.5V10.5" />
-              </svg>
-            </span>
+            Talk to Our Team
           </a>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              if (onServiceSelect) {
-                e.preventDefault();
-                onServiceSelect("Talk to Our Team");
-              }
-            }}
-            className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-5 py-2 relative flex-[0_0_auto] rounded-[22px] overflow-hidden border border-solid border-[#007aff] bg-white hover:bg-blue-50/50 shadow-[0px_4px_4px_#00000040] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#007aff] transition-colors cursor-pointer"
-          >
-            <span className="relative flex items-center justify-center w-fit font-medium text-[#007aff] text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-              Talk to Our Team
-            </span>
-          </a>
-        </nav>
-      </header>
-      <div
-        id="services-list"
-        className="flex flex-col items-start gap-9 relative self-stretch w-full max-w-[1280px] mx-auto"
-      >
+        </div>
+      </div>
+
+      {/* 4 Cards Stack with exact Figma alignments and spacing */}
+      <div className="flex flex-col items-center gap-12 lg:gap-16 relative self-stretch w-full mt-4">
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
 
           return (
             <article
               key={service.title}
-              className={`${
-                service.containerClassName ?? "justify-center px-6 sm:px-12 lg:px-[120px] py-0"
-              } flex-[0_0_auto] flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative self-stretch w-full`}
+              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-8 lg:gap-12"
+              aria-label={`${service.category} - ${service.title}`}
             >
-              {isImageLeft && (
-                <div className="shrink-0 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className={service.imageClassName}
-                    alt={service.imageAlt}
+              {/* Left Column */}
+              {isImageLeft ? (
+                /* Card 1 & 3: Image on Left */
+                <div className="flex-1 flex justify-center lg:justify-start items-center w-full">
+                  <Image
                     src={service.image}
-                    loading="lazy"
+                    alt={service.imageAlt}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
+                    className={service.imageClassName}
+                    quality={100}
                   />
+                </div>
+              ) : (
+                /* Card 2 & 4: Content on Left (All left-aligned: badge, title, desc, link) */
+                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[490px]">
+                  <div className="flex items-center justify-start w-full">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                      {service.category}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px] text-left">
+                    {service.title}
+                  </h3>
+                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
+                    {service.description}
+                  </div>
+                  <div className="pt-2 flex justify-start w-full">
+                    <ArrowLink
+                      label={service.linkLabel}
+                      onClick={() => onServiceSelect?.(service.title)}
+                    />
+                  </div>
                 </div>
               )}
 
-              <ServiceContent
-                service={service}
-                onSelect={() => onServiceSelect && onServiceSelect(service.title)}
-              />
-              {!isImageLeft && (
-                <div className="shrink-0 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    className={service.imageClassName}
-                    alt={service.imageAlt}
+              {/* Right Column */}
+              {isImageLeft ? (
+                /* Card 1 & 3: Content on Right (Badge RIGHT, Title & Desc LEFT, Link RIGHT) */
+                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[490px]">
+                  <div className="flex items-center justify-end w-full">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                      {service.category}
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px] text-left">
+                    {service.title}
+                  </h3>
+                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
+                    {service.description}
+                  </div>
+                  <div className="flex justify-end pt-2 w-full">
+                    <ArrowLink
+                      label={service.linkLabel}
+                      onClick={() => onServiceSelect?.(service.title)}
+                    />
+                  </div>
+                </div>
+              ) : (
+                /* Card 2 & 4: Image on Right */
+                <div className="flex-1 flex justify-center lg:justify-end items-center w-full">
+                  <Image
                     src={service.image}
-                    loading="lazy"
+                    alt={service.imageAlt}
+                    width={service.imageWidth}
+                    height={service.imageHeight}
+                    className={service.imageClassName}
+                    quality={100}
                   />
                 </div>
               )}

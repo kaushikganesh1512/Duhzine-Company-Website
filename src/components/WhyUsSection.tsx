@@ -24,24 +24,25 @@ export default function WhyUsSection() {
 
   return (
     <section
-      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-10 relative bg-[#f4f7ff] px-4 sm:px-8 lg:px-[120px] pt-16 pb-12 overflow-hidden"
+      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-12 lg:px-16 xl:px-[100px] py-20 overflow-hidden"
       aria-labelledby="why-us-heading"
     >
       {/* 3D Faceted Sphere floating prominently on the right border */}
-      <div className="hidden lg:block absolute -right-24 xl:-right-28 top-[52%] -translate-y-1/2 w-[240px] xl:w-[280px] h-[240px] xl:h-[280px] pointer-events-none select-none z-10 opacity-95">
+      <div className="hidden lg:block absolute -right-20 xl:-right-24 top-[50%] -translate-y-1/2 w-[240px] xl:w-[280px] h-[240px] xl:h-[280px] pointer-events-none select-none z-10 opacity-95">
         <Image
           src="/images/service_sphere_faceted_clean.png"
           alt="3D Faceted sphere"
           width={280}
           height={280}
           className="w-full h-full object-contain"
+          quality={100}
         />
       </div>
 
       {/* Header */}
       <div className="flex flex-col items-center gap-4 relative self-stretch w-full text-center">
         {/* Pill Badge */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-4 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Mission &amp; Vision
           </span>
@@ -50,7 +51,7 @@ export default function WhyUsSection() {
         {/* Heading */}
         <h2
           id="why-us-heading"
-          className="font-semibold text-black text-[32px] sm:text-[40px] tracking-[-2.00px] leading-[39px] sm:leading-[48px]"
+          className="font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] tracking-[-2.00px] leading-[42px] sm:leading-[52px]"
         >
           Why Businesses Choose{" "}
           <span className="text-blue-600">Duhzine IT Solutions ?</span>
@@ -63,17 +64,17 @@ export default function WhyUsSection() {
         </p>
       </div>
 
-      {/* 3 Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative self-stretch w-full mt-2 z-20">
+      {/* 3 Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-7 relative self-stretch w-full mt-2 z-20">
         {features.map((item) => (
           <div
             key={item.title}
-            className="flex flex-col items-start gap-4 p-8 bg-white rounded-2xl shadow-xs border border-gray-100 hover:shadow-md transition-shadow relative"
+            className="flex flex-col items-start gap-4 p-8 sm:p-9 bg-white rounded-2xl shadow-xs border border-gray-100 hover:shadow-md transition-shadow relative"
           >
-            {/* Person Icon in soft light-blue circle */}
-            <div className="w-11 h-11 rounded-full bg-[#edf5ff] flex items-center justify-center text-blue-600 mb-1">
+            {/* Person Icon in soft light-blue circle matching third image */}
+            <div className="w-12 h-12 rounded-full bg-[#edf5ff] flex items-center justify-center text-blue-600 mb-1">
               <svg
-                className="w-5 h-5 text-blue-600"
+                className="w-6 h-6 text-blue-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -87,7 +88,7 @@ export default function WhyUsSection() {
               </svg>
             </div>
 
-            <h3 className="font-semibold text-black text-xl tracking-tight leading-snug">
+            <h3 className="font-semibold text-black text-[22px] tracking-tight leading-snug">
               {item.title}
             </h3>
 

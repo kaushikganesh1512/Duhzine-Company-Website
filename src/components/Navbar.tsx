@@ -37,7 +37,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       }`}
       aria-label="Primary navigation"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-[68px] flex items-center justify-between">
+      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-[100px] h-[68px] flex items-center justify-between">
         {/* Duhzine Brand Logo (Left aligned with equal padding) */}
         <a href="#home" className="flex items-center select-none py-1 group">
           <Image
