@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 
 interface ServicesSectionProps {
   onServiceSelect?: (serviceName: string) => void;
@@ -14,8 +13,6 @@ type Service = {
   image: string;
   imageAlt: string;
   imageClassName: string;
-  imageWidth: number;
-  imageHeight: number;
   linkLabel: string;
   imagePosition: "left" | "right";
   containerClassName?: string;
@@ -38,12 +35,10 @@ const services: Service[] = [
         devices.
       </>
     ),
-    image: "/images/service_figma_card_1.png",
+    image: "/images/service_card_1_clean.png",
     imageAlt:
       "High-performance website design displayed across multiple devices",
-    imageClassName: "relative w-[376px] h-[254px] object-contain drop-shadow-sm",
-    imageWidth: 376,
-    imageHeight: 254,
+    imageClassName: "relative w-[376px] lg:w-[420px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "Explore Web Development",
     imagePosition: "left",
   },
@@ -60,11 +55,9 @@ const services: Service[] = [
         world.
       </>
     ),
-    image: "/images/service_figma_card_2.png",
+    image: "/images/service_card_2_clean.png",
     imageAlt: "E-commerce mobile application displayed on a smartphone",
-    imageClassName: "relative w-[314px] h-[254px] object-contain drop-shadow-sm",
-    imageWidth: 314,
-    imageHeight: 254,
+    imageClassName: "relative w-[314px] lg:w-[350px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -81,15 +74,13 @@ const services: Service[] = [
         quality leads, and achieve better conversions.
       </>
     ),
-    image: "/images/service_figma_card_3.png",
+    image: "/images/service_card_3_clean.png",
     imageAlt: "Mobile analytics and digital marketing dashboard",
-    imageClassName: "relative w-[305px] h-[254px] object-contain drop-shadow-sm",
-    imageWidth: 305,
-    imageHeight: 254,
+    imageClassName: "relative w-[305px] lg:w-[340px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "left",
-    contentClassName: "lg:w-[457px]",
-    descriptionClassName: "lg:w-[423px]",
+    contentClassName: "w-full lg:w-[457px]",
+    descriptionClassName: "w-full lg:w-[423px]",
   },
   {
     category: "SaaS & Cloud Solutions",
@@ -102,14 +93,12 @@ const services: Service[] = [
         platform.
       </>
     ),
-    image: "/images/service_figma_card_4.png",
+    image: "/images/service_card_4_clean.png",
     imageAlt: "CRM and business management software dashboard",
-    imageClassName: "relative w-[524px] h-[266px] object-contain drop-shadow-sm",
-    imageWidth: 524,
-    imageHeight: 266,
+    imageClassName: "relative w-[524px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
-    containerClassName: "lg:h-[290px] px-6 sm:px-10 lg:pl-[120px] lg:pr-8 py-0",
+    containerClassName: "min-h-[290px] px-6 sm:px-12 lg:pl-[120px] lg:pr-8 py-0",
   },
 ];
 
@@ -184,8 +173,7 @@ const ServiceContent = ({
               {service.category}
             </span>
           </div>
-
-          <div className={`flex items-start ${isRightAligned ? "justify-start lg:justify-end" : "justify-start"} relative self-stretch w-full flex-[0_0_auto]`}>
+          <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
             <h2
               className={`relative flex items-center ${
                 isRightAligned ? "justify-start lg:justify-end text-left lg:text-right" : "text-left"
@@ -195,7 +183,6 @@ const ServiceContent = ({
             </h2>
           </div>
         </div>
-
         <div
           className={`${
             service.descriptionClassName ?? ""
@@ -206,7 +193,6 @@ const ServiceContent = ({
           </p>
         </div>
       </div>
-
       <ArrowLink label={service.linkLabel} onClick={onSelect} />
     </div>
   );
@@ -219,37 +205,13 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
       className="flex flex-col items-center gap-10 relative self-stretch w-full bg-[#f4f7ff] py-14 sm:py-20 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* 3D Faceted Sphere floating on left border (Figma layout) */}
-      <div className="absolute -left-2 top-24 sm:top-32 w-16 sm:w-20 md:w-24 lg:w-28 select-none pointer-events-none z-10 opacity-90">
-        <Image
-          src="/images/service_sphere_faceted_clean.png"
-          alt="3D Geometric Artwork"
-          width={112}
-          height={280}
-          className="w-full h-auto object-contain drop-shadow-sm"
-        />
-      </div>
-
-      {/* 3D Translucent Rainbow Ribbon on right border (Figma layout) */}
-      <div className="absolute right-0 bottom-40 sm:bottom-52 w-16 sm:w-20 md:w-24 select-none pointer-events-none z-10 opacity-80">
-        <Image
-          src="/images/service_ribbon_clean.png"
-          alt="3D Ribbon Artwork"
-          width={96}
-          height={160}
-          className="w-full h-auto object-contain"
-        />
-      </div>
-
-      {/* Section Header */}
-      <header className="flex flex-col items-center gap-6 relative self-stretch w-full max-w-[1280px] mx-auto z-20">
+      <header className="flex flex-col items-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex w-[148px] items-center justify-center gap-2.5 px-3 py-2 relative flex-[0_0_auto] bg-[#007aff] rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
             <span className="relative flex items-center justify-center w-fit mt-[-0.20px] font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Service
             </span>
           </div>
-
           <div className="flex flex-col items-center justify-center gap-2 px-6 sm:px-12 lg:px-[120px] py-0 relative self-stretch w-full flex-[0_0_auto]">
             <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
               <h1
@@ -259,7 +221,6 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
                 Our Core Digital Services
               </h1>
             </div>
-
             <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
               <p className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-normal text-black text-base sm:text-lg text-center tracking-[0] leading-[22.7px] max-w-2xl">
                 We design, develop, and scale digital solutions that help
@@ -269,9 +230,8 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
             </div>
           </div>
         </div>
-
         <nav
-          className="inline-flex items-center gap-4 sm:gap-6 relative flex-[0_0_auto]"
+          className="inline-flex items-start gap-4 sm:gap-6 relative flex-[0_0_auto]"
           aria-label="Service actions"
         >
           <a
@@ -293,7 +253,6 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
               </svg>
             </span>
           </a>
-
           <a
             href="#contact"
             onClick={(e) => {
@@ -310,11 +269,9 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
           </a>
         </nav>
       </header>
-
-      {/* Services List with Gap 36px (gap-9) matching Figma exactly */}
       <div
         id="services-list"
-        className="flex flex-col items-start gap-9 relative self-stretch w-full max-w-[1280px] mx-auto z-20"
+        className="flex flex-col items-start gap-9 relative self-stretch w-full max-w-[1280px] mx-auto"
       >
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
@@ -324,17 +281,16 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
               key={service.title}
               className={`${
                 service.containerClassName ?? "justify-center px-6 sm:px-12 lg:px-[120px] py-0"
-              } flex-[0_0_auto] flex flex-col lg:flex-row items-center gap-6 relative self-stretch w-full`}
+              } flex-[0_0_auto] flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative self-stretch w-full`}
             >
               {isImageLeft && (
                 <div className="shrink-0 flex items-center justify-center">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     className={service.imageClassName}
                     alt={service.imageAlt}
                     src={service.image}
-                    width={service.imageWidth}
-                    height={service.imageHeight}
-                    priority={isImageLeft}
+                    loading="lazy"
                   />
                 </div>
               )}
@@ -343,15 +299,14 @@ export default function ServicesSection({ onServiceSelect }: ServicesSectionProp
                 service={service}
                 onSelect={() => onServiceSelect && onServiceSelect(service.title)}
               />
-
               {!isImageLeft && (
                 <div className="shrink-0 flex items-center justify-center">
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     className={service.imageClassName}
                     alt={service.imageAlt}
                     src={service.image}
-                    width={service.imageWidth}
-                    height={service.imageHeight}
+                    loading="lazy"
                   />
                 </div>
               )}
