@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import DuhzineLogo from "./DuhzineLogo";
+import React, { useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
@@ -9,118 +9,113 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onBookCall }: NavbarProps) {
+  const [activeNavigation, setActiveNavigation] = useState("Home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinks = [
-    { name: "Home", href: "#home", active: true },
-    { name: "Services", href: "#services", active: false },
-    { name: "Portfolio", href: "#portfolio", active: false },
-    { name: "Blogs", href: "#blogs", active: false },
-    { name: "Contact", href: "#contact", active: false },
-    { name: "About", href: "#about", active: false },
+  const navigationItems = [
+    { label: "Home", href: "#home" },
+    { label: "Services", href: "#services" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Blogs", href: "#blogs" },
+    { label: "Contact", href: "#contact" },
+    { label: "About", href: "#about" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-4 md:px-8 pt-3 transition-all duration-300">
-      <div
-        className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${
-          scrolled
-            ? "bg-[#05070f]/95 shadow-xl shadow-black/20 backdrop-blur-md border border-slate-800/80"
-            : "bg-[#05070f] border border-slate-800"
-        } px-5 md:px-8 py-2.5 flex items-center justify-between`}
+    <div className="w-full flex justify-center pt-0 px-0 bg-[#f4f7ff]">
+      {/* Primary Navigation Header Container (1040px wide on desktop as per Figma) */}
+      <header
+        className="relative w-full max-w-[1040px] h-[65px] bg-black flex items-center justify-between px-4 sm:px-6 z-30"
+        aria-label="Primary navigation"
       >
-        {/* Brand Logo */}
-        <a href="#home" className="flex items-center">
-          <DuhzineLogo theme="dark" showTagline={true} />
+        {/* Duhzine Logo */}
+        <a href="#home" className="flex items-center select-none py-1">
+          <Image
+            src="/images/header_logo.png"
+            alt="Duhzine agency logo"
+            width={148}
+            height={47}
+            className="h-[46px] w-auto object-contain"
+            priority
+          />
         </a>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center space-x-7">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                link.active
-                  ? "text-[#2563eb] font-semibold"
-                  : "text-slate-300 hover:text-white"
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
+        {/* Main Desktop Navigation Items */}
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center space-x-7">
+          {navigationItems.map((item) => {
+            const isActive = activeNavigation === item.label;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setActiveNavigation(item.label)}
+                aria-current={isActive ? "page" : undefined}
+                className={`text-base font-bold leading-[16.8px] tracking-[-0.28px] transition-colors ${
+                  isActive ? "text-blue-600" : "text-[#fefefe] hover:text-white"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
-        {/* Right CTA Button */}
-        <div className="hidden md:flex items-center">
+        {/* Book a Call Button (Exact Figma styling: rounded-md border border-[#787878] bg-blue-600) */}
+        <div className="hidden sm:flex items-center">
           <button
+            type="button"
             onClick={onBookCall}
-            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs md:text-sm font-semibold px-5 py-2 rounded-full transition-all shadow-md shadow-blue-500/20 hover:scale-[1.03] active:scale-[0.98]"
+            className="box-border flex h-[35px] items-center justify-center rounded-md border border-solid border-[#787878] bg-blue-600 px-[13px] py-[9px] hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
+            aria-label="Book a call"
           >
-            Book a call
+            <span className="text-sm font-bold leading-[16.8px] tracking-[-0.28px] text-white whitespace-nowrap">
+              Book a call
+            </span>
           </button>
         </div>
 
-        {/* Mobile menu trigger */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile controls */}
+        <div className="flex sm:hidden items-center gap-2">
           <button
+            type="button"
             onClick={onBookCall}
-            className="bg-[#2563eb] text-white text-xs font-semibold px-3 py-1.5 rounded-full"
+            className="h-[32px] px-3 rounded-md bg-blue-600 text-white text-xs font-bold"
           >
             Book a call
           </button>
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-slate-300 hover:text-white p-1.5 focus:outline-none"
-            aria-label="Toggle Navigation"
+            className="p-1.5 text-white focus:outline-none"
+            aria-label="Toggle navigation"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-7xl mx-auto bg-[#070b14]/95 backdrop-blur-xl border border-slate-800 rounded-2xl p-5 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+        <div className="sm:hidden absolute top-[65px] left-0 right-0 bg-black/95 backdrop-blur-md border-b border-slate-800 p-5 z-40 text-white">
           <nav className="flex flex-col space-y-3">
-            {navLinks.map((link) => (
+            {navigationItems.map((item) => (
               <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`text-sm py-1.5 px-3 rounded-lg font-medium transition-colors ${
-                  link.active
-                    ? "text-[#2563eb] bg-blue-950/40 font-semibold"
-                    : "text-slate-300 hover:text-white hover:bg-slate-900"
+                key={item.label}
+                href={item.href}
+                onClick={() => {
+                  setActiveNavigation(item.label);
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-sm py-1.5 font-bold ${
+                  activeNavigation === item.label ? "text-blue-500" : "text-slate-300"
                 }`}
               >
-                {link.name}
+                {item.label}
               </a>
             ))}
-            <div className="pt-2 border-t border-slate-800">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onBookCall();
-                }}
-                className="w-full py-2.5 bg-[#2563eb] text-white rounded-full text-xs font-semibold text-center"
-              >
-                Book a call
-              </button>
-            </div>
           </nav>
         </div>
       )}
-    </header>
+    </div>
   );
 }
-
