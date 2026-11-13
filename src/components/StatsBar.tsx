@@ -35,10 +35,10 @@ const row2Logos = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full py-12 sm:py-16 bg-[#f4f7ff] relative overflow-hidden">
-      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-[100px]">
+    <section className="w-full py-14 sm:py-20 bg-[#f4f7ff] relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Key Numerical Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-6 md:gap-0 pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-8 md:gap-0 pb-14">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
@@ -46,10 +46,10 @@ export default function StatsBar() {
                 idx < stats.length - 1 ? "md:border-r md:border-gray-300" : ""
               }`}
             >
-              <span className="text-[44px] sm:text-[52px] font-bold text-blue-600 tracking-tight leading-none mb-2.5">
+              <span className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-blue-600 tracking-tight leading-none mb-3">
                 {stat.value}
               </span>
-              <span className="text-sm sm:text-[15px] font-medium text-gray-700 leading-snug">
+              <span className="text-sm sm:text-base font-medium text-gray-700 leading-snug">
                 {stat.label}
               </span>
             </div>
@@ -57,8 +57,8 @@ export default function StatsBar() {
         </div>
 
         {/* Section Heading */}
-        <div className="text-center pt-2 pb-7">
-          <p className="text-[15px] font-semibold text-gray-700 tracking-tight">
+        <div className="text-center pt-2 pb-8">
+          <p className="text-base sm:text-lg font-semibold text-gray-700 tracking-tight">
             Over 50+ Business Trust Us
           </p>
         </div>
@@ -66,11 +66,11 @@ export default function StatsBar() {
         {/* 2 Rows of 9 Partner Logos from Google Drive */}
         <div className="flex flex-col gap-5 sm:gap-6 items-center">
           {/* Row 1 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
             {row1Logos.map((logo, idx) => (
               <div
                 key={`r1-${idx}`}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
               >
                 <img
                   src={logo.src}
@@ -82,11 +82,11 @@ export default function StatsBar() {
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
             {row2Logos.map((logo, idx) => (
               <div
                 key={`r2-${idx}`}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-105 transition-transform"
               >
                 <img
                   src={logo.src}

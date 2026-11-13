@@ -40,7 +40,7 @@ const services: Service[] = [
     imageAlt: "High-performance website design displayed across multiple devices",
     imageWidth: 376,
     imageHeight: 254,
-    imageClassName: "w-[380px] lg:w-[410px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-[420px] lg:w-[480px] xl:w-[520px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "Explore Web Development",
     imagePosition: "left",
   },
@@ -61,7 +61,7 @@ const services: Service[] = [
     imageAlt: "E-commerce mobile application displayed on a smartphone",
     imageWidth: 628,
     imageHeight: 508,
-    imageClassName: "w-[320px] lg:w-[350px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-[360px] lg:w-[400px] xl:w-[430px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -82,7 +82,7 @@ const services: Service[] = [
     imageAlt: "Mobile analytics and digital marketing dashboard",
     imageWidth: 305,
     imageHeight: 254,
-    imageClassName: "w-[310px] lg:w-[340px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-[350px] lg:w-[390px] xl:w-[420px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "left",
   },
@@ -101,7 +101,7 @@ const services: Service[] = [
     imageAlt: "CRM and business management software dashboard",
     imageWidth: 524,
     imageHeight: 266,
-    imageClassName: "w-[500px] lg:w-[540px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-[520px] lg:w-[580px] xl:w-[620px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -119,7 +119,7 @@ const ArrowLink = ({
     onClick={onClick}
     className="inline-flex items-center gap-1.5 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
   >
-    <span className="font-semibold text-blue-600 text-sm sm:text-[15px] tracking-tight leading-normal group-hover:underline">
+    <span className="font-semibold text-blue-600 text-sm sm:text-base tracking-tight leading-normal group-hover:underline">
       {label}
     </span>
     <span className="text-blue-600 text-base font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
@@ -134,37 +134,13 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-12 lg:px-16 xl:px-[100px] py-20 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-16 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-20 md:py-28 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* 3D Faceted metallic sphere floating on left border */}
-      <div className="hidden lg:block absolute -left-16 xl:-left-20 top-36 w-[180px] xl:w-[220px] h-[180px] xl:h-[220px] pointer-events-none select-none z-10 opacity-90">
-        <Image
-          src="/images/service_sphere_faceted_clean.png"
-          alt="3D Faceted Sphere"
-          width={220}
-          height={220}
-          className="w-full h-full object-contain"
-          quality={100}
-        />
-      </div>
-
-      {/* 3D Translucent ribbon floating on right border */}
-      <div className="hidden lg:block absolute -right-16 xl:-right-20 top-[45%] w-[180px] xl:w-[220px] h-[360px] xl:h-[400px] pointer-events-none select-none z-10 opacity-90">
-        <Image
-          src="/images/service_ribbon_clean.png"
-          alt="3D Translucent Ribbon"
-          width={220}
-          height={400}
-          className="w-full h-full object-contain"
-          quality={100}
-        />
-      </div>
-
       {/* Header */}
       <div className="flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Service
           </span>
@@ -174,11 +150,11 @@ export default function ServicesSection({
         <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full">
           <h2
             id="services-heading"
-            className="font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] tracking-[-2.00px] leading-[42px] sm:leading-[52px]"
+            className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[52px] tracking-[-2px] leading-tight"
           >
             Our Core Digital Services
           </h2>
-          <p className="font-medium text-black text-base sm:text-lg tracking-[-0.36px] leading-[27px] max-w-3xl">
+          <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl">
             We design, develop, and scale digital solutions that help businesses
             improve their online presence, streamline operations, engage
             customers, and achieve measurable growth.
@@ -190,29 +166,29 @@ export default function ServicesSection({
           <button
             type="button"
             onClick={() => onServiceSelect?.("All Services")}
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>View all services</span>
             <span className="text-sm font-normal">↗</span>
           </button>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-6 py-2.5 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
           >
             Talk to Our Team
           </a>
         </div>
       </div>
 
-      {/* 4 Cards Stack with exact Figma alignments and spacing */}
-      <div className="flex flex-col items-center gap-12 lg:gap-16 relative self-stretch w-full mt-4">
+      {/* 4 Cards Stack with exact Figma alignments and generous responsive spacing */}
+      <div className="flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
 
           return (
             <article
               key={service.title}
-              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-8 lg:gap-12"
+              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
               aria-label={`${service.category} - ${service.title}`}
             >
               {/* Left Column */}
@@ -230,16 +206,16 @@ export default function ServicesSection({
                 </div>
               ) : (
                 /* Card 2 & 4: Content on Left (All left-aligned: badge, title, desc, link) */
-                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[490px]">
+                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[540px]">
                   <div className="flex items-center justify-start w-full">
-                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {service.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px] text-left">
+                  <h3 className="font-semibold text-black text-2xl sm:text-3xl lg:text-[36px] tracking-tight leading-snug sm:leading-[42px] text-left">
                     {service.title}
                   </h3>
-                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
+                  <div className="font-normal text-gray-700 text-sm sm:text-base leading-relaxed text-left">
                     {service.description}
                   </div>
                   <div className="pt-2 flex justify-start w-full">
@@ -254,16 +230,16 @@ export default function ServicesSection({
               {/* Right Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Content on Right (Badge RIGHT, Title & Desc LEFT, Link RIGHT) */
-                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[490px]">
+                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[540px]">
                   <div className="flex items-center justify-end w-full">
-                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] tracking-tight leading-none shadow-xs">
+                    <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {service.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold text-black text-[28px] sm:text-[34px] tracking-tight leading-[34px] sm:leading-[40px] text-left">
+                  <h3 className="font-semibold text-black text-2xl sm:text-3xl lg:text-[36px] tracking-tight leading-snug sm:leading-[42px] text-left">
                     {service.title}
                   </h3>
-                  <div className="font-normal text-gray-700 text-sm sm:text-[15px] leading-relaxed text-left">
+                  <div className="font-normal text-gray-700 text-sm sm:text-base leading-relaxed text-left">
                     {service.description}
                   </div>
                   <div className="flex justify-end pt-2 w-full">

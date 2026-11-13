@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="absolute top-8 left-10 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-[100px] relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Top: Custom Quote / Callback Block matching fourth image */}
         <div className="relative rounded-2xl bg-[#080d1a]/85 backdrop-blur-sm p-8 sm:p-12 text-white overflow-hidden border border-neutral-800 shadow-2xl flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-20">
           {/* Subtle inner corner glow */}

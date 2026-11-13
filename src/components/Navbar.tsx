@@ -37,21 +37,22 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       }`}
       aria-label="Primary navigation"
     >
-      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-[100px] h-[68px] flex items-center justify-between">
-        {/* Duhzine Brand Logo (Left aligned with equal padding) */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-[72px] flex items-center justify-between">
+        {/* Duhzine Brand Logo */}
         <a href="#home" className="flex items-center select-none py-1 group">
           <Image
             src="/images/header_logo.png"
             alt="Duhzine agency logo"
-            width={154}
-            height={48}
-            className="h-[44px] md:h-[48px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            width={160}
+            height={50}
+            className="h-[46px] md:h-[50px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             priority
+            quality={100}
           />
         </a>
 
-        {/* Desktop Navigation Links (Center aligned with equal spacing) */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-7 lg:space-x-9">
+        {/* Desktop Navigation Links */}
+        <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-8 lg:space-x-10">
           {navigationItems.map((item) => {
             const isActive = activeNavigation === item.label;
             return (
@@ -60,59 +61,50 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                 href={item.href}
                 onClick={() => setActiveNavigation(item.label)}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-sm lg:text-[15px] font-bold tracking-[-0.25px] transition-all relative py-1 ${
+                className={`text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 ${
                   isActive
                     ? "text-blue-500 font-extrabold"
-                    : "text-neutral-200 hover:text-white"
+                    : "text-[#fefefe] hover:text-blue-400"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500 rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
                 )}
               </a>
             );
           })}
         </nav>
 
-        {/* Book a Call Button (Right aligned with equal padding) */}
-        <div className="hidden sm:flex items-center">
+        {/* Right CTA Button */}
+        <div className="hidden md:flex items-center">
           <button
             type="button"
             onClick={onBookCall}
-            className="box-border flex h-[38px] items-center justify-center rounded-md border border-[#787878] bg-blue-600 hover:bg-blue-700 px-4 py-2 transition-all shadow-md shadow-blue-600/30 hover:shadow-blue-600/50 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="px-5 py-2.5 rounded-lg border border-neutral-700 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-tight transition-all shadow-sm hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
             aria-label="Book a call"
-          >
-            <span className="text-sm font-bold text-white tracking-[-0.28px] whitespace-nowrap">
-              Book a call
-            </span>
-          </button>
-        </div>
-
-        {/* Mobile menu trigger */}
-        <div className="flex sm:hidden items-center gap-2.5">
-          <button
-            type="button"
-            onClick={onBookCall}
-            className="h-[34px] px-3.5 rounded-md bg-blue-600 text-white text-xs font-bold"
           >
             Book a call
           </button>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden flex items-center">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-neutral-300 hover:text-white focus:outline-none"
-            aria-label="Toggle navigation"
+            className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden w-full bg-neutral-950/95 backdrop-blur-xl border-b border-neutral-800 px-6 py-5 animate-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col space-y-3.5">
+        <div className="md:hidden bg-neutral-950 border-b border-neutral-800 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
+          <nav className="flex flex-col space-y-3">
             {navigationItems.map((item) => (
               <a
                 key={item.label}
@@ -121,14 +113,28 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                   setActiveNavigation(item.label);
                   setMobileMenuOpen(false);
                 }}
-                className={`text-sm py-1.5 font-bold transition-colors ${
-                  activeNavigation === item.label ? "text-blue-500" : "text-neutral-300 hover:text-white"
+                className={`text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
+                  activeNavigation === item.label
+                    ? "text-blue-400 bg-blue-950/40"
+                    : "text-neutral-300 hover:text-white hover:bg-neutral-900"
                 }`}
               >
                 {item.label}
               </a>
             ))}
           </nav>
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onBookCall();
+              }}
+              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm text-center shadow-md transition-colors"
+            >
+              Book a call
+            </button>
+          </div>
         </div>
       )}
     </header>

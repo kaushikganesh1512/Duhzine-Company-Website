@@ -45,7 +45,7 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="flex flex-col items-start gap-3 px-0 pt-4 pb-6 flex-1 grow bg-white relative self-stretch">
+    <article className="flex flex-col items-center gap-4 px-2 pt-6 pb-8 flex-1 grow bg-white relative self-stretch">
       {/* Connector line and step circle row (Fixed 28px height, perfectly centered across all 4 steps) */}
       <div className="flex items-center self-stretch w-full relative h-7">
         <div className="flex-1 h-0.5 flex items-center">
@@ -54,10 +54,10 @@ const ProcessStep = ({
 
         <div className="inline-flex flex-col items-center justify-center relative shrink-0">
           <div
-            className="relative w-7 h-7 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] flex items-center justify-center z-10"
+            className="relative w-8 h-8 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] flex items-center justify-center z-10"
             aria-label={`Step ${number}: ${title}`}
           >
-            <span className="text-blue-600 text-[12px] font-medium text-center tracking-tight leading-none">
+            <span className="text-blue-600 text-[13px] font-semibold text-center tracking-tight leading-none">
               {number}
             </span>
           </div>
@@ -69,15 +69,13 @@ const ProcessStep = ({
       </div>
 
       {/* Step Title & Description */}
-      <div className="flex flex-col items-start gap-2.5 relative self-stretch w-full flex-1">
-        <div className="flex flex-col items-start gap-1 px-4 sm:px-6 py-0 relative self-stretch w-full">
-          <h3 className="relative self-stretch mt-[-1.00px] font-semibold text-black text-xs text-center tracking-[0] leading-[14px]">
-            {title}
-          </h3>
-          <p className="relative self-stretch font-normal text-gray-500 text-xs text-center tracking-[0] leading-[14px]">
-            {description}
-          </p>
-        </div>
+      <div className="flex flex-col items-center gap-1.5 px-3 sm:px-4 text-center w-full">
+        <h3 className="font-semibold text-black text-base sm:text-[17px] tracking-tight leading-snug">
+          {title}
+        </h3>
+        <p className="font-normal text-gray-600 text-xs sm:text-[13px] leading-relaxed max-w-[210px] mx-auto">
+          {description}
+        </p>
       </div>
     </article>
   );
@@ -86,39 +84,33 @@ const ProcessStep = ({
 export default function ProcessSection(): React.ReactNode {
   return (
     <section
-      className="flex flex-col w-full max-w-[1280px] mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-12 lg:px-16 xl:px-[100px] pt-20 pb-12 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-16 md:py-24 overflow-hidden"
       aria-labelledby="process-heading"
     >
-      <div className="flex flex-col items-center gap-10 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex flex-col items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative flex-[0_0_auto] bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
-            <p className="relative flex items-center justify-center w-fit font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
+      <div className="flex flex-col items-center gap-10 relative self-stretch w-full">
+        <div className="flex flex-col items-center gap-4 relative self-stretch w-full">
+          <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+            <p className="font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Our Simple, Smart &amp; Scalable Process
             </p>
           </div>
-          <div className="flex flex-col items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <div className="flex flex-col items-center justify-center gap-3 py-0 relative self-stretch w-full flex-[0_0_auto]">
-              <div className="flex w-full max-w-[904px] items-start justify-center relative flex-[0_0_auto]">
-                <h2
-                  id="process-heading"
-                  className="relative flex items-center justify-center flex-1 mt-[-1.00px] font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] text-center tracking-[-2.00px] leading-[42px] sm:leading-[52px]"
-                >
-                  From Idea to Launch - A Clear Development Process
-                </h2>
-              </div>
-              <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-                <p className="relative flex items-center justify-center flex-1 font-medium text-black text-base sm:text-lg text-center tracking-[-0.36px] leading-[27px] max-w-3xl">
-                  We follow a structured approach that keeps your project
-                  focused, transparent, and aligned with your business
-                  objectives.
-                </p>
-              </div>
-            </div>
+          <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full text-center">
+            <h2
+              id="process-heading"
+              className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2.00px] leading-tight max-w-[960px]"
+            >
+              From Idea to Launch - A Clear Development Process
+            </h2>
+            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl">
+              We follow a structured approach that keeps your project
+              focused, transparent, and aligned with your business
+              objectives.
+            </p>
           </div>
         </div>
 
         {/* 4 Process Steps Bar with items-stretch ensuring perfectly aligned horizontal line */}
-        <div className="w-full p-2 flex-[0_0_auto] flex flex-col items-center justify-center relative">
+        <div className="w-full max-w-5xl flex flex-col items-center justify-center relative">
           <div
             className="flex flex-col sm:flex-row items-stretch justify-center relative self-stretch w-full bg-white rounded-2xl shadow-xs border border-gray-100/90 overflow-hidden"
             role="list"
@@ -129,29 +121,6 @@ export default function ProcessSection(): React.ReactNode {
                 <ProcessStep {...step} />
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Digital Solutions Across Industries header */}
-      <div className="flex w-fit items-center justify-center gap-2.5 px-5 py-1.5 relative flex-[0_0_auto] bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm mt-6">
-        <div className="relative flex items-center justify-center w-fit font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-          Digital Solutions Across Industries
-        </div>
-      </div>
-      <div className="flex flex-col items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex flex-col items-center justify-center gap-3 py-0 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-            <h2 className="relative flex items-center justify-center w-full max-w-[881px] mt-[-1.00px] font-semibold text-black text-[34px] sm:text-[42px] lg:text-[46px] text-center tracking-[-2.00px] leading-[42px] sm:leading-[52px]">
-              Technology That Adapts to Different Business Needs
-            </h2>
-          </div>
-          <div className="flex items-start justify-center relative self-stretch w-full flex-[0_0_auto]">
-            <p className="relative flex items-center justify-center flex-1 font-medium text-black text-base sm:text-lg text-center tracking-[-0.36px] leading-[27px] max-w-3xl">
-              We provide digital solutions for businesses across multiple
-              industries, helping organizations streamline operations, improve
-              customer experiences, and strengthen their digital presence.
-            </p>
           </div>
         </div>
       </div>
