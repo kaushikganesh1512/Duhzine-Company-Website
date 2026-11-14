@@ -40,7 +40,7 @@ const services: Service[] = [
     imageAlt: "High-performance website design displayed across multiple devices",
     imageWidth: 376,
     imageHeight: 254,
-    imageClassName: "w-[420px] lg:w-[480px] xl:w-[520px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-full max-w-[440px] lg:max-w-[480px] xl:max-w-[500px] h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "Explore Web Development",
     imagePosition: "left",
   },
@@ -61,7 +61,7 @@ const services: Service[] = [
     imageAlt: "E-commerce mobile application displayed on a smartphone",
     imageWidth: 628,
     imageHeight: 508,
-    imageClassName: "w-[360px] lg:w-[400px] xl:w-[430px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-full max-w-[350px] lg:max-w-[380px] xl:max-w-[400px] h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -82,7 +82,7 @@ const services: Service[] = [
     imageAlt: "Mobile analytics and digital marketing dashboard",
     imageWidth: 305,
     imageHeight: 254,
-    imageClassName: "w-[350px] lg:w-[390px] xl:w-[420px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-full max-w-[340px] lg:max-w-[370px] xl:max-w-[390px] h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "left",
   },
@@ -101,7 +101,7 @@ const services: Service[] = [
     imageAlt: "CRM and business management software dashboard",
     imageWidth: 524,
     imageHeight: 266,
-    imageClassName: "w-[520px] lg:w-[580px] xl:w-[620px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
+    imageClassName: "w-full max-w-[460px] lg:max-w-[500px] xl:max-w-[530px] h-auto object-contain rounded-2xl drop-shadow-sm",
     linkLabel: "View our work",
     imagePosition: "right",
   },
@@ -134,23 +134,9 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-4 sm:px-6 lg:px-8 py-12 md:py-16 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* Right 3D Prism Ribbon (Interactive, strictly positioned at edge near lower services) */}
-      <div className="hidden lg:block absolute right-0 bottom-[400px] w-[95px] xl:w-[140px] 2xl:w-[170px] pointer-events-auto select-none z-10">
-        <div className="animate-float transition-all duration-700 ease-out hover:scale-110 hover:-rotate-6 cursor-pointer">
-          <Image
-            src="/images/side_services_ribbon.png"
-            alt="3D Prism Ribbon Artwork"
-            width={210}
-            height={290}
-            quality={100}
-            className="w-full h-auto object-contain drop-shadow-md"
-          />
-        </div>
-      </div>
-
       {/* Header */}
       <div className="reveal-on-scroll flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
@@ -194,21 +180,21 @@ export default function ServicesSection({
         </div>
       </div>
 
-      {/* 4 Cards Stack with exact Figma alignments and generous responsive spacing */}
-      <div className="stagger-container flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
+      {/* 4 Cards Stack with spacious edge-curved outer boxes and smooth hover states */}
+      <div className="stagger-container flex flex-col items-center gap-10 lg:gap-14 relative self-stretch w-full mt-4">
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
 
           return (
             <article
               key={service.title}
-              className="stagger-item interactive-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
+              className="stagger-item hover-expand-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full p-8 sm:p-10 lg:p-12 xl:p-14 gap-8 lg:gap-12 xl:gap-16 cursor-pointer"
               aria-label={`${service.category} - ${service.title}`}
             >
               {/* Left Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Image on Left */
-                <div className="flex-1 flex justify-center lg:justify-start items-center w-full">
+                <div className="flex-1 flex justify-center lg:justify-start items-center w-full max-w-[480px] xl:max-w-[520px]">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}
@@ -220,7 +206,7 @@ export default function ServicesSection({
                 </div>
               ) : (
                 /* Card 2 & 4: Content on Left (All left-aligned: badge, title, desc, link) */
-                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[540px]">
+                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full max-w-[540px] xl:max-w-[580px]">
                   <div className="flex items-center justify-start w-full">
                     <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {service.category}
@@ -244,7 +230,7 @@ export default function ServicesSection({
               {/* Right Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Content on Right (Badge RIGHT, Title & Desc LEFT, Link RIGHT) */
-                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[540px]">
+                <div className="flex-1 flex flex-col gap-4 w-full max-w-[540px] xl:max-w-[580px]">
                   <div className="flex items-center justify-end w-full">
                     <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {service.category}
@@ -265,7 +251,7 @@ export default function ServicesSection({
                 </div>
               ) : (
                 /* Card 2 & 4: Image on Right */
-                <div className="flex-1 flex justify-center lg:justify-end items-center w-full">
+                <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-[480px] xl:max-w-[520px]">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}

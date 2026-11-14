@@ -108,7 +108,7 @@ export default function PortfolioSection({
   return (
     <section
       id="portfolio"
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-12 relative bg-[#f4f7ff] px-4 sm:px-6 lg:px-8 py-12 md:py-16 overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
       {/* Section Header */}
@@ -155,20 +155,20 @@ export default function PortfolioSection({
       </div>
 
       {/* 3 Projects Stack matching exact Figma layout & alternating orientations */}
-      <div className="stagger-container flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
+      <div className="stagger-container flex flex-col items-center gap-10 lg:gap-14 relative self-stretch w-full mt-4">
         {projects.map((project, index) => {
           const isImageLeft = project.imagePosition === "left";
 
           return (
             <article
               key={project.title}
-              className="stagger-item interactive-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
+              className="stagger-item hover-expand-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full p-8 sm:p-10 lg:p-12 xl:p-14 gap-8 lg:gap-12 xl:gap-16 cursor-pointer"
               aria-label={`${project.category} - ${project.title}`}
             >
               {/* Left Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Image on Left */
-                <div className="flex-1 flex justify-center lg:justify-start items-center w-full">
+                <div className="flex-1 flex justify-center lg:justify-start items-center w-full max-w-[480px] xl:max-w-[520px]">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
@@ -181,7 +181,7 @@ export default function PortfolioSection({
                 </div>
               ) : (
                 /* Card 2: Content on Left (Left-aligned badge, title, desc, link) */
-                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full lg:max-w-[540px]">
+                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full max-w-[540px] xl:max-w-[580px]">
                   <div className="flex items-center justify-start w-full">
                     <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {project.category}
@@ -205,7 +205,7 @@ export default function PortfolioSection({
               {/* Right Column */}
               {isImageLeft ? (
                 /* Card 1 & 3: Content on Right (Right badge, left text, right link) */
-                <div className="flex-1 flex flex-col gap-4 w-full lg:max-w-[540px]">
+                <div className="flex-1 flex flex-col gap-4 w-full max-w-[540px] xl:max-w-[580px]">
                   <div className="flex items-center justify-end w-full">
                     <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {project.category}
@@ -226,7 +226,7 @@ export default function PortfolioSection({
                 </div>
               ) : (
                 /* Card 2: Image on Right */
-                <div className="flex-1 flex justify-center lg:justify-end items-center w-full">
+                <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-[480px] xl:max-w-[520px]">
                   <Image
                     src={project.image}
                     alt={project.imageAlt}
