@@ -12,6 +12,9 @@ export default function ContactOffice() {
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12">
+          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
+            <span>Our Location</span>
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4">
             Our Office in Chennai
           </h2>

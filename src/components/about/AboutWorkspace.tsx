@@ -19,7 +19,7 @@ export default function AboutWorkspace() {
     <section className="w-full bg-[#f4f7ff] py-16 md:py-24 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center mb-12">
         {/* Pill Badge */}
-        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6">
+        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
           <span>Designed for Creativity, Collaboration &amp; Growth</span>
         </div>
 

@@ -89,10 +89,8 @@ export default function ProcessSection(): React.ReactNode {
     >
       <div className="flex flex-col items-center gap-8 relative self-stretch w-full">
         <div className="reveal-on-scroll flex flex-col items-center gap-4 relative self-stretch w-full">
-          <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
-            <p className="font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-              Our Simple, Smart &amp; Scalable Process
-            </p>
+          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-2 hover:scale-[1.02] transition-transform">
+            <span>Our Simple, Smart &amp; Scalable Process</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full text-center">
             <h2

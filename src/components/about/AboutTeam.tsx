@@ -47,6 +47,9 @@ export default function AboutTeam() {
 
           {/* Header */}
           <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 relative z-10">
+            <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
+              <span>Leadership Team</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
               Meet Our Core Team
             </h2>

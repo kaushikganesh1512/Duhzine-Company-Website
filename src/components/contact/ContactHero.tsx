@@ -31,10 +31,8 @@ export default function ContactHero({ onContactClick }: ContactHeroProps) {
 
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         {/* Top Pill Badge */}
-        <div className="inline-flex items-center justify-center p-1 rounded-full border border-gray-300/80 bg-white/60 backdrop-blur-sm shadow-sm mb-7">
-          <div className="px-5 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-medium tracking-normal">
-            Contact Duhzine IT Solutions
-          </div>
+        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-7 hover:scale-[1.02] transition-transform">
+          <span>Contact Duhzine IT Solutions</span>
         </div>
 
         {/* Main Headline */}

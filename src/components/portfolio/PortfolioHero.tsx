@@ -39,7 +39,7 @@ export default function PortfolioHero({
 
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         {/* Top Pill Badge */}
-        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-8">
+        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-8 hover:scale-[1.02] transition-transform">
           <span>Portfolio</span>
         </div>
 

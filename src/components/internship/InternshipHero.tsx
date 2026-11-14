@@ -45,7 +45,7 @@ export default function InternshipHero({ onStartApplication }: InternshipHeroPro
         {/* Top Centered Header Content */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Pill Badge */}
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-6">
+          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
             <span>Internship Program for Students &amp; Freshers</span>
           </div>
 

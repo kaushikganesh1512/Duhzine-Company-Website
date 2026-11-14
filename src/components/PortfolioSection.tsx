@@ -114,10 +114,8 @@ export default function PortfolioSection({
       {/* Section Header */}
       <div className="reveal-on-scroll flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
-        <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
-          <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
-            Our Recent Work
-          </span>
+        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-2 hover:scale-[1.02] transition-transform">
+          <span>Our Recent Work</span>
         </div>
 
         {/* Section Heading & Subtitle */}

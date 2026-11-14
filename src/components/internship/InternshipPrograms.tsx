@@ -74,7 +74,7 @@ export default function InternshipPrograms({
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="reveal-on-scroll flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <div className="pill-badge inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
+          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-4 hover:scale-[1.02] transition-transform">
             <span>Our Internship Programs</span>
           </div>
 
