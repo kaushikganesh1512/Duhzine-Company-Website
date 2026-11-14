@@ -100,33 +100,35 @@ export default function Footer() {
                 CONTACT US
               </h3>
 
-              {/* Contact Info List with Exact Icons */}
+              {/* Contact Info List with Exact Icons from User Reference */}
               <div className="flex flex-col gap-3.5 text-xs sm:text-sm text-gray-300">
-                {/* Location with exact matching dark tile icon */}
+                {/* Location with Google Maps white rounded tile */}
                 <div className="flex items-center gap-3">
-                  <div className="w-7 h-7 shrink-0 relative">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 relative">
                     <Image
-                      src="/images/icons/location.png"
+                      src="/images/footer_icons/icon_map.png"
                       alt="Location"
-                      width={28}
-                      height={28}
-                      className="w-7 h-7 object-contain rounded-md"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain rounded-md"
                       quality={100}
+                      unoptimized
                     />
                   </div>
                   <span className="font-normal text-gray-200">OMR, Navalur, Chennai - 600130</span>
                 </div>
 
-                {/* Phone with exact matching dark tile icon */}
+                {/* Phone with dark navy blue rounded tile */}
                 <div className="flex items-center gap-3">
-                  <div className="w-7 h-7 shrink-0 relative">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 relative">
                     <Image
-                      src="/images/icons/phone.png"
+                      src="/images/footer_icons/icon_phone.png"
                       alt="Phone"
-                      width={28}
-                      height={28}
-                      className="w-7 h-7 object-contain rounded-md"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain rounded-md"
                       quality={100}
+                      unoptimized
                     />
                   </div>
                   <a
@@ -137,16 +139,17 @@ export default function Footer() {
                   </a>
                 </div>
 
-                {/* Email with exact Gmail icon matching user image */}
+                {/* Email with white rounded Gmail tile */}
                 <div className="flex items-center gap-3">
-                  <div className="w-7 h-7 shrink-0 relative">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 relative">
                     <Image
-                      src="/images/icons/gmail.png"
+                      src="/images/footer_icons/icon_mail.png"
                       alt="Email"
-                      width={28}
-                      height={28}
-                      className="w-7 h-7 object-contain rounded-md"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain rounded-md"
                       quality={100}
+                      unoptimized
                     />
                   </div>
                   <a
@@ -159,22 +162,23 @@ export default function Footer() {
               </div>
 
               {/* Social Media Icons (4 exact tiles matching user uploaded image) */}
-              <div className="flex items-center gap-3 mt-6">
+              <div className="flex items-center gap-3.5 sm:gap-4 mt-6">
                 {/* LinkedIn */}
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+                  className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <Image
-                    src="/images/icons/linkedin.png"
+                    src="/images/footer_icons/icon_linkedin.png"
                     alt="LinkedIn"
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain rounded-xl shadow-sm"
                     quality={100}
+                    unoptimized
                   />
                 </a>
 
@@ -183,16 +187,17 @@ export default function Footer() {
                   href="https://wa.me/919841483195"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+                  className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="WhatsApp"
                 >
                   <Image
-                    src="/images/icons/whatsapp.png"
+                    src="/images/footer_icons/icon_whatsapp.png"
                     alt="WhatsApp"
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain rounded-xl shadow-sm"
                     quality={100}
+                    unoptimized
                   />
                 </a>
 
@@ -201,16 +206,17 @@ export default function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+                  className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="Facebook"
                 >
                   <Image
-                    src="/images/icons/facebook.png"
+                    src="/images/footer_icons/icon_facebook.png"
                     alt="Facebook"
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain rounded-xl shadow-sm"
                     quality={100}
+                    unoptimized
                   />
                 </a>
 
@@ -219,16 +225,17 @@ export default function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+                  className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="Instagram"
                 >
                   <Image
-                    src="/images/icons/instagram.png"
+                    src="/images/footer_icons/icon_instagram.png"
                     alt="Instagram"
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain rounded-xl shadow-sm"
                     quality={100}
+                    unoptimized
                   />
                 </a>
               </div>
