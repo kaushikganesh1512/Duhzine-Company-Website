@@ -16,12 +16,14 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   const isServicesPage = pathname === "/services";
   const isCrmPage = pathname === "/crm";
   const isPortfolioPage = pathname === "/portfolio";
+  const isContactPage = pathname === "/contact";
 
   const getInitialNav = () => {
     if (isAboutPage) return "About";
     if (isServicesPage) return "Services";
     if (isCrmPage) return "CRM";
     if (isPortfolioPage) return "Portfolio";
+    if (isContactPage) return "Contact";
     return "Home";
   };
 
@@ -38,10 +40,12 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       setActiveNavigation("CRM");
     } else if (isPortfolioPage) {
       setActiveNavigation("Portfolio");
+    } else if (isContactPage) {
+      setActiveNavigation("Contact");
     } else {
       setActiveNavigation("Home");
     }
-  }, [isAboutPage, isServicesPage, isCrmPage, isPortfolioPage]);
+  }, [isAboutPage, isServicesPage, isCrmPage, isPortfolioPage, isContactPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,14 +55,12 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isSpecialPage = isAboutPage || isServicesPage || isCrmPage || isPortfolioPage;
-
   const navigationItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "CRM", href: "/crm" },
-    { label: "Contact", href: isSpecialPage ? "/#contact" : "#contact" },
+    { label: "Contact", href: "/contact" },
     { label: "About", href: "/about" },
   ];
 
