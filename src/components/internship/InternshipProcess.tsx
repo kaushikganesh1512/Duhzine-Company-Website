@@ -34,8 +34,8 @@ export default function InternshipProcess() {
     <section className="py-16 md:py-24 bg-[#f8faff] relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
+        <div className="reveal-on-scroll flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+          <div className="pill-badge inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
             <span>Intern Hiring Process</span>
           </div>
 
@@ -55,19 +55,19 @@ export default function InternshipProcess() {
           {/* Continuous blue connecting line behind the numbered circles */}
           <div className="hidden lg:block absolute top-[28px] left-[12.5%] right-[12.5%] h-0.5 bg-blue-600 z-0 pointer-events-none" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center bg-white sm:bg-transparent p-6 sm:p-2 rounded-2xl border border-neutral-100 sm:border-0 shadow-sm sm:shadow-none"
+                className="stagger-item group flex flex-col items-center text-center bg-white sm:bg-transparent p-6 sm:p-2 rounded-2xl border border-neutral-100 sm:border-0 shadow-sm sm:shadow-none hover:-translate-y-1 transition-transform duration-300 cursor-pointer"
               >
                 {/* Numbered Indicator Circle */}
-                <div className="w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-extrabold text-lg flex items-center justify-center shadow-md mb-6 relative">
+                <div className="w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-extrabold text-lg flex items-center justify-center shadow-md mb-6 relative group-hover:scale-110 group-hover:shadow-[0px_0px_0px_6px_rgba(37,99,235,0.25)] transition-all duration-300">
                   <span>{step.number}</span>
                 </div>
 
                 {/* Step Title */}
-                <h3 className="text-lg lg:text-xl font-bold text-neutral-900 tracking-tight mb-3">
+                <h3 className="text-lg lg:text-xl font-bold text-neutral-900 tracking-tight mb-3 group-hover:text-blue-600 transition-colors">
                   {step.title}
                 </h3>
 

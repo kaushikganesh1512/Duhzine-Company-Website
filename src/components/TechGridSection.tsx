@@ -39,8 +39,8 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
     >
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative flex flex-col items-center gap-12">
         {/* Section Header */}
-        <div className="flex flex-col items-center gap-4 relative self-stretch w-full text-center">
-          <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="reveal-on-scroll flex flex-col items-center gap-4 relative self-stretch w-full text-center">
+          <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
             <span className="font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Digital Solutions Across Industries
             </span>
@@ -61,12 +61,12 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
         </div>
 
         {/* 3x3 Dark Card Container (No side images, clean and spacious) */}
-        <div className="relative rounded-3xl bg-[#05070f] p-8 sm:p-14 lg:p-16 text-center text-white overflow-hidden shadow-2xl border border-neutral-800 z-10 w-full">
+        <div className="reveal-scale relative rounded-3xl bg-[#05070f] p-8 sm:p-14 lg:p-16 text-center text-white overflow-hidden shadow-2xl border border-neutral-800 z-10 w-full">
           {/* Ambient blue lighting on right edge */}
           <div className="absolute -bottom-28 -right-28 w-[450px] h-[450px] bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />
 
           {/* 3x3 White Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 relative z-10 max-w-[960px] mx-auto">
+          <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 relative z-10 max-w-[960px] mx-auto">
             {industries.map((item) => {
               const IconComp = item.icon;
               const isSelected = selectedIndustry === item.id;
@@ -79,12 +79,12 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
                     setSelectedIndustry(item.id);
                     onIndustryClick?.(item.name);
                   }}
-                  className={`flex flex-col items-center justify-center p-9 sm:p-12 rounded-3xl bg-white text-black transition-all cursor-pointer shadow-md hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] ${
+                  className={`stagger-item interactive-card group flex flex-col items-center justify-center p-9 sm:p-12 rounded-3xl bg-white text-black transition-all cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-2 active:scale-[0.98] ${
                     isSelected ? "ring-4 ring-blue-600 shadow-blue-500/20" : ""
                   }`}
                 >
                   {/* Blue Circular Icon Container */}
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-blue-600 flex items-center justify-center text-white mb-5 shadow-sm">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-blue-600 group-hover:bg-blue-700 group-hover:scale-110 flex items-center justify-center text-white mb-5 shadow-sm transition-all duration-300">
                     <IconComp className="w-8 h-8 sm:w-10 sm:h-10" />
                   </div>
 

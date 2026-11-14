@@ -71,14 +71,14 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
   return (
     <section className="w-full bg-[#f4f7ff] pb-20 md:pb-28">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+        <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
                 onClick={() => onSelectService?.(service.title)}
-                className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/60 hover:bg-white border border-gray-200/60 hover:border-blue-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group"
+                className="stagger-item interactive-card flex flex-col items-center text-center p-6 rounded-2xl bg-white/60 hover:bg-white border border-gray-200/60 hover:border-blue-300 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer group"
               >
                 {/* Blue Circular Icon Container */}
                 <div className="w-14 h-14 rounded-full bg-indigo-50/90 text-blue-600 flex items-center justify-center mb-5 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 group-hover:scale-110">

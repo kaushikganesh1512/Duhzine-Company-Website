@@ -48,9 +48,9 @@ export default function TestimonialsSection({
       aria-labelledby="testimonials-heading"
     >
       {/* Header */}
-      <div className="flex flex-col items-center gap-6 relative self-stretch w-full text-center">
+      <div className="reveal-on-scroll flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge matching Figma */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Testimonals
           </span>
@@ -76,14 +76,14 @@ export default function TestimonialsSection({
           <button
             type="button"
             onClick={onActionClick}
-            className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer active:scale-[0.98]"
           >
             <span>View all services</span>
             <span className="text-sm font-normal">↗</span>
           </button>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs active:scale-[0.98]"
           >
             Talk to Our Team
           </a>
@@ -91,11 +91,11 @@ export default function TestimonialsSection({
       </div>
 
       {/* 2x2 Dark Testimonial Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative self-stretch w-full mt-2">
+      <div className="stagger-container grid grid-cols-1 md:grid-cols-2 gap-8 relative self-stretch w-full mt-2">
         {testimonials.map((t) => (
           <article
             key={t.name}
-            className="relative flex flex-col justify-between p-9 sm:p-11 rounded-3xl bg-[#0b0e17] border border-neutral-800/90 shadow-xl overflow-hidden group hover:border-blue-900 transition-all"
+            className="stagger-item interactive-card relative flex flex-col justify-between p-9 sm:p-11 rounded-3xl bg-[#0b0e17] border border-neutral-800/90 shadow-xl overflow-hidden group hover:border-blue-700/80 hover:-translate-y-2 transition-all cursor-pointer"
           >
             {/* Ambient blue glow on right edge inside card */}
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />

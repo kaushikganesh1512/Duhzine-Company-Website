@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <footer id="contact" className="w-full bg-[#f4f7ff] pt-12 pb-16 overflow-hidden">
       {/* Unified Footer Container matching exact Image 1 design */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="reveal-scale w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-2xl md:rounded-3xl bg-neutral-950 text-white overflow-hidden shadow-2xl border border-neutral-800">
           {/* Top-Left Ambient Blue Glow */}
           <div className="absolute top-0 left-0 w-[450px] h-[300px] bg-blue-600/25 rounded-full blur-3xl pointer-events-none -z-0" />
@@ -54,7 +54,7 @@ export default function Footer() {
                 href="https://wa.me/919566123876"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-emerald-900/30 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean WhatsApp Vector Icon */}
                 <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Footer() {
               {/* Call Us Button */}
               <a
                 href="tel:9566123876"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-sky-900/30 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean Telephone Vector Icon */}
                 <svg className="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
@@ -80,9 +80,9 @@ export default function Footer() {
           {/* ======================================================== */}
           {/* 2. 4 COLUMNS CONTENT SECTION                             */}
           {/* ======================================================== */}
-          <div className="relative z-10 px-8 sm:px-12 py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          <div className="stagger-container relative z-10 px-8 sm:px-12 py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {/* Column 1: Brand & Contact Info */}
-            <div className="flex flex-col items-start">
+            <div className="stagger-item flex flex-col items-start">
               {/* Duhzine Logo */}
               <div className="mb-5">
                 <Image

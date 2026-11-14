@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 
 export const metadata: Metadata = {
   title: "Duhzine | Build a Website That Attracts, Engages & Converts",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth antialiased">
       <body className="min-h-screen bg-[#f8faff] text-[#0f172a] font-sans selection:bg-blue-600 selection:text-white">
-        {children}
+        <ScrollAnimationProvider>
+          {children}
+        </ScrollAnimationProvider>
       </body>
     </html>
   );

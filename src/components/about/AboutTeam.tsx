@@ -41,12 +41,12 @@ export default function AboutTeam() {
     <section className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Dark Container Box matching Figma */}
-        <div className="w-full bg-neutral-950 rounded-[32px] sm:rounded-[40px] px-6 sm:px-12 py-16 sm:py-20 relative overflow-hidden shadow-2xl border border-neutral-900">
+        <div className="reveal-scale w-full bg-neutral-950 rounded-[32px] sm:rounded-[40px] px-6 sm:px-12 py-16 sm:py-20 relative overflow-hidden shadow-2xl border border-neutral-900">
           {/* Bottom Right Blue Ambient Glow */}
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
 
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-14 relative z-10">
+          <div className="reveal-on-scroll text-center max-w-3xl mx-auto mb-14 relative z-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
               Meet Our Core Team
             </h2>
@@ -56,11 +56,11 @@ export default function AboutTeam() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-10">
+          <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-10">
             {team.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-[32px] p-8 shadow-lg flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl group"
+                className="stagger-item interactive-card bg-white rounded-[32px] p-8 shadow-lg flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group cursor-pointer"
               >
                 {/* Blue Container with Avatar */}
                 <div className="w-28 h-32 bg-blue-600 rounded-[28px] relative flex items-end justify-center overflow-hidden mb-6 shadow-inner group-hover:scale-105 transition-transform duration-300">

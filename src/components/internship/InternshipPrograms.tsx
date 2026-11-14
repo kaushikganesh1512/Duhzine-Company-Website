@@ -73,8 +73,8 @@ export default function InternshipPrograms({
     <section className="py-16 md:py-24 bg-[#f8faff] relative">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
+        <div className="reveal-on-scroll flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+          <div className="pill-badge inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
             <span>Our Internship Programs</span>
           </div>
 
@@ -90,13 +90,13 @@ export default function InternshipPrograms({
         </div>
 
         {/* 3 Program Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="stagger-container grid grid-cols-1 md:grid-cols-3 gap-8">
           {programs.map((program, idx) => {
             const IconComponent = program.icon;
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-7 lg:p-8 border border-neutral-100 shadow-[0_2px_10px_rgba(16,24,40,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(16,24,40,0.12)] transition-all duration-300 flex flex-col justify-between"
+                className="stagger-item interactive-card bg-white rounded-2xl p-7 lg:p-8 border border-neutral-100 shadow-[0_2px_10px_rgba(16,24,40,0.06)] hover:shadow-[0_20px_40px_-6px_rgba(37,99,235,0.15)] hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between cursor-pointer group"
               >
                 <div>
                   {/* Top Domain Icon */}

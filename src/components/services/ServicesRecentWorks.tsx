@@ -60,8 +60,8 @@ export default function ServicesRecentWorks({
     <section className="w-full bg-[#f4f7ff] py-16 md:py-24">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
-        <div className="text-center mb-14 sm:mb-16">
-          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6">
+        <div className="reveal-on-scroll text-center mb-14 sm:mb-16">
+          <div className="pill-badge inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6">
             <span>Mission &amp; Vision</span>
           </div>
 
@@ -75,11 +75,11 @@ export default function ServicesRecentWorks({
         </div>
 
         {/* 6 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="stagger-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {projects.map((proj, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+              className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
               <div className="w-full h-56 sm:h-64 relative overflow-hidden bg-gray-50 border-b border-gray-100">

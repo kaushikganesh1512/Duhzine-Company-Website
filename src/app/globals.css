@@ -96,4 +96,179 @@ body {
   animation-play-state: paused;
 }
 
+/* ======================================================== */
+/* SCROLL REVEAL & RUNNING STAGGER ENTRANCE EFFECTS         */
+/* ======================================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger running entrance for items inside grids and lists */
+.stagger-container .stagger-item {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.stagger-container.revealed .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Running delay cascade for sequential items */
+.stagger-container.revealed .stagger-item:nth-child(1) { transition-delay: 0.04s; }
+.stagger-container.revealed .stagger-item:nth-child(2) { transition-delay: 0.12s; }
+.stagger-container.revealed .stagger-item:nth-child(3) { transition-delay: 0.20s; }
+.stagger-container.revealed .stagger-item:nth-child(4) { transition-delay: 0.28s; }
+.stagger-container.revealed .stagger-item:nth-child(5) { transition-delay: 0.36s; }
+.stagger-container.revealed .stagger-item:nth-child(6) { transition-delay: 0.44s; }
+.stagger-container.revealed .stagger-item:nth-child(7) { transition-delay: 0.52s; }
+.stagger-container.revealed .stagger-item:nth-child(8) { transition-delay: 0.60s; }
+.stagger-container.revealed .stagger-item:nth-child(9) { transition-delay: 0.68s; }
+.stagger-container.revealed .stagger-item:nth-child(10) { transition-delay: 0.76s; }
+.stagger-container.revealed .stagger-item:nth-child(11) { transition-delay: 0.84s; }
+.stagger-container.revealed .stagger-item:nth-child(12) { transition-delay: 0.92s; }
+.stagger-container.revealed .stagger-item:nth-child(13) { transition-delay: 1.00s; }
+.stagger-container.revealed .stagger-item:nth-child(14) { transition-delay: 1.08s; }
+.stagger-container.revealed .stagger-item:nth-child(15) { transition-delay: 1.16s; }
+.stagger-container.revealed .stagger-item:nth-child(16) { transition-delay: 1.24s; }
+
+/* ======================================================== */
+/* INTERACTIVE HOVER & PRESS EFFECTS ACROSS ALL PAGES       */
+/* ======================================================== */
+
+/* All interactive buttons */
+button:not([disabled]),
+a.inline-flex,
+.interactive-btn {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+button:not([disabled]):hover,
+.interactive-btn:hover {
+  transform: translateY(-2px);
+}
+
+button:not([disabled]):active,
+.interactive-btn:active {
+  transform: translateY(0.5px) scale(0.98);
+}
+
+/* Primary blue CTA buttons */
+button.bg-blue-600:hover,
+a.bg-blue-600:hover,
+.btn-primary:hover {
+  box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.4), 0 4px 10px -2px rgba(37, 99, 235, 0.2);
+}
+
+/* Outline buttons */
+button.border-blue-600:hover,
+a.border-blue-600:hover {
+  box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.18);
+  background-color: rgba(239, 246, 255, 0.8);
+}
+
+/* Interactive Cards, Panels & Boxes */
+.interactive-card,
+article {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Card image subtle zoom */
+.interactive-card img,
+article img {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-card:hover img {
+  transform: scale(1.025);
+}
+
+/* Interactive form inputs */
+input, textarea, select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  border-color: #2563eb !important;
+}
+
+/* Pill badge hover pulse */
+.pill-badge {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.pill-badge:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.3);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right,
+  .stagger-container .stagger-item,
+  .interactive-card,
+  .interactive-btn {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
 

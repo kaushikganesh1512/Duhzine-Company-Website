@@ -45,7 +45,7 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="flex flex-col items-center gap-4 pt-6 pb-8 flex-1 grow bg-white relative self-stretch">
+    <article className="stagger-item group flex flex-col items-center gap-4 pt-6 pb-8 flex-1 grow bg-white hover:bg-blue-50/30 transition-colors duration-300 relative self-stretch cursor-pointer">
       {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection) */}
       <div className="flex items-center self-stretch w-full relative h-7">
         <div className="flex-1 h-0.5 flex items-center">
@@ -54,7 +54,7 @@ const ProcessStep = ({
 
         <div className="inline-flex flex-col items-center justify-center relative shrink-0">
           <div
-            className="relative w-8 h-8 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] flex items-center justify-center z-10"
+            className="relative w-8 h-8 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] group-hover:scale-110 group-hover:shadow-[0px_0px_0px_6px_rgba(37,99,235,0.25)] flex items-center justify-center z-10 transition-all duration-300"
             aria-label={`Step ${number}: ${title}`}
           >
             <span className="text-blue-600 text-[13px] font-semibold text-center tracking-tight leading-none">
@@ -70,7 +70,7 @@ const ProcessStep = ({
 
       {/* Step Title & Description */}
       <div className="flex flex-col items-center gap-1.5 px-3 sm:px-4 text-center w-full">
-        <h3 className="font-semibold text-black text-base sm:text-[17px] tracking-tight leading-snug">
+        <h3 className="font-semibold text-black text-base sm:text-[17px] tracking-tight leading-snug group-hover:text-blue-600 transition-colors duration-200">
           {title}
         </h3>
         <p className="font-normal text-gray-600 text-xs sm:text-[13px] leading-relaxed max-w-[210px] mx-auto">
@@ -88,8 +88,8 @@ export default function ProcessSection(): React.ReactNode {
       aria-labelledby="process-heading"
     >
       <div className="flex flex-col items-center gap-8 relative self-stretch w-full">
-        <div className="flex flex-col items-center gap-4 relative self-stretch w-full">
-          <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="reveal-on-scroll flex flex-col items-center gap-4 relative self-stretch w-full">
+          <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
             <p className="font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
               Our Simple, Smart &amp; Scalable Process
             </p>
@@ -112,7 +112,7 @@ export default function ProcessSection(): React.ReactNode {
         {/* 4 Process Steps Bar with items-stretch ensuring perfectly aligned horizontal line */}
         <div className="w-full max-w-5xl flex flex-col items-center justify-center relative">
           <div
-            className="flex flex-col sm:flex-row items-stretch justify-center relative self-stretch w-full bg-white rounded-2xl shadow-xs border border-gray-100/90 overflow-hidden"
+            className="stagger-container flex flex-col sm:flex-row items-stretch justify-center relative self-stretch w-full bg-white rounded-2xl shadow-xs border border-gray-100/90 overflow-hidden"
             role="list"
             aria-label="Development process steps"
           >

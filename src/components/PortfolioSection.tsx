@@ -112,9 +112,9 @@ export default function PortfolioSection({
       aria-labelledby="portfolio-heading"
     >
       {/* Section Header */}
-      <div className="flex flex-col items-center gap-6 relative self-stretch w-full text-center">
+      <div className="reveal-on-scroll flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Our Recent Work
           </span>
@@ -140,14 +140,14 @@ export default function PortfolioSection({
           <button
             type="button"
             onClick={() => onProjectClick?.("All Projects")}
-            className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer active:scale-[0.98]"
           >
             <span>View all works</span>
             <span className="text-sm font-normal">↗</span>
           </button>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs hover:scale-[1.02] active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs active:scale-[0.98]"
           >
             Talk to Our Team
           </a>
@@ -155,14 +155,14 @@ export default function PortfolioSection({
       </div>
 
       {/* 3 Projects Stack matching exact Figma layout & alternating orientations */}
-      <div className="flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
+      <div className="stagger-container flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
         {projects.map((project, index) => {
           const isImageLeft = project.imagePosition === "left";
 
           return (
             <article
               key={project.title}
-              className="flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
+              className="stagger-item interactive-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
               aria-label={`${project.category} - ${project.title}`}
             >
               {/* Left Column */}

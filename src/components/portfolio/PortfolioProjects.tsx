@@ -81,7 +81,7 @@ export default function PortfolioProjects({
     <section id="portfolio-works" className="w-full bg-[#f4f7ff] pb-20 md:pb-28">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
-        <div className="text-center mb-14 sm:mb-16">
+        <div className="reveal-on-scroll text-center mb-14 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4">
             Recent Works
           </h2>
@@ -92,11 +92,11 @@ export default function PortfolioProjects({
         </div>
 
         {/* 9 Projects Grid (3x3) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div className="stagger-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {projects.map((proj, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+              className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
               <div className="w-full h-56 sm:h-64 relative overflow-hidden bg-gray-50 border-b border-gray-100">

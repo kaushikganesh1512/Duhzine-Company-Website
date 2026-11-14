@@ -49,9 +49,9 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
       </div>
 
       {/* Header */}
-      <div className="flex flex-col items-center gap-5 relative self-stretch w-full text-center">
+      <div className="reveal-on-scroll flex flex-col items-center gap-5 relative self-stretch w-full text-center">
         {/* Pill Badge */}
-        <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
+        <div className="pill-badge flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
           <span className="relative font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
             Mission &amp; Vision
           </span>
@@ -76,16 +76,16 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
       </div>
 
       {/* 3 Cards Grid (Spacious, balanced, consistent) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative self-stretch w-full mt-2 z-20">
+      <div className="stagger-container grid grid-cols-1 md:grid-cols-3 gap-8 relative self-stretch w-full mt-2 z-20">
         {features.map((item) => (
           <div
             key={item.title}
-            className="flex flex-col items-start gap-5 p-9 sm:p-11 bg-white rounded-3xl shadow-xs border border-gray-100 hover:shadow-lg transition-all relative"
+            className="stagger-item interactive-card group flex flex-col items-start gap-5 p-9 sm:p-11 bg-white rounded-3xl shadow-xs border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all relative cursor-pointer"
           >
             {/* Person Icon in soft light-blue circle matching design */}
-            <div className="w-14 h-14 rounded-full bg-[#edf5ff] flex items-center justify-center text-blue-600 mb-2 shadow-xs">
+            <div className="w-14 h-14 rounded-full bg-[#edf5ff] group-hover:bg-blue-600 flex items-center justify-center text-blue-600 group-hover:text-white mb-2 shadow-xs group-hover:scale-110 transition-all duration-300">
               <svg
-                className="w-7 h-7 text-blue-600"
+                className="w-7 h-7 currentColor transition-colors duration-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -99,7 +99,7 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
               </svg>
             </div>
 
-            <h3 className="font-semibold text-black text-2xl tracking-tight leading-snug">
+            <h3 className="font-semibold text-black text-2xl tracking-tight leading-snug group-hover:text-blue-600 transition-colors duration-200">
               {item.title}
             </h3>
 

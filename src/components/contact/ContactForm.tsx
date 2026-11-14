@@ -41,7 +41,7 @@ export default function ContactForm() {
     <section id="contact-form-section" className="w-full bg-[#f4f7ff] py-14 md:py-24">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="reveal-on-scroll text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4">
             Tell Us About Your Project
           </h2>
@@ -52,7 +52,7 @@ export default function ContactForm() {
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-3xl p-7 sm:p-10 md:p-14 border border-gray-200/90 shadow-xl max-w-4xl mx-auto">
+        <div className="reveal-scale interactive-card bg-white rounded-3xl p-7 sm:p-10 md:p-14 border border-gray-200/90 shadow-xl max-w-4xl mx-auto">
           {submitted ? (
             <div className="py-12 text-center flex flex-col items-center gap-4">
               <CheckCircle2 className="w-16 h-16 text-emerald-500 animate-bounce" />
@@ -203,7 +203,7 @@ export default function ContactForm() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base shadow-md shadow-blue-500/25 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  className="interactive-btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base shadow-md shadow-blue-500/25 transition-all duration-200 active:scale-[0.98] cursor-pointer"
                 >
                   <span>Submit</span>
                   <ArrowDown className="w-4 h-4 stroke-[2.5]" />
