@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 interface NavbarProps {
   onBookCall: () => void;
@@ -17,6 +17,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   const isCrmPage = pathname === "/crm";
   const isPortfolioPage = pathname === "/portfolio";
   const isContactPage = pathname === "/contact";
+  const isInternshipPage = pathname === "/internship";
 
   const getInitialNav = () => {
     if (isAboutPage) return "About";
@@ -24,12 +25,16 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     if (isCrmPage) return "CRM";
     if (isPortfolioPage) return "Portfolio";
     if (isContactPage) return "Contact";
+    if (isInternshipPage) return "Careers";
     return "Home";
   };
 
   const [activeNavigation, setActiveNavigation] = useState(getInitialNav);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileCareersOpen, setMobileCareersOpen] = useState(true);
+  const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (isAboutPage) {
@@ -42,10 +47,12 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       setActiveNavigation("Portfolio");
     } else if (isContactPage) {
       setActiveNavigation("Contact");
+    } else if (isInternshipPage) {
+      setActiveNavigation("Careers");
     } else {
       setActiveNavigation("Home");
     }
-  }, [isAboutPage, isServicesPage, isCrmPage, isPortfolioPage, isContactPage]);
+  }, [isAboutPage, isServicesPage, isCrmPage, isPortfolioPage, isContactPage, isInternshipPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,11 +62,31 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMouseEnterCareers = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setCareersDropdownOpen(true);
+  };
+
+  const handleMouseLeaveCareers = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setCareersDropdownOpen(false);
+    }, 150);
+  };
+
   const navigationItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "CRM", href: "/crm" },
+    {
+      label: "Careers",
+      href: "/internship",
+      isDropdown: true,
+      children: [
+        { label: "Full time", href: "/contact?source=careers" },
+        { label: "Internships", href: "/internship" },
+      ],
+    },
     { label: "Contact", href: "/contact" },
     { label: "About", href: "/about" },
   ];
@@ -86,9 +113,83 @@ export default function Navbar({ onBookCall }: NavbarProps) {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-8 lg:space-x-10">
+        <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navigationItems.map((item) => {
             const isActive = activeNavigation === item.label;
+
+            if (item.isDropdown) {
+              return (
+                <div
+                  key={item.label}
+                  className="relative py-1"
+                  onMouseEnter={handleMouseEnterCareers}
+                  onMouseLeave={handleMouseLeaveCareers}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setCareersDropdownOpen((prev) => !prev)}
+                    aria-expanded={careersDropdownOpen}
+                    aria-haspopup="true"
+                    className={`inline-flex items-center gap-1 text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 focus:outline-none cursor-pointer ${
+                      isActive || isInternshipPage
+                        ? "text-blue-500 font-extrabold"
+                        : "text-[#fefefe] hover:text-blue-400"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${
+                        careersDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                    {(isActive || isInternshipPage) && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
+                    )}
+                  </button>
+
+                  {/* Dropdown Menu */}
+                  {careersDropdownOpen && (
+                    <div
+                      className="absolute top-full left-0 mt-1 w-44 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl py-2 px-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                      role="menu"
+                    >
+                      <Link
+                        href="/contact?source=careers"
+                        onClick={() => {
+                          setActiveNavigation("Careers");
+                          setCareersDropdownOpen(false);
+                        }}
+                        className="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
+                        role="menuitem"
+                      >
+                        <span>Full time</span>
+                        <span className="text-[10px] uppercase font-semibold tracking-wider text-blue-400 bg-blue-950/80 px-1.5 py-0.5 rounded border border-blue-800/40">
+                          Hiring
+                        </span>
+                      </Link>
+
+                      <Link
+                        href="/internship"
+                        onClick={() => {
+                          setActiveNavigation("Careers");
+                          setCareersDropdownOpen(false);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+                          isInternshipPage
+                            ? "text-blue-400 bg-blue-950/50 font-bold"
+                            : "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                        }`}
+                        role="menuitem"
+                      >
+                        <span>Internships</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={item.label}
@@ -138,24 +239,82 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-neutral-950 border-b border-neutral-800 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
-          <nav className="flex flex-col space-y-3">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => {
-                  setActiveNavigation(item.label);
-                  setMobileMenuOpen(false);
-                }}
-                className={`text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
-                  activeNavigation === item.label
-                    ? "text-blue-400 bg-blue-950/40"
-                    : "text-neutral-300 hover:text-white hover:bg-neutral-900"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="flex flex-col space-y-2">
+            {navigationItems.map((item) => {
+              if (item.isDropdown) {
+                return (
+                  <div key={item.label} className="flex flex-col">
+                    <button
+                      type="button"
+                      onClick={() => setMobileCareersOpen((prev) => !prev)}
+                      className={`flex items-center justify-between text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
+                        activeNavigation === item.label || isInternshipPage
+                          ? "text-blue-400 bg-blue-950/40"
+                          : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform ${
+                          mobileCareersOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    {mobileCareersOpen && (
+                      <div className="pl-6 pt-1 pb-1 flex flex-col space-y-1">
+                        <Link
+                          href="/contact?source=careers"
+                          onClick={() => {
+                            setActiveNavigation("Careers");
+                            setMobileMenuOpen(false);
+                          }}
+                          className="text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors flex items-center justify-between"
+                        >
+                          <span>Full time</span>
+                          <span className="text-[10px] uppercase font-semibold tracking-wider text-blue-400 bg-blue-950/80 px-1.5 py-0.5 rounded border border-blue-800/40">
+                            Hiring
+                          </span>
+                        </Link>
+                        <Link
+                          href="/internship"
+                          onClick={() => {
+                            setActiveNavigation("Careers");
+                            setMobileMenuOpen(false);
+                          }}
+                          className={`text-sm font-medium py-2 px-3 rounded-md transition-colors flex items-center justify-between ${
+                            isInternshipPage
+                              ? "text-blue-400 bg-blue-950/60 font-bold"
+                              : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                          }`}
+                        >
+                          <span>Internships</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => {
+                    setActiveNavigation(item.label);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
+                    activeNavigation === item.label
+                      ? "text-blue-400 bg-blue-950/40"
+                      : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
           <div className="pt-2">
             <button

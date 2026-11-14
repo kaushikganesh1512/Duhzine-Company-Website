@@ -1,0 +1,85 @@
+"use client";
+
+import React from "react";
+
+export default function InternshipProcess() {
+  const steps = [
+    {
+      number: "01",
+      title: "Apply",
+      description:
+        "Submit your application with your updated resume and portfolio. Our recruitment team carefully reviews every application to identify the best match for the role.",
+    },
+    {
+      number: "02",
+      title: "Screening & Interview",
+      description:
+        "Shortlisted candidates will have a brief HR discussion to understand their background, career goals, communication skills, and overall fit for the position.",
+    },
+    {
+      number: "03",
+      title: "Offer Releasing",
+      description:
+        "Once you successfully completed the interview process, we'll send your offer letter and guide you through the next step of onboarding process.",
+    },
+    {
+      number: "04",
+      title: "Onboarding Process",
+      description:
+        "Welcome to Duhzine! Once you accept the offer and complete the internship fee payment, our onboarding process ensures a smooth transition into your new role.",
+    },
+  ];
+
+  return (
+    <section className="py-16 md:py-24 bg-[#f8faff] relative">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Section Header */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-4">
+            <span>Intern Hiring Process</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug">
+            Our Simple &amp; Transparent Hiring Process
+          </h2>
+
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl">
+            We believe in hiring talented individuals through a fair, efficient, and
+            candidate-friendly process. From your application to joining our team, every step is
+            designed to help you showcase your skills and find the right opportunity at Duhzine.
+          </p>
+        </div>
+
+        {/* 4-Step Process Timeline */}
+        <div className="relative mt-8">
+          {/* Connecting Line behind the numbered circles (visible on desktop) */}
+          <div className="hidden lg:block absolute top-[28px] left-[12%] right-[12%] h-[2px] bg-neutral-200 z-0" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            {steps.map((step, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center text-center bg-white sm:bg-transparent p-6 sm:p-2 rounded-2xl border border-neutral-100 sm:border-0 shadow-sm sm:shadow-none"
+              >
+                {/* Numbered Indicator Circle */}
+                <div className="w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-extrabold text-lg flex items-center justify-center shadow-md mb-6 relative">
+                  <span>{step.number}</span>
+                </div>
+
+                {/* Step Title */}
+                <h3 className="text-lg lg:text-xl font-bold text-neutral-900 tracking-tight mb-3">
+                  {step.title}
+                </h3>
+
+                {/* Step Description */}
+                <p className="text-xs sm:text-sm text-neutral-600 font-normal leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
