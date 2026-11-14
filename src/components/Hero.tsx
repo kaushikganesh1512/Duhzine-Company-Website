@@ -20,7 +20,7 @@ export default function Hero({ onStartProject }: HeroProps) {
       <div className="hidden lg:block absolute left-0 top-6 xl:top-8 w-[160px] xl:w-[220px] 2xl:w-[260px] pointer-events-auto select-none z-10">
         <div className="animate-float-vertical cursor-pointer">
           <Image
-            src="/images/side_hero_left.png"
+            src="/images/side_hero_left_v2.png"
             alt="Abstract 3D Chrome Torus Artwork"
             width={732}
             height={1218}
@@ -35,7 +35,7 @@ export default function Hero({ onStartProject }: HeroProps) {
       <div className="hidden lg:block absolute right-0 top-6 xl:top-8 w-[180px] xl:w-[240px] 2xl:w-[280px] pointer-events-auto select-none z-10">
         <div className="animate-float-vertical-reverse cursor-pointer">
           <Image
-            src="/images/side_hero_right.png"
+            src="/images/side_hero_right_v2.png"
             alt="Abstract 3D Glassmorphic Interface Artwork"
             width={865}
             height={1218}
