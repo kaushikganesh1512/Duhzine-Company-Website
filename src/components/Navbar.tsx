@@ -93,26 +93,26 @@ export default function Navbar({ onBookCall }: NavbarProps) {
 
   return (
     <header
-      className={`w-full bg-black sticky top-0 z-50 transition-all duration-300 border-b border-neutral-800/80 ${
-        scrolled ? "shadow-xl shadow-black/30 backdrop-blur-md" : ""
+      className={`w-full bg-white sticky top-0 z-50 transition-all duration-300 border-b border-neutral-200/80 ${
+        scrolled ? "shadow-md shadow-neutral-900/5 backdrop-blur-md bg-white/95" : ""
       }`}
       aria-label="Primary navigation"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-[72px] flex items-center justify-between">
-        {/* Duhzine Brand Logo */}
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-[68px] flex items-center justify-between">
+        {/* Duhzine Brand Logo from Image 2 */}
         <Link href="/" className="flex items-center select-none py-1 group">
           <Image
-            src="/images/header_logo.png"
-            alt="Duhzine agency logo"
-            width={160}
-            height={50}
-            className="h-[46px] md:h-[50px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            src="/images/logo_dark.png"
+            alt="Duhzine IT Solutions"
+            width={140}
+            height={42}
+            className="h-[36px] md:h-[40px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             priority
             quality={100}
           />
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links - Styled exactly per Image 1 and Figma snippet */}
         <nav aria-label="Main navigation" className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navigationItems.map((item) => {
             const isActive = activeNavigation === item.label;
@@ -131,15 +131,15 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     onClick={() => setCareersDropdownOpen((prev) => !prev)}
                     aria-expanded={careersDropdownOpen}
                     aria-haspopup="true"
-                    className={`inline-flex items-center text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 focus:outline-none cursor-pointer ${
+                    className={`inline-flex items-center text-sm font-medium font-['Figtree',sans-serif] leading-4 transition-colors relative py-1 focus:outline-none cursor-pointer ${
                       isActive || isInternshipPage
-                        ? "text-blue-500 font-extrabold"
-                        : "text-[#fefefe] hover:text-blue-400"
+                        ? "text-blue-600 font-semibold"
+                        : "text-black hover:text-blue-600"
                     }`}
                   >
                     <span>{item.label}</span>
                     {(isActive || isInternshipPage) && (
-                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 rounded-full" />
                     )}
                   </button>
 
@@ -150,15 +150,15 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     }`}
                     role="menu"
                   >
-                    <div className="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl py-1.5 px-1 backdrop-blur-md">
-                      {/* Full time - does not redirect to any other page, simply remains same */}
+                    <div className="bg-white border border-neutral-200 rounded-xl shadow-xl py-1.5 px-1">
+                      {/* Full time - stays on same page */}
                       <button
                         type="button"
                         onClick={(e) => {
                           e.preventDefault();
                           setCareersDropdownOpen(false);
                         }}
-                        className="w-full text-left block px-3.5 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors cursor-pointer"
+                        className="w-full text-left block px-3.5 py-2 text-sm font-medium text-neutral-700 hover:text-black hover:bg-neutral-100 rounded-lg transition-colors cursor-pointer"
                         role="menuitem"
                       >
                         Full time
@@ -172,8 +172,8 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                         }}
                         className={`block px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
                           isInternshipPage
-                            ? "text-blue-400 bg-blue-950/50 font-bold"
-                            : "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                            ? "text-blue-600 bg-blue-50 font-semibold"
+                            : "text-neutral-700 hover:text-black hover:bg-neutral-100"
                         }`}
                         role="menuitem"
                       >
@@ -191,27 +191,27 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                 href={item.href}
                 onClick={() => setActiveNavigation(item.label)}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 ${
+                className={`text-sm font-medium font-['Figtree',sans-serif] leading-4 transition-colors relative py-1 ${
                   isActive
-                    ? "text-blue-500 font-extrabold"
-                    : "text-[#fefefe] hover:text-blue-400"
+                    ? "text-blue-600 font-semibold"
+                    : "text-black hover:text-blue-600"
                 }`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 rounded-full" />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        {/* Right CTA Button */}
+        {/* Right CTA Button - Styled per Image 1 & Figma: bg-blue-600 rounded-md */}
         <div className="hidden md:flex items-center">
           <button
             type="button"
             onClick={onBookCall}
-            className="px-5 py-2.5 rounded-lg border border-neutral-700 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-tight transition-all shadow-sm hover:scale-[1.03] active:scale-[0.98] cursor-pointer"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium font-['Figtree',sans-serif] leading-4 transition-colors shadow-xs cursor-pointer active:scale-[0.98]"
             aria-label="Book a call"
           >
             Book a call
@@ -223,7 +223,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors"
+            className="p-2 rounded-lg text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -233,7 +233,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-neutral-950 border-b border-neutral-800 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="md:hidden bg-white border-b border-neutral-200 px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200">
           <nav className="flex flex-col space-y-2">
             {navigationItems.map((item) => {
               if (item.isDropdown) {
@@ -242,10 +242,10 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     <button
                       type="button"
                       onClick={() => setMobileCareersOpen((prev) => !prev)}
-                      className={`flex items-center justify-between text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
+                      className={`flex items-center justify-between text-base font-medium py-2 px-3 rounded-lg transition-colors ${
                         activeNavigation === item.label || isInternshipPage
-                          ? "text-blue-400 bg-blue-950/40"
-                          : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                          ? "text-blue-600 bg-blue-50 font-semibold"
+                          : "text-neutral-800 hover:text-black hover:bg-neutral-100"
                       }`}
                     >
                       <span>{item.label}</span>
@@ -253,14 +253,13 @@ export default function Navbar({ onBookCall }: NavbarProps) {
 
                     {mobileCareersOpen && (
                       <div className="pl-6 pt-1 pb-1 flex flex-col space-y-1">
-                        {/* Mobile Full time - does not redirect, simply remains same */}
                         <button
                           type="button"
                           onClick={(e) => {
                             e.preventDefault();
                             setMobileMenuOpen(false);
                           }}
-                          className="w-full text-left text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors cursor-pointer"
+                          className="w-full text-left text-sm font-medium py-2 px-3 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors cursor-pointer"
                         >
                           Full time
                         </button>
@@ -272,8 +271,8 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                           }}
                           className={`text-sm font-medium py-2 px-3 rounded-md transition-colors ${
                             isInternshipPage
-                              ? "text-blue-400 bg-blue-950/60 font-bold"
-                              : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                              ? "text-blue-600 bg-blue-50 font-semibold"
+                              : "text-neutral-700 hover:text-black hover:bg-neutral-100"
                           }`}
                         >
                           Internship
@@ -292,10 +291,10 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     setActiveNavigation(item.label);
                     setMobileMenuOpen(false);
                   }}
-                  className={`text-base font-semibold py-2 px-3 rounded-lg transition-colors ${
+                  className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${
                     activeNavigation === item.label
-                      ? "text-blue-400 bg-blue-950/40"
-                      : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                      ? "text-blue-600 bg-blue-50 font-semibold"
+                      : "text-neutral-800 hover:text-black hover:bg-neutral-100"
                   }`}
                 >
                   {item.label}
@@ -310,7 +309,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onBookCall();
               }}
-              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm text-center shadow-md transition-colors"
+              className="w-full py-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm text-center shadow-xs transition-colors"
             >
               Book a call
             </button>
