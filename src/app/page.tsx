@@ -13,8 +13,10 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import ProjectModal from "@/components/ProjectModal";
+import EnquiryPopup from "@/components/EnquiryPopup";
 
 export default function Home() {
+  const [enquiryPopupOpen, setEnquiryPopupOpen] = useState(true);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [projectModalOpen, setProjectModalOpen] = useState(false);
 
@@ -68,6 +70,16 @@ export default function Home() {
       <ProjectModal
         isOpen={projectModalOpen}
         onClose={() => setProjectModalOpen(false)}
+      />
+
+      {/* Auto Welcome & Reload Enquiry Popup */}
+      <EnquiryPopup
+        isOpen={enquiryPopupOpen}
+        onClose={() => setEnquiryPopupOpen(false)}
+        onDiscussProject={() => {
+          setEnquiryPopupOpen(false);
+          setProjectModalOpen(true);
+        }}
       />
     </main>
   );
