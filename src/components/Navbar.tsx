@@ -83,7 +83,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       href: "/internship",
       isDropdown: true,
       children: [
-        { label: "Full time", href: "/contact?source=careers" },
+        { label: "Full time", href: "#" },
         { label: "Internship", href: "/internship" },
       ],
     },
@@ -151,17 +151,18 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     role="menu"
                   >
                     <div className="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl py-1.5 px-1 backdrop-blur-md">
-                      <Link
-                        href="/contact?source=careers"
-                        onClick={() => {
-                          setActiveNavigation("Careers");
+                      {/* Full time - does not redirect to any other page, simply remains same */}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
                           setCareersDropdownOpen(false);
                         }}
-                        className="block px-3.5 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
+                        className="w-full text-left block px-3.5 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors cursor-pointer"
                         role="menuitem"
                       >
                         Full time
-                      </Link>
+                      </button>
 
                       <Link
                         href="/internship"
@@ -252,16 +253,17 @@ export default function Navbar({ onBookCall }: NavbarProps) {
 
                     {mobileCareersOpen && (
                       <div className="pl-6 pt-1 pb-1 flex flex-col space-y-1">
-                        <Link
-                          href="/contact?source=careers"
-                          onClick={() => {
-                            setActiveNavigation("Careers");
+                        {/* Mobile Full time - does not redirect, simply remains same */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
                             setMobileMenuOpen(false);
                           }}
-                          className="text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors"
+                          className="w-full text-left text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors cursor-pointer"
                         >
                           Full time
-                        </Link>
+                        </button>
                         <Link
                           href="/internship"
                           onClick={() => {

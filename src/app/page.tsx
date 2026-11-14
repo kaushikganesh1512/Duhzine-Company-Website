@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
@@ -16,9 +16,17 @@ import ProjectModal from "@/components/ProjectModal";
 import EnquiryPopup from "@/components/EnquiryPopup";
 
 export default function Home() {
-  const [enquiryPopupOpen, setEnquiryPopupOpen] = useState(true);
+  const [enquiryPopupOpen, setEnquiryPopupOpen] = useState(false);
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [projectModalOpen, setProjectModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Show popup smoothly after the home page is displayed
+    const timer = setTimeout(() => {
+      setEnquiryPopupOpen(true);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen bg-[#f4f7ff] text-[#0f172a] relative">

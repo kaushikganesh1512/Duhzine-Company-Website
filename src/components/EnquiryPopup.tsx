@@ -37,7 +37,7 @@ export default function EnquiryPopup({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/65 backdrop-blur-md transition-opacity duration-300 animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-[2px] transition-all duration-300 animate-in fade-in"
       role="dialog"
       aria-modal="true"
       aria-labelledby="enquiry-popup-title"
@@ -48,8 +48,8 @@ export default function EnquiryPopup({
         }
       }}
     >
-      {/* Modal Card */}
-      <div className="relative w-full max-w-[430px] bg-gradient-to-br from-[#0c1222] via-[#090f20] to-[#040713] rounded-[24px] p-6 sm:p-7 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.08)] shadow-[0px_25px_60px_0px_rgba(0,0,0,0.6)] overflow-hidden text-left animate-in zoom-in-95 duration-200">
+      {/* Modal Card - Appears gracefully above the home page */}
+      <div className="relative w-full max-w-[430px] bg-gradient-to-br from-[#0c1222] via-[#090f20] to-[#040713] rounded-[24px] p-6 sm:p-7 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.12)] shadow-[0px_25px_60px_0px_rgba(0,0,0,0.65)] overflow-hidden text-left animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
         {/* Top-Right Warm Orange/Amber Glow */}
         <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-orange-500/35 via-amber-500/15 to-transparent rounded-full blur-2xl pointer-events-none" />
 
@@ -116,4 +116,3 @@ export default function EnquiryPopup({
     </div>
   );
 }
-
