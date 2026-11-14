@@ -100,65 +100,81 @@ export default function Footer() {
                 CONTACT US
               </h3>
 
-              {/* Contact Info List with Exact Image 1 Icons */}
+              {/* Contact Info List with Exact Icons */}
               <div className="flex flex-col gap-3.5 text-xs sm:text-sm text-gray-300">
-                {/* Location with Google Maps styled icon */}
-                <div className="flex items-center gap-2.5">
-                  <Image
-                    src="/images/icons/location.png"
-                    alt="Location"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 object-contain shrink-0"
-                  />
-                  <span>OMR, Navalur, Chennai - 600130</span>
+                {/* Location with exact matching dark tile icon */}
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 shrink-0 relative">
+                    <Image
+                      src="/images/icons/location.png"
+                      alt="Location"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 object-contain rounded-md"
+                      quality={100}
+                    />
+                  </div>
+                  <span className="font-normal text-gray-200">OMR, Navalur, Chennai - 600130</span>
                 </div>
 
-                {/* Phone with dark blue badge icon */}
-                <div className="flex items-center gap-2.5">
-                  <Image
-                    src="/images/icons/phone.png"
-                    alt="Phone"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5 object-contain shrink-0"
-                  />
-                  <a href="tel:+919841483195" className="hover:text-blue-400 transition-colors">
+                {/* Phone with exact matching dark tile icon */}
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 shrink-0 relative">
+                    <Image
+                      src="/images/icons/phone.png"
+                      alt="Phone"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 object-contain rounded-md"
+                      quality={100}
+                    />
+                  </div>
+                  <a
+                    href="tel:+919841483195"
+                    className="font-normal text-gray-200 hover:text-blue-400 transition-colors"
+                  >
                     +91 98414 83195
                   </a>
                 </div>
 
-                {/* Email with Original Gmail Icon */}
-                <div className="flex items-center gap-2.5">
-                  <Image
-                    src="/images/icons/gmail.png"
-                    alt="Gmail"
-                    width={22}
-                    height={22}
-                    className="w-5 h-5 object-contain shrink-0"
-                  />
-                  <a href="mailto:info@duhzineitsolutions.com" className="hover:text-blue-400 transition-colors">
+                {/* Email with exact Gmail icon matching user image */}
+                <div className="flex items-center gap-3">
+                  <div className="w-7 h-7 shrink-0 relative">
+                    <Image
+                      src="/images/icons/gmail.png"
+                      alt="Email"
+                      width={28}
+                      height={28}
+                      className="w-7 h-7 object-contain rounded-md"
+                      quality={100}
+                    />
+                  </div>
+                  <a
+                    href="mailto:info@duhzineitsolutions.com"
+                    className="font-normal text-gray-200 hover:text-blue-400 transition-colors"
+                  >
                     info@duhzineitsolutions.com
                   </a>
                 </div>
               </div>
 
-              {/* Social Media Icons (Exact original icons matching uploaded image) */}
-              <div className="flex items-center gap-3 sm:gap-3.5 mt-6">
+              {/* Social Media Icons (4 exact tiles matching user uploaded image) */}
+              <div className="flex items-center gap-3 mt-6">
                 {/* LinkedIn */}
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8 h-8 rounded-[8px] overflow-hidden hover:opacity-90 hover:scale-105 transition-all shadow-sm shrink-0"
+                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <Image
                     src="/images/icons/linkedin.png"
                     alt="LinkedIn"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    quality={100}
                   />
                 </a>
 
@@ -167,15 +183,16 @@ export default function Footer() {
                   href="https://wa.me/919841483195"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8 h-8 rounded-[8px] overflow-hidden hover:opacity-90 hover:scale-105 transition-all shadow-sm shrink-0"
+                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="WhatsApp"
                 >
                   <Image
                     src="/images/icons/whatsapp.png"
                     alt="WhatsApp"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    quality={100}
                   />
                 </a>
 
@@ -184,15 +201,16 @@ export default function Footer() {
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8 h-8 rounded-[8px] overflow-hidden hover:opacity-90 hover:scale-105 transition-all shadow-sm shrink-0"
+                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="Facebook"
                 >
                   <Image
                     src="/images/icons/facebook.png"
                     alt="Facebook"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    quality={100}
                   />
                 </a>
 
@@ -201,15 +219,16 @@ export default function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-8 h-8 rounded-[8px] overflow-hidden hover:opacity-90 hover:scale-105 transition-all shadow-sm shrink-0"
+                  className="w-10 h-10 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
                   aria-label="Instagram"
                 >
                   <Image
                     src="/images/icons/instagram.png"
                     alt="Instagram"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain rounded-xl shadow-sm"
+                    quality={100}
                   />
                 </a>
               </div>
