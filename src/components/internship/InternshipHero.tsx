@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { UserCheck, Award, TrendingUp } from "lucide-react";
 
 interface InternshipHeroProps {
@@ -42,41 +41,17 @@ export default function InternshipHero({ onStartApplication }: InternshipHeroPro
       {/* Background Decorative Radial Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Floating 3D Artwork - Left Side */}
-      <div className="hidden xl:block absolute left-2 lg:left-4 top-16 w-36 lg:w-44 pointer-events-none select-none z-0">
-        <Image
-          src="/images/side_hero_left.png"
-          alt="Internship career icons"
-          width={176}
-          height={380}
-          className="w-full h-auto object-contain drop-shadow-md animate-float-slow"
-          priority
-        />
-      </div>
-
-      {/* Floating 3D Artwork - Right Side */}
-      <div className="hidden xl:block absolute right-2 lg:right-4 top-20 w-36 lg:w-44 pointer-events-none select-none z-0">
-        <Image
-          src="/images/side_hero_right.png"
-          alt="Internship tech badges"
-          width={176}
-          height={380}
-          className="w-full h-auto object-contain drop-shadow-md animate-float-delayed"
-          priority
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Top Centered Header Content */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Pill Badge */}
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold shadow-sm mb-6">
-            <span>Internship Program for Students & Freshers</span>
+            <span>Internship Program for Students &amp; Freshers</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.15]">
-            Launch Your <span className="text-[#2563eb]">Career with Duhzine</span>
+            Launch Your <span className="text-blue-600">Career with Duhzine</span>
           </h1>
 
           {/* Description */}
@@ -89,25 +64,23 @@ export default function InternshipHero({ onStartApplication }: InternshipHeroPro
           </p>
         </div>
 
-        {/* Stats Row with Vertical Dividers */}
-        <div className="mt-14 max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-neutral-200/90 py-6">
-            {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className={`flex flex-col items-center justify-center text-center px-4 ${
-                  idx < 2 ? "pb-6 md:pb-0" : "pt-6 md:pt-0"
-                }`}
-              >
-                <div className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#2563eb] font-['Plus_Jakarta_Sans'] tracking-tight">
-                  {stat.number}
-                </div>
-                <div className="mt-2 text-xs sm:text-sm font-medium text-neutral-600">
-                  {stat.label}
-                </div>
+        {/* Stats Row - Same Numbers & Text Style as Portfolio and other pages */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 max-w-5xl mx-auto mt-14 mb-12">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className={`flex flex-col items-center justify-center text-center px-4 ${
+                index !== stats.length - 1 ? "md:border-r md:border-slate-300/80" : ""
+              }`}
+            >
+              <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 tracking-tight font-sans">
+                {item.number}
               </div>
-            ))}
-          </div>
+              <div className="text-xs sm:text-sm md:text-base font-medium text-gray-800 mt-2">
+                {item.label}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* 3 Value Benefit Cards */}

@@ -100,3 +100,4 @@ export default function InternshipInstitutes({ onPartnerClick }: InternshipInsti
     </section>
   );
 }
+

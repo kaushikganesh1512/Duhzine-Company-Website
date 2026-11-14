@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onBookCall: () => void;
@@ -70,7 +70,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   const handleMouseLeaveCareers = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setCareersDropdownOpen(false);
-    }, 150);
+    }, 180);
   };
 
   const navigationItems = [
@@ -84,7 +84,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       isDropdown: true,
       children: [
         { label: "Full time", href: "/contact?source=careers" },
-        { label: "Internships", href: "/internship" },
+        { label: "Internship", href: "/internship" },
       ],
     },
     { label: "Contact", href: "/contact" },
@@ -121,51 +121,46 @@ export default function Navbar({ onBookCall }: NavbarProps) {
               return (
                 <div
                   key={item.label}
-                  className="relative py-1"
+                  className="relative py-1 group"
                   onMouseEnter={handleMouseEnterCareers}
                   onMouseLeave={handleMouseLeaveCareers}
                 >
+                  {/* Careers as a normal word without drop down icon */}
                   <button
                     type="button"
                     onClick={() => setCareersDropdownOpen((prev) => !prev)}
                     aria-expanded={careersDropdownOpen}
                     aria-haspopup="true"
-                    className={`inline-flex items-center gap-1 text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 focus:outline-none cursor-pointer ${
+                    className={`inline-flex items-center text-[15px] lg:text-base font-bold tracking-[-0.25px] transition-all relative py-1 focus:outline-none cursor-pointer ${
                       isActive || isInternshipPage
                         ? "text-blue-500 font-extrabold"
                         : "text-[#fefefe] hover:text-blue-400"
                     }`}
                   >
                     <span>{item.label}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        careersDropdownOpen ? "rotate-180" : ""
-                      }`}
-                    />
                     {(isActive || isInternshipPage) && (
                       <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
                     )}
                   </button>
 
-                  {/* Dropdown Menu */}
-                  {careersDropdownOpen && (
-                    <div
-                      className="absolute top-full left-0 mt-1 w-44 bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl py-2 px-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
-                      role="menu"
-                    >
+                  {/* Dropdown Menu - appears automatically on hover */}
+                  <div
+                    className={`absolute top-full left-0 pt-2 w-36 z-50 transition-all duration-150 before:content-[''] before:absolute before:-top-2 before:left-0 before:right-0 before:h-2 ${
+                      careersDropdownOpen ? "block" : "hidden group-hover:block"
+                    }`}
+                    role="menu"
+                  >
+                    <div className="bg-neutral-900 border border-neutral-800 rounded-xl shadow-2xl py-1.5 px-1 backdrop-blur-md">
                       <Link
                         href="/contact?source=careers"
                         onClick={() => {
                           setActiveNavigation("Careers");
                           setCareersDropdownOpen(false);
                         }}
-                        className="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
+                        className="block px-3.5 py-2 text-sm font-medium rounded-lg text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
                         role="menuitem"
                       >
-                        <span>Full time</span>
-                        <span className="text-[10px] uppercase font-semibold tracking-wider text-blue-400 bg-blue-950/80 px-1.5 py-0.5 rounded border border-blue-800/40">
-                          Hiring
-                        </span>
+                        Full time
                       </Link>
 
                       <Link
@@ -174,18 +169,17 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                           setActiveNavigation("Careers");
                           setCareersDropdownOpen(false);
                         }}
-                        className={`flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+                        className={`block px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
                           isInternshipPage
                             ? "text-blue-400 bg-blue-950/50 font-bold"
                             : "text-neutral-300 hover:text-white hover:bg-neutral-800"
                         }`}
                         role="menuitem"
                       >
-                        <span>Internships</span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                        Internship
                       </Link>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             }
@@ -254,11 +248,6 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                       }`}
                     >
                       <span>{item.label}</span>
-                      <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          mobileCareersOpen ? "rotate-180" : ""
-                        }`}
-                      />
                     </button>
 
                     {mobileCareersOpen && (
@@ -269,12 +258,9 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                             setActiveNavigation("Careers");
                             setMobileMenuOpen(false);
                           }}
-                          className="text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors flex items-center justify-between"
+                          className="text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors"
                         >
-                          <span>Full time</span>
-                          <span className="text-[10px] uppercase font-semibold tracking-wider text-blue-400 bg-blue-950/80 px-1.5 py-0.5 rounded border border-blue-800/40">
-                            Hiring
-                          </span>
+                          Full time
                         </Link>
                         <Link
                           href="/internship"
@@ -282,14 +268,13 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                             setActiveNavigation("Careers");
                             setMobileMenuOpen(false);
                           }}
-                          className={`text-sm font-medium py-2 px-3 rounded-md transition-colors flex items-center justify-between ${
+                          className={`text-sm font-medium py-2 px-3 rounded-md transition-colors ${
                             isInternshipPage
                               ? "text-blue-400 bg-blue-950/60 font-bold"
                               : "text-neutral-300 hover:text-white hover:bg-neutral-900"
                           }`}
                         >
-                          <span>Internships</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                          Internship
                         </Link>
                       </div>
                     )}

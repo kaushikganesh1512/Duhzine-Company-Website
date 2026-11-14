@@ -83,3 +83,4 @@ export default function InternshipProcess() {
     </section>
   );
 }
+
