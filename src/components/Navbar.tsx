@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 interface NavbarProps {
   onBookCall: () => void;
@@ -30,7 +30,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   })();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileCareersOpen, setMobileCareersOpen] = useState(true);
+  const [mobileCareersOpen, setMobileCareersOpen] = useState(false);
   const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -221,13 +221,19 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     <button
                       type="button"
                       onClick={() => setMobileCareersOpen((prev) => !prev)}
-                      className={`flex items-center justify-between text-base font-medium py-2 px-3 rounded-lg transition-colors ${
+                      className={`w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-lg transition-colors cursor-pointer ${
                         activeNavigation === item.label || isInternshipPage
                           ? "text-blue-600 bg-blue-50 font-semibold"
                           : "text-neutral-800 hover:text-black hover:bg-neutral-100"
                       }`}
+                      aria-expanded={mobileCareersOpen}
                     >
                       <span>{item.label}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          mobileCareersOpen ? "rotate-180 text-blue-600" : "text-neutral-500"
+                        }`}
+                      />
                     </button>
 
                     {mobileCareersOpen && (

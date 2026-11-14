@@ -19,23 +19,23 @@ export default function CtaSection({}: CtaSectionProps) {
 
           {/* Left Text */}
           <div className="relative z-10 max-w-xl">
-            <h2 className="text-2xl sm:text-[30px] font-semibold text-white tracking-tight leading-snug mb-3">
+            <h2 className="text-2xl sm:text-[30px] font-semibold text-white tracking-tight leading-snug mb-3 [text-wrap:balance]">
               Need a custom quotation or have questions?
             </h2>
-            <p className="text-gray-300 text-sm sm:text-[15px] leading-relaxed font-normal">
+            <p className="text-gray-300 text-sm sm:text-[15px] leading-relaxed font-normal [text-wrap:balance]">
               Not sure which package fits your requirements? Talk to our web design
               experts directly and get a quick custom quote.
             </p>
           </div>
 
           {/* Right Action Buttons */}
-          <div className="relative z-10 flex flex-wrap items-center gap-4 shrink-0">
+          <div className="relative z-10 flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
             {/* WhatsApp Button */}
             <a
               href="https://wa.me/919566123876"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-medium text-sm transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               {/* WhatsApp Icon */}
               <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">

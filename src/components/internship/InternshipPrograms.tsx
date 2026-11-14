@@ -78,11 +78,11 @@ export default function InternshipPrograms({
             <span>Our Internship Programs</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug [text-wrap:balance]">
             Build Your Skills. Gain Real-World Experience. Shape Your Future.
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance]">
             Kickstart your career with industry-focused internship programs at Duhzine IT
             Solutions. Work on real-time projects, gain practical experience, learn from industry
             professionals and develop the skills needed to succeed in your chosen field.

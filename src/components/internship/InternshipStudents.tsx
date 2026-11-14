@@ -40,22 +40,22 @@ export default function InternshipStudents({ onJoinClick }: InternshipStudentsPr
             <span>Testimonials</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug [text-wrap:balance]">
             Helping 1,000+ Students Build Successful Careers
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance]">
             Over 1,000 students have successfully completed their internships at Duhzine,
             gaining hands-on experience, expert mentorship, and industry-ready skills to launch
             successful careers in technology.
           </p>
 
           {/* Action CTAs */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <button
               type="button"
               onClick={onJoinClick}
-              className="inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="inline-flex items-center justify-center gap-1.5 px-5 sm:px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <span>Join Our Innovative Team</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -63,7 +63,7 @@ export default function InternshipStudents({ onJoinClick }: InternshipStudentsPr
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-900 font-medium text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 rounded-full bg-white hover:bg-neutral-50 text-neutral-900 border border-neutral-900 font-medium text-xs sm:text-sm whitespace-nowrap transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             >
               Contact us
             </Link>

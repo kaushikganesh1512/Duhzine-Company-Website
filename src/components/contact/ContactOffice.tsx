@@ -15,11 +15,11 @@ export default function ContactOffice() {
           <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
             <span>Our Location</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 [text-wrap:balance]">
             Our Office in Chennai
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             Duhzine IT Solutions is based in Navalur, Chennai, Tamil Nadu, India. Visit or contact our team to discuss your software, website, mobile app, CRM, or digital marketing requirements.
           </p>
         </div>

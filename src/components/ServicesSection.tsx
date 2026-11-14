@@ -159,19 +159,19 @@ export default function ServicesSection({
           </p>
         </div>
 
-        {/* Action Buttons */}
-        <div className="inline-flex items-center gap-4 relative">
+        {/* Action Buttons (Strictly single line on all devices) */}
+        <div className="flex flex-row items-center justify-center gap-2.5 sm:gap-4 relative w-full flex-wrap">
           <button
             type="button"
             onClick={() => onServiceSelect?.("All Services")}
-            className="interactive-btn inline-flex items-center justify-center gap-2 px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm sm:text-base transition-all shadow-xs cursor-pointer active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-7 py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-xs sm:text-base whitespace-nowrap transition-all shadow-xs cursor-pointer active:scale-[0.98]"
           >
             <span>View all services</span>
-            <span className="text-sm font-normal">↗</span>
+            <span className="text-xs sm:text-sm font-normal">↗</span>
           </button>
           <a
             href="#contact"
-            className="interactive-btn inline-flex items-center justify-center px-7 py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-sm sm:text-base transition-all shadow-xs active:scale-[0.98]"
+            className="interactive-btn inline-flex items-center justify-center px-4 sm:px-7 py-2.5 sm:py-3 bg-white hover:bg-blue-50/50 text-blue-600 border border-blue-600 rounded-full font-medium text-xs sm:text-base whitespace-nowrap transition-all shadow-xs active:scale-[0.98]"
           >
             Talk to Our Team
           </a>

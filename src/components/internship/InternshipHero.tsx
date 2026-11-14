@@ -41,17 +41,17 @@ export default function InternshipHero() {
         {/* Top Centered Header Content */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Pill Badge */}
-          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
+          <div className="inline-flex items-center justify-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap">
             <span>Internship Program for Students &amp; Freshers</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.15]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.15] [text-wrap:balance]">
             Launch Your <span className="text-blue-600">Career with Duhzine</span>
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl">
+          <p className="mt-6 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance]">
             Gain practical industry exposure by working on real-world technology projects at
             Duhzine IT Solutions. Our internship programs are designed for college students,
             recent graduates, and freshers who want to develop practical skills, gain

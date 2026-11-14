@@ -19,17 +19,17 @@ export default function AboutWorkspace() {
     <section className="w-full bg-[#f4f7ff] py-16 md:py-24 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center mb-12">
         {/* Pill Badge */}
-        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
+        <div className="inline-flex items-center justify-center px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap max-w-full">
           <span>Designed for Creativity, Collaboration &amp; Growth</span>
         </div>
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 [text-wrap:balance]">
           A Space Where Innovation Happens
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
           At Duhzine IT Solutions, our workspace is more than just an office — it&apos;s a place where ideas come to life, creativity thrives, and innovation drives us forward.
         </p>
       </div>

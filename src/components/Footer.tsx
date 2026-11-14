@@ -39,22 +39,22 @@ export default function Footer() {
           <div className="relative z-10 px-8 sm:px-12 py-10 sm:py-12 border-b border-white/20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8 bg-gradient-to-r from-blue-900/30 via-neutral-950/80 to-blue-950/20 backdrop-blur-xs">
             {/* Left Headline & Subtitle */}
             <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-[28px] font-bold text-white tracking-tight leading-snug mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+              <h2 className="text-2xl sm:text-[28px] font-bold text-white tracking-tight leading-snug mb-2 font-['Plus_Jakarta_Sans',sans-serif] [text-wrap:balance]">
                 Need a custom quotation or have questions?
               </h2>
-              <p className="text-gray-300 text-sm sm:text-[15px] leading-relaxed font-normal font-['Plus_Jakarta_Sans',sans-serif]">
+              <p className="text-gray-300 text-sm sm:text-[15px] leading-relaxed font-normal font-['Plus_Jakarta_Sans',sans-serif] [text-wrap:balance]">
                 Not sure which package fits your requirements? Talk to our web design experts directly and get a quick custom quote.
               </p>
             </div>
 
             {/* Right Buttons: Chat on WhatsApp & Call Us */}
-            <div className="flex flex-wrap items-center gap-4 shrink-0">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919566123876"
                 target="_blank"
                 rel="noreferrer"
-                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean WhatsApp Vector Icon */}
                 <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">

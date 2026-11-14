@@ -73,11 +73,11 @@ export default function CrmFeatures() {
             <span>Everything You Need to Manage Your Business</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto [text-wrap:balance]">
             One Platform. Multiple Business Operations.
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             Duhzine&apos;s CRM solutions bring essential business operations together in one easy-to-use platform, helping teams reduce manual work and manage customer relationships more effectively.
           </p>
         </div>

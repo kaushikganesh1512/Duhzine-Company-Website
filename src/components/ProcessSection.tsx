@@ -45,14 +45,14 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="stagger-item group flex flex-col items-center gap-4 pt-6 pb-8 flex-1 grow bg-white hover:bg-blue-50/30 transition-colors duration-300 relative self-stretch cursor-pointer">
-      {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection) */}
+    <article className="stagger-item group flex flex-col items-center gap-3 sm:gap-4 pt-6 pb-6 sm:pb-8 flex-1 grow bg-white hover:bg-blue-50/30 transition-colors duration-300 relative self-stretch cursor-pointer">
+      {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection on desktop, centered circle on mobile) */}
       <div className="flex items-center self-stretch w-full relative h-7">
-        <div className="flex-1 h-0.5 flex items-center">
+        <div className="hidden sm:flex flex-1 h-0.5 items-center">
           {connectorBefore && <div className="w-full h-0.5 bg-blue-600" />}
         </div>
 
-        <div className="inline-flex flex-col items-center justify-center relative shrink-0">
+        <div className="inline-flex flex-col items-center justify-center relative shrink-0 mx-auto sm:mx-0">
           <div
             className="relative w-8 h-8 bg-white rounded-full border-2 border-solid border-blue-600 shadow-[0px_0px_0px_4px_rgba(225,225,254,0.7)] group-hover:scale-110 group-hover:shadow-[0px_0px_0px_6px_rgba(37,99,235,0.25)] flex items-center justify-center z-10 transition-all duration-300"
             aria-label={`Step ${number}: ${title}`}
@@ -63,7 +63,7 @@ const ProcessStep = ({
           </div>
         </div>
 
-        <div className="flex-1 h-0.5 flex items-center">
+        <div className="hidden sm:flex flex-1 h-0.5 items-center">
           {connectorAfter && <div className="w-full h-0.5 bg-blue-600" />}
         </div>
       </div>
@@ -73,10 +73,17 @@ const ProcessStep = ({
         <h3 className="font-semibold text-black text-base sm:text-[17px] tracking-tight leading-snug group-hover:text-blue-600 transition-colors duration-200">
           {title}
         </h3>
-        <p className="font-normal text-gray-600 text-xs sm:text-[13px] leading-relaxed max-w-[210px] mx-auto">
+        <p className="font-normal text-gray-600 text-xs sm:text-[13px] leading-relaxed max-w-[240px] sm:max-w-[210px] mx-auto">
           {description}
         </p>
       </div>
+
+      {/* Mobile vertical connecting line centered between steps */}
+      {connectorAfter && (
+        <div className="sm:hidden flex flex-col items-center w-full mt-2 -mb-4 shrink-0" aria-hidden="true">
+          <div className="w-0.5 h-8 bg-blue-600 rounded-full" />
+        </div>
+      )}
     </article>
   );
 };
@@ -95,11 +102,11 @@ export default function ProcessSection(): React.ReactNode {
           <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full text-center">
             <h2
               id="process-heading"
-              className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2.00px] leading-tight max-w-[960px]"
+              className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2.00px] leading-tight max-w-[960px] [text-wrap:balance]"
             >
               From Idea to Launch - A Clear Development Process
             </h2>
-            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl">
+            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance]">
               We follow a structured approach that keeps your project
               focused, transparent, and aligned with your business
               objectives.

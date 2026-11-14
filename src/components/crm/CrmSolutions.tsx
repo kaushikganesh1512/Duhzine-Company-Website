@@ -71,11 +71,11 @@ export default function CrmSolutions({ onContactClick }: CrmSolutionsProps) {
             <span>Product Solutions</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto [text-wrap:balance]">
             Business Management Software Built for Your Industry
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             Every business has different workflows and customer management requirements. Our industry-focused CRM solutions provide the tools you need to manage everyday operations from one centralized platform.
           </p>
         </div>

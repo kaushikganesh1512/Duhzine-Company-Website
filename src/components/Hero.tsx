@@ -47,16 +47,18 @@ export default function Hero({ onStartProject }: HeroProps) {
       </div>
 
       {/* Hero Central Content (Scaled up, beautifully centered with generous responsive padding) */}
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-20">
-        {/* Top Pill Badge */}
-        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-8 hover:scale-[1.02] transition-transform">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-10 lg:px-16 text-center relative z-20">
+        {/* Top Pill Badge (Strictly single line across mobile & desktop) */}
+        <div className="inline-flex items-center justify-center px-3 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-[10px] min-[370px]:text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 sm:mb-8 hover:scale-[1.02] transition-transform max-w-full whitespace-nowrap">
           <span>Best Software Development Company in Chennai</span>
         </div>
 
-        {/* Main Headline (Larger, bold, professional) */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold text-black tracking-[-2px] leading-[1.12] mb-7">
-          Build a Website That Attracts,<br />
-          <span className="text-[#2563eb]">Engages &amp; Converts.</span>
+        {/* Main Headline (Clean balanced lines on mobile & desktop) */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold text-black tracking-[-1px] sm:tracking-[-2px] leading-[1.18] sm:leading-[1.12] mb-6 sm:mb-7">
+          <span className="block sm:inline">Build a Website </span>
+          <span className="block sm:inline">That Attracts,</span>
+          <br className="hidden sm:inline" />
+          <span className="text-[#2563eb] block sm:inline">Engages &amp; Converts.</span>
         </h1>
 
         {/* Subtitle description - EXACT words on each line */}

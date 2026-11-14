@@ -41,11 +41,11 @@ export default function ServicesTechGrid({
             <span>Digital Solutions Across Industries</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 max-w-4xl mx-auto [text-wrap:balance]">
             Technology That Adapts to Different Business Needs
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
             We provide digital solutions for businesses across multiple industries, helping organizations streamline operations, improve customer experiences, and strengthen their digital presence.
           </p>
         </div>

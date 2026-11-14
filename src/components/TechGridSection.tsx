@@ -46,11 +46,11 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
           <div className="flex flex-col items-center justify-center gap-3 relative self-stretch w-full">
             <h2
               id="industries-heading"
-              className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2.00px] leading-tight max-w-[960px]"
+              className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2.00px] leading-tight max-w-[960px] [text-wrap:balance]"
             >
               Technology That Adapts to Different Business Needs
             </h2>
-            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl">
+            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance]">
               We provide digital solutions for businesses across multiple
               industries, helping organizations streamline operations, improve
               customer experiences, and strengthen their digital presence.

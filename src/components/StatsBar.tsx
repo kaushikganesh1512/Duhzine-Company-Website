@@ -64,42 +64,84 @@ export default function StatsBar() {
           </p>
         </div>
 
-        {/* 2 Rows of 9 Partner Logos from Google Drive */}
-        <div className="stagger-container flex flex-col gap-5 sm:gap-6 items-center">
-          {/* Row 1 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
-            {row1Logos.map((logo, idx) => (
-              <div
-                key={`r1-${idx}`}
-                className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={88}
-                  height={88}
-                  className="w-full h-full object-contain rounded-xl"
-                />
-              </div>
-            ))}
+        {/* Partner Logos: Mobile 4-in-a-row + 2-centered, Desktop 2 rows of 9 */}
+        <div className="stagger-container w-full flex flex-col items-center">
+          {/* Mobile Layout (< md): 4 per line continuously + last 2 centered in final line */}
+          <div className="flex md:hidden flex-col items-center w-full max-w-[340px] sm:max-w-[400px] mx-auto">
+            {/* First 16 logos (4 rows of 4) */}
+            <div className="grid grid-cols-4 gap-2.5 sm:gap-3 justify-items-center w-full">
+              {[...row1Logos, ...row2Logos].slice(0, 16).map((logo, idx) => (
+                <div
+                  key={`m-grid-${idx}`}
+                  className="stagger-item interactive-card w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 active:scale-95 transition-all cursor-pointer"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={76}
+                    height={76}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Last 2 logos centered in the last line */}
+            <div className="flex items-center justify-center gap-2.5 sm:gap-3 w-full mt-2.5 sm:mt-3">
+              {[...row1Logos, ...row2Logos].slice(16, 18).map((logo, idx) => (
+                <div
+                  key={`m-last-${idx}`}
+                  className="stagger-item interactive-card w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 active:scale-95 transition-all cursor-pointer"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={76}
+                    height={76}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Row 2 */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
-            {row2Logos.map((logo, idx) => (
-              <div
-                key={`r2-${idx}`}
-                className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={88}
-                  height={88}
-                  className="w-full h-full object-contain rounded-xl"
-                />
-              </div>
-            ))}
+          {/* Desktop Layout (>= md): 2 Rows of 9 Partner Logos */}
+          <div className="hidden md:flex flex-col gap-5 sm:gap-6 items-center w-full">
+            {/* Row 1 */}
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
+              {row1Logos.map((logo, idx) => (
+                <div
+                  key={`r1-${idx}`}
+                  className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={88}
+                    height={88}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
+              {row2Logos.map((logo, idx) => (
+                <div
+                  key={`r2-${idx}`}
+                  className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={88}
+                    height={88}
+                    className="w-full h-full object-contain rounded-xl"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
