@@ -21,12 +21,21 @@ export default function Home() {
   const [projectModalOpen, setProjectModalOpen] = useState(false);
 
   useEffect(() => {
-    // Show popup smoothly after the home page is displayed
-    const timer = setTimeout(() => {
-      setEnquiryPopupOpen(true);
-    }, 800);
-    return () => clearTimeout(timer);
+    // Only show the enquiry popup once when the website opens, not on every page transition
+    const hasShownPopup = sessionStorage.getItem("duhzine_enquiry_shown");
+    if (!hasShownPopup) {
+      const timer = setTimeout(() => {
+        setEnquiryPopupOpen(true);
+        sessionStorage.setItem("duhzine_enquiry_shown", "true");
+      }, 800);
+      return () => clearTimeout(timer);
+    }
   }, []);
+
+  const handleCloseEnquiry = () => {
+    setEnquiryPopupOpen(false);
+    sessionStorage.setItem("duhzine_enquiry_shown", "true");
+  };
 
   return (
     <main className="min-h-screen bg-[#f4f7ff] text-[#0f172a] relative">
@@ -83,9 +92,9 @@ export default function Home() {
       {/* Auto Welcome & Reload Enquiry Popup */}
       <EnquiryPopup
         isOpen={enquiryPopupOpen}
-        onClose={() => setEnquiryPopupOpen(false)}
+        onClose={handleCloseEnquiry}
         onDiscussProject={() => {
-          setEnquiryPopupOpen(false);
+          handleCloseEnquiry();
           setProjectModalOpen(true);
         }}
       />
