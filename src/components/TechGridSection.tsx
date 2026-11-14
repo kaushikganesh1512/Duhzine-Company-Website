@@ -34,7 +34,7 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
 
   return (
     <section
-      className="w-full py-16 sm:py-24 bg-[#f4f7ff] relative overflow-hidden"
+      className="w-full py-12 md:py-16 bg-[#f4f7ff] relative overflow-hidden"
       aria-labelledby="industries-heading"
     >
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative flex flex-col items-center gap-12">

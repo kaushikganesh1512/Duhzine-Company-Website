@@ -45,8 +45,8 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="flex flex-col items-center gap-4 px-2 pt-6 pb-8 flex-1 grow bg-white relative self-stretch">
-      {/* Connector line and step circle row (Fixed 28px height, perfectly centered across all 4 steps) */}
+    <article className="flex flex-col items-center gap-4 pt-6 pb-8 flex-1 grow bg-white relative self-stretch">
+      {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection) */}
       <div className="flex items-center self-stretch w-full relative h-7">
         <div className="flex-1 h-0.5 flex items-center">
           {connectorBefore && <div className="w-full h-0.5 bg-blue-600" />}
@@ -84,10 +84,10 @@ const ProcessStep = ({
 export default function ProcessSection(): React.ReactNode {
   return (
     <section
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-16 md:py-24 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-10 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
       aria-labelledby="process-heading"
     >
-      <div className="flex flex-col items-center gap-10 relative self-stretch w-full">
+      <div className="flex flex-col items-center gap-8 relative self-stretch w-full">
         <div className="flex flex-col items-center gap-4 relative self-stretch w-full">
           <div className="flex w-fit items-center justify-center gap-2.5 px-6 py-2 relative bg-blue-600 rounded-[22px] overflow-hidden border-[0.2px] border-solid border-[#222222] shadow-sm">
             <p className="font-medium text-white text-[15px] text-center tracking-[-0.60px] leading-[18px] whitespace-nowrap">
@@ -116,6 +116,9 @@ export default function ProcessSection(): React.ReactNode {
             role="list"
             aria-label="Development process steps"
           >
+            {/* Continuous unbroken line behind all circles */}
+            <div className="hidden sm:block absolute top-[38px] left-[12.5%] right-[12.5%] h-0.5 bg-blue-600 z-0 pointer-events-none" />
+
             {processSteps.map((step) => (
               <div className="contents" role="listitem" key={step.number}>
                 <ProcessStep {...step} />

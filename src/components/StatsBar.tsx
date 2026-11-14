@@ -35,10 +35,10 @@ const row2Logos = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full py-14 sm:py-20 bg-[#f4f7ff] relative overflow-hidden">
+    <section className="w-full py-10 md:py-14 bg-[#f4f7ff] relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Key Numerical Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-8 md:gap-0 pb-14">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-8 md:gap-0 pb-10">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}

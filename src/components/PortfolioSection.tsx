@@ -108,7 +108,7 @@ export default function PortfolioSection({
   return (
     <section
       id="portfolio"
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-16 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-20 md:py-28 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
       aria-labelledby="portfolio-heading"
     >
       {/* Section Header */}

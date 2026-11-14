@@ -11,19 +11,19 @@ export default function Hero({ onStartProject }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative w-full bg-[#f4f7ff] pt-14 pb-20 md:pt-20 md:pb-28 overflow-hidden"
+      className="relative w-full bg-[#f4f7ff] pt-12 pb-14 md:pt-16 md:pb-16 overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[520px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Left 3D Chrome Torus Floating Artwork (Interactive, strictly positioned flush to edge to prevent overlap) */}
+      {/* Left 3D Chrome Torus Floating Artwork (Enhanced high quality, no black box) */}
       <div className="hidden lg:block absolute left-0 top-8 xl:top-12 w-[130px] xl:w-[190px] 2xl:w-[230px] pointer-events-auto select-none z-10">
         <div className="animate-float transition-all duration-700 ease-out hover:scale-105 hover:rotate-2 cursor-pointer">
           <Image
             src="/images/side_hero_left.png"
             alt="Abstract 3D Chrome Torus Artwork"
-            width={250}
-            height={406}
+            width={500}
+            height={812}
             priority
             quality={100}
             className="w-full h-auto object-contain drop-shadow-md"
@@ -31,14 +31,14 @@ export default function Hero({ onStartProject }: HeroProps) {
         </div>
       </div>
 
-      {/* Right 3D Glassmorphic Interface Floating Artwork (Interactive, strictly positioned flush to edge) */}
+      {/* Right 3D Glassmorphic Interface Floating Artwork (Enhanced high quality, no black box) */}
       <div className="hidden lg:block absolute right-0 top-8 xl:top-12 w-[140px] xl:w-[210px] 2xl:w-[250px] pointer-events-auto select-none z-10">
         <div className="animate-float-reverse transition-all duration-700 ease-out hover:scale-105 hover:-rotate-2 cursor-pointer">
           <Image
             src="/images/side_hero_right.png"
             alt="Abstract 3D Glassmorphic Interface Artwork"
-            width={290}
-            height={406}
+            width={580}
+            height={812}
             priority
             quality={100}
             className="w-full h-auto object-contain drop-shadow-md"

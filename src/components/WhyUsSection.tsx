@@ -31,7 +31,7 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
 
   return (
     <section
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-20 md:py-28 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
       aria-labelledby="why-us-heading"
     >
       {/* Right 3D Faceted Sphere (Interactive, strictly positioned at right edge) */}

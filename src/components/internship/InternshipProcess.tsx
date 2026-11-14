@@ -52,8 +52,8 @@ export default function InternshipProcess() {
 
         {/* 4-Step Process Timeline */}
         <div className="relative mt-8">
-          {/* Connecting Line behind the numbered circles (visible on desktop) */}
-          <div className="hidden lg:block absolute top-[28px] left-[12%] right-[12%] h-[2px] bg-neutral-200 z-0" />
+          {/* Continuous blue connecting line behind the numbered circles */}
+          <div className="hidden lg:block absolute top-[28px] left-[12.5%] right-[12.5%] h-0.5 bg-blue-600 z-0 pointer-events-none" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {steps.map((step, idx) => (

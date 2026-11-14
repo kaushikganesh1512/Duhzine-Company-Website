@@ -44,7 +44,7 @@ export default function TestimonialsSection({
   return (
     <section
       id="testimonials"
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-16 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 pt-14 pb-28 overflow-hidden"
+      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-12 relative bg-[#f4f7ff] px-6 sm:px-10 lg:px-16 py-12 md:py-16 overflow-hidden"
       aria-labelledby="testimonials-heading"
     >
       {/* Header */}
