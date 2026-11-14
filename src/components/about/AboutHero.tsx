@@ -56,3 +56,4 @@ export default function AboutHero({ onStartProject }: AboutHeroProps) {
     </section>
   );
 }
+

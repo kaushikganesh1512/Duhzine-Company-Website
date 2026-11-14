@@ -3,7 +3,14 @@
 import React from "react";
 import Image from "next/image";
 
-export default function WhyUsSection() {
+interface WhyUsSectionProps {
+  title?: string;
+  highlight?: string;
+}
+
+export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
+  const displayTitle = title || "Why Businesses Choose";
+  const displayHighlight = highlight !== undefined ? highlight : "Duhzine IT Solutions ?";
   const features = [
     {
       title: "One-Stop Solution",
@@ -55,8 +62,10 @@ export default function WhyUsSection() {
           id="why-us-heading"
           className="font-semibold text-black text-3xl sm:text-4xl md:text-5xl lg:text-[50px] tracking-[-2px] leading-tight"
         >
-          Why Businesses Choose{" "}
-          <span className="text-blue-600">Duhzine IT Solutions ?</span>
+          {displayTitle}{" "}
+          {displayHighlight && (
+            <span className="text-blue-600">{displayHighlight}</span>
+          )}
         </h2>
 
         {/* Subtitle */}

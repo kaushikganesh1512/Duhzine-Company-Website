@@ -13,18 +13,27 @@ interface NavbarProps {
 export default function Navbar({ onBookCall }: NavbarProps) {
   const pathname = usePathname();
   const isAboutPage = pathname === "/about";
+  const isServicesPage = pathname === "/services";
 
-  const [activeNavigation, setActiveNavigation] = useState(isAboutPage ? "About" : "Home");
+  const getInitialNav = () => {
+    if (isAboutPage) return "About";
+    if (isServicesPage) return "Services";
+    return "Home";
+  };
+
+  const [activeNavigation, setActiveNavigation] = useState(getInitialNav);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     if (isAboutPage) {
       setActiveNavigation("About");
+    } else if (isServicesPage) {
+      setActiveNavigation("Services");
     } else {
       setActiveNavigation("Home");
     }
-  }, [isAboutPage]);
+  }, [isAboutPage, isServicesPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,12 +43,14 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isSpecialPage = isAboutPage || isServicesPage;
+
   const navigationItems = [
-    { label: "Home", href: isAboutPage ? "/" : "#home" },
-    { label: "Services", href: isAboutPage ? "/#services" : "#services" },
-    { label: "Portfolio", href: isAboutPage ? "/#portfolio" : "#portfolio" },
-    { label: "Blogs", href: isAboutPage ? "/#blogs" : "#blogs" },
-    { label: "Contact", href: isAboutPage ? "/#contact" : "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: isSpecialPage ? "/#portfolio" : "#portfolio" },
+    { label: "Blogs", href: isSpecialPage ? "/#blogs" : "#blogs" },
+    { label: "Contact", href: isSpecialPage ? "/#contact" : "#contact" },
     { label: "About", href: "/about" },
   ];
 
