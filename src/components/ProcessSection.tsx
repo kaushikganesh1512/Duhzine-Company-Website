@@ -45,8 +45,8 @@ const ProcessStep = ({
   connectorAfter,
 }: (typeof processSteps)[number]): React.ReactNode => {
   return (
-    <article className="stagger-item group flex flex-col items-center gap-3 sm:gap-4 pt-6 pb-6 sm:pb-8 flex-1 grow bg-white hover:bg-blue-50/30 transition-colors duration-300 relative self-stretch cursor-pointer">
-      {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection on desktop, centered circle on mobile) */}
+    <article className="stagger-item group flex flex-col items-center gap-2.5 sm:gap-4 py-4 sm:pt-6 sm:pb-8 flex-1 grow bg-white hover:bg-blue-50/30 transition-colors duration-300 relative self-stretch cursor-pointer">
+      {/* Connector line and step circle row (Fixed 28px height, seamless edge-to-edge connection on desktop, centered circle without connecting lines on mobile) */}
       <div className="flex items-center self-stretch w-full relative h-7">
         <div className="hidden sm:flex flex-1 h-0.5 items-center">
           {connectorBefore && <div className="w-full h-0.5 bg-blue-600" />}
@@ -77,13 +77,6 @@ const ProcessStep = ({
           {description}
         </p>
       </div>
-
-      {/* Mobile vertical connecting line centered between steps */}
-      {connectorAfter && (
-        <div className="sm:hidden flex flex-col items-center w-full mt-2 -mb-4 shrink-0" aria-hidden="true">
-          <div className="w-0.5 h-8 bg-blue-600 rounded-full" />
-        </div>
-      )}
     </article>
   );
 };

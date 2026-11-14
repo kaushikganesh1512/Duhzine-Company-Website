@@ -47,7 +47,7 @@ export default function CtaSection({}: CtaSectionProps) {
             {/* Call Us Button */}
             <a
               href="tel:9566123876"
-              className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               {/* Phone Icon */}
               <svg

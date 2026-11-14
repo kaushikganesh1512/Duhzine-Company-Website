@@ -63,13 +63,13 @@ export default function Footer() {
                 <span>Chat on WhatsApp</span>
               </a>
 
-              {/* Call Us Button */}
+              {/* Call Us Button (Same dimensions & styling as Chat on WhatsApp) */}
               <a
                 href="tel:9566123876"
-                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-sm sm:text-base transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean Telephone Vector Icon */}
-                <svg className="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
                   <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.057 15.057 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 3.93c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.55c0-.55-.45-1-.99-1z" />
                 </svg>
                 <span>Call Us: 9566123876</span>
