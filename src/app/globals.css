@@ -51,6 +51,32 @@ body {
   animation: float-slow 8.5s ease-in-out infinite;
 }
 
+@keyframes float-vertical {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes float-vertical-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+.animate-float-vertical {
+  animation: float-vertical 6s ease-in-out infinite;
+}
+
+.animate-float-vertical-reverse {
+  animation: float-vertical-reverse 7s ease-in-out infinite;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);

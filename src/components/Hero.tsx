@@ -16,32 +16,32 @@ export default function Hero({ onStartProject }: HeroProps) {
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[520px] bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Left 3D Chrome Torus Floating Artwork (Enhanced high quality, flush to left edge) */}
-      <div className="hidden lg:block absolute left-0 top-6 xl:top-8 w-[140px] xl:w-[200px] 2xl:w-[240px] pointer-events-auto select-none z-10">
-        <div className="animate-float origin-left transition-all duration-700 ease-out hover:scale-105 cursor-pointer">
+      {/* Left 3D Chrome Torus Floating Artwork (No blue circle, zero gap flush to leftmost screen edge) */}
+      <div className="hidden lg:block absolute left-0 top-6 xl:top-8 w-[160px] xl:w-[220px] 2xl:w-[260px] pointer-events-auto select-none z-10">
+        <div className="animate-float-vertical cursor-pointer">
           <Image
             src="/images/side_hero_left.png"
             alt="Abstract 3D Chrome Torus Artwork"
-            width={422}
+            width={402}
             height={812}
             priority
             quality={100}
-            className="w-full h-auto object-contain object-left drop-shadow-md"
+            className="w-full h-auto object-contain object-left block"
           />
         </div>
       </div>
 
-      {/* Right 3D Glassmorphic Interface Floating Artwork (Enhanced high quality, flush to right edge) */}
-      <div className="hidden lg:block absolute right-0 top-6 xl:top-8 w-[150px] xl:w-[220px] 2xl:w-[260px] pointer-events-auto select-none z-10">
-        <div className="animate-float-reverse origin-right transition-all duration-700 ease-out hover:scale-105 cursor-pointer">
+      {/* Right 3D Glassmorphic Interface Floating Artwork (No blue circle, zero gap flush to rightmost screen edge) */}
+      <div className="hidden lg:block absolute right-0 top-6 xl:top-8 w-[180px] xl:w-[240px] 2xl:w-[280px] pointer-events-auto select-none z-10">
+        <div className="animate-float-vertical-reverse cursor-pointer">
           <Image
             src="/images/side_hero_right.png"
             alt="Abstract 3D Glassmorphic Interface Artwork"
-            width={572}
+            width={547}
             height={812}
             priority
             quality={100}
-            className="w-full h-auto object-contain object-right drop-shadow-md"
+            className="w-full h-auto object-contain object-right block"
           />
         </div>
       </div>
