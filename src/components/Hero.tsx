@@ -31,21 +31,6 @@ export default function Hero({ onStartProject }: HeroProps) {
         </div>
       </div>
 
-      {/* Right 3D Glassmorphic Interface Floating Artwork (No boxes, no dark blue circle, zero gap flush to rightmost screen edge) */}
-      <div className="hidden lg:block absolute right-0 top-6 xl:top-8 w-[180px] xl:w-[240px] 2xl:w-[280px] pointer-events-auto select-none z-10">
-        <div className="animate-float-vertical-reverse cursor-pointer">
-          <Image
-            src="/images/side_hero_right.png"
-            alt="Abstract 3D Glassmorphic Interface Artwork"
-            width={865}
-            height={1218}
-            priority
-            quality={100}
-            className="w-full h-auto object-contain object-right block"
-          />
-        </div>
-      </div>
-
       {/* Hero Central Content (Scaled up, beautifully centered with generous responsive padding) */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-20">
         {/* Top Pill Badge */}

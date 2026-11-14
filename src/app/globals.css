@@ -214,8 +214,7 @@ a.border-blue-600:hover {
 }
 
 /* Interactive Cards, Panels & Boxes */
-.interactive-card,
-article {
+.interactive-card {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
@@ -224,9 +223,28 @@ article {
   box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
 }
 
+/* Edge-curved expandable cards (Portfolio & Services) */
+.hover-expand-card {
+  border-radius: 2.25rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(229, 231, 235, 0.95);
+  box-shadow: 0 6px 24px -2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-expand-card:hover {
+  transform: scale(1.035) translateY(-6px);
+  box-shadow: 0 30px 60px -12px rgba(37, 99, 235, 0.18), 0 12px 24px -6px rgba(0, 0, 0, 0.05);
+  border-color: rgba(147, 197, 253, 0.9);
+}
+
+.hover-expand-card:hover img {
+  transform: scale(1.035);
+}
+
 /* Card image subtle zoom */
-.interactive-card img,
-article img {
+.interactive-card img {
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

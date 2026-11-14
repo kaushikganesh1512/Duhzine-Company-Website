@@ -195,14 +195,14 @@ export default function ServicesSection({
       </div>
 
       {/* 4 Cards Stack with exact Figma alignments and generous responsive spacing */}
-      <div className="stagger-container flex flex-col items-center gap-14 lg:gap-20 relative self-stretch w-full mt-4">
+      <div className="stagger-container flex flex-col items-center gap-12 lg:gap-16 relative self-stretch w-full mt-4">
         {services.map((service) => {
           const isImageLeft = service.imagePosition === "left";
 
           return (
             <article
               key={service.title}
-              className="stagger-item interactive-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full py-4 gap-10 lg:gap-16"
+              className="stagger-item hover-expand-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full p-8 sm:p-10 lg:p-12 xl:p-14 bg-white rounded-3xl lg:rounded-[36px] border border-gray-200/90 shadow-sm gap-10 lg:gap-14 cursor-pointer"
               aria-label={`${service.category} - ${service.title}`}
             >
               {/* Left Column */}
