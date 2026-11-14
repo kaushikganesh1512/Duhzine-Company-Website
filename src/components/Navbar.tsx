@@ -19,7 +19,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   const isContactPage = pathname === "/contact";
   const isInternshipPage = pathname === "/internship";
 
-  const getInitialNav = () => {
+  const activeNavigation = (() => {
     if (isAboutPage) return "About";
     if (isServicesPage) return "Services";
     if (isCrmPage) return "CRM";
@@ -27,32 +27,13 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     if (isContactPage) return "Contact";
     if (isInternshipPage) return "Careers";
     return "Home";
-  };
+  })();
 
-  const [activeNavigation, setActiveNavigation] = useState(getInitialNav);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileCareersOpen, setMobileCareersOpen] = useState(true);
   const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (isAboutPage) {
-      setActiveNavigation("About");
-    } else if (isServicesPage) {
-      setActiveNavigation("Services");
-    } else if (isCrmPage) {
-      setActiveNavigation("CRM");
-    } else if (isPortfolioPage) {
-      setActiveNavigation("Portfolio");
-    } else if (isContactPage) {
-      setActiveNavigation("Contact");
-    } else if (isInternshipPage) {
-      setActiveNavigation("Careers");
-    } else {
-      setActiveNavigation("Home");
-    }
-  }, [isAboutPage, isServicesPage, isCrmPage, isPortfolioPage, isContactPage, isInternshipPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -167,7 +148,6 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                       <Link
                         href="/internship"
                         onClick={() => {
-                          setActiveNavigation("Careers");
                           setCareersDropdownOpen(false);
                         }}
                         className={`block px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -189,7 +169,6 @@ export default function Navbar({ onBookCall }: NavbarProps) {
               <Link
                 key={item.label}
                 href={item.href}
-                onClick={() => setActiveNavigation(item.label)}
                 aria-current={isActive ? "page" : undefined}
                 className={`text-sm font-medium font-['Figtree',sans-serif] leading-4 transition-colors relative py-1 ${
                   isActive
@@ -266,7 +245,6 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                         <Link
                           href="/internship"
                           onClick={() => {
-                            setActiveNavigation("Careers");
                             setMobileMenuOpen(false);
                           }}
                           className={`text-sm font-medium py-2 px-3 rounded-md transition-colors ${
@@ -288,7 +266,6 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                   key={item.label}
                   href={item.href}
                   onClick={() => {
-                    setActiveNavigation(item.label);
                     setMobileMenuOpen(false);
                   }}
                   className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${

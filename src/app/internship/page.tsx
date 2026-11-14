@@ -23,7 +23,7 @@ export default function InternshipPage() {
     setEnrollModalOpen(true);
   };
 
-  const handleTalkToTeam = (_programTitle: string) => {
+  const handleTalkToTeam = () => {
     setProjectModalOpen(true);
   };
 
@@ -33,7 +33,7 @@ export default function InternshipPage() {
       <Navbar onBookCall={() => setBookingModalOpen(true)} />
 
       {/* Hero Section with stats and 3 benefit cards */}
-      <InternshipHero onStartApplication={() => handlePayNow("Internship Program")} />
+      <InternshipHero />
 
       {/* 3 Internship Programs: UI/UX, Digital Marketing, Full Stack */}
       <InternshipPrograms

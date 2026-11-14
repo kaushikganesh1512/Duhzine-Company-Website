@@ -3,11 +3,7 @@
 import React from "react";
 import { UserCheck, Award, TrendingUp } from "lucide-react";
 
-interface InternshipHeroProps {
-  onStartApplication?: () => void;
-}
-
-export default function InternshipHero({ onStartApplication }: InternshipHeroProps) {
+export default function InternshipHero() {
   const stats = [
     { number: "5+", label: "Internship Domains" },
     { number: "50+", label: "Institute Tie-Up" },

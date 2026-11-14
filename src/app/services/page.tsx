@@ -26,10 +26,10 @@ export default function ServicesPage() {
       <ServicesHero onStartProject={() => setProjectModalOpen(true)} />
 
       {/* 8 Core Services Grid */}
-      <ServicesGrid onSelectService={(_service) => setProjectModalOpen(true)} />
+      <ServicesGrid onSelectService={() => setProjectModalOpen(true)} />
 
       {/* Recent Works Showcase (6 Project Cards) */}
-      <ServicesRecentWorks onProjectClick={(_proj) => setProjectModalOpen(true)} />
+      <ServicesRecentWorks onProjectClick={() => setProjectModalOpen(true)} />
 
       {/* Why Duhzine ? Section */}
       <WhyUsSection title="Why Duhzine ?" highlight="" />
@@ -38,7 +38,7 @@ export default function ServicesPage() {
       <ProcessSection />
 
       {/* Technology That Adapts to Different Business Needs (9 Industries) */}
-      <ServicesTechGrid onIndustryClick={(_ind) => setProjectModalOpen(true)} />
+      <ServicesTechGrid onIndustryClick={() => setProjectModalOpen(true)} />
 
       {/* What Our Clients Say (Testimonials) */}
       <TestimonialsSection onActionClick={() => setProjectModalOpen(true)} />

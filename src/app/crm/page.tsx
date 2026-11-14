@@ -23,7 +23,7 @@ export default function CrmPage() {
       <CrmHero onStartProject={() => setProjectModalOpen(true)} />
 
       {/* 3 Industry CRM Solutions (Salon, Gym, Clinic) */}
-      <CrmSolutions onContactClick={(_sol) => setProjectModalOpen(true)} />
+      <CrmSolutions onContactClick={() => setProjectModalOpen(true)} />
 
       {/* One Platform. Multiple Business Operations (8 Features) */}
       <CrmFeatures />

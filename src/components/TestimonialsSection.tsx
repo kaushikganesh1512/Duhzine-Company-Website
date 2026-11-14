@@ -18,7 +18,7 @@ const testimonials = [
   {
     name: "Joseph Vijay",
     role: "Owner of Vj Unique Properties",
-    avatar: "/images/drive/Testimonals 2 (2).jpg",
+    avatar: "/images/drive/Testimonals_2.jpg",
     content:
       '“We had a great experience working with Duhzine IT Solutions Pvt Ltd. The team delivered a well-designed, user-friendly website that meets our expectations perfectly. Highly recommended. "Thanks Gopinath!!!"”',
   },

@@ -1,11 +1,48 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
 
+export const viewport: Viewport = {
+  themeColor: "#2563eb",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "Duhzine | Build a Website That Attracts, Engages & Converts",
-  description: "Duhzine IT Solutions Pvt. Ltd. is a software and digital technology company helping businesses build, launch, and grow through custom software, high-performance websites, mobile apps, SaaS solutions, cloud technologies, and digital marketing.",
-  keywords: ["software development chennai", "web development", "mobile app development", "duhzine", "duhzine it solutions", "custom software"],
+  metadataBase: new URL("https://duhzine.com"),
+  title: {
+    default: "Duhzine | Build a Website That Attracts, Engages & Converts",
+    template: "%s | Duhzine IT Solutions",
+  },
+  description:
+    "Duhzine IT Solutions Pvt. Ltd. is a premier software and digital technology company helping businesses build, launch, and grow through custom software, high-performance websites, mobile apps, SaaS solutions, cloud technologies, and digital marketing.",
+  keywords: [
+    "software development chennai",
+    "web development chennai",
+    "mobile app development",
+    "duhzine",
+    "duhzine it solutions",
+    "custom software",
+    "IT solutions chennai",
+    "CRM software",
+  ],
+  authors: [{ name: "Duhzine IT Solutions Pvt. Ltd." }],
+  openGraph: {
+    title: "Duhzine | Build a Website That Attracts, Engages & Converts",
+    description:
+      "Software & digital technology company helping businesses build, launch, and grow through custom software, high-performance websites, mobile apps, SaaS solutions, and digital marketing.",
+    url: "https://duhzine.com",
+    siteName: "Duhzine IT Solutions",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

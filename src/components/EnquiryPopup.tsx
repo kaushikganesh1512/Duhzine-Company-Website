@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useSyncExternalStore } from "react";
 import { X, ArrowRight } from "lucide-react";
 
 interface EnquiryPopupProps {
@@ -9,16 +9,14 @@ interface EnquiryPopupProps {
   onDiscussProject: () => void;
 }
 
+const emptySubscribe = () => () => {};
+
 export default function EnquiryPopup({
   isOpen,
   onClose,
   onDiscussProject,
 }: EnquiryPopupProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   // Handle ESC key to close
   useEffect(() => {

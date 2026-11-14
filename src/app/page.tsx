@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* Core Digital Services */}
       <ServicesSection
-        onServiceSelect={(_serviceName) => setProjectModalOpen(true)}
+        onServiceSelect={() => setProjectModalOpen(true)}
       />
 
       {/* From Idea to Launch - Process Section */}
@@ -58,12 +58,12 @@ export default function Home() {
 
       {/* Technology That Adapts to Different Business Needs */}
       <TechGridSection
-        onIndustryClick={(_industry) => setProjectModalOpen(true)}
+        onIndustryClick={() => setProjectModalOpen(true)}
       />
 
       {/* Real Projects. Digital Solutions. */}
       <PortfolioSection
-        onProjectClick={(_projectName) => setProjectModalOpen(true)}
+        onProjectClick={() => setProjectModalOpen(true)}
       />
 
       {/* Why Businesses Choose Duhzine IT Solutions ? */}

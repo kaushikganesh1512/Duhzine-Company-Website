@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const stats = [
   { value: "800+", label: "Completed Projects" },
@@ -72,9 +73,11 @@ export default function StatsBar() {
                 key={`r1-${idx}`}
                 className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={88}
+                  height={88}
                   className="w-full h-full object-contain rounded-xl"
                 />
               </div>
@@ -88,9 +91,11 @@ export default function StatsBar() {
                 key={`r2-${idx}`}
                 className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
               >
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={88}
+                  height={88}
                   className="w-full h-full object-contain rounded-xl"
                 />
               </div>

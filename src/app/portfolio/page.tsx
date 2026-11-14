@@ -32,7 +32,7 @@ export default function PortfolioPage() {
 
       {/* 9 Recent Works Projects (3x3 Grid) */}
       <PortfolioProjects
-        onProjectClick={(_title) => setProjectModalOpen(true)}
+        onProjectClick={() => setProjectModalOpen(true)}
       />
 
       {/* Quotation Callback & Footer */}
