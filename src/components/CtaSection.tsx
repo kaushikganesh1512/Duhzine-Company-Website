@@ -29,13 +29,13 @@ export default function CtaSection({}: CtaSectionProps) {
           </div>
 
           {/* Right Action Buttons */}
-          <div className="relative z-10 flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
+          <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 shrink-0">
             {/* WhatsApp Button */}
             <a
               href="https://wa.me/919566123876"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               {/* WhatsApp Icon */}
               <svg className="w-5 h-5 fill-currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function CtaSection({}: CtaSectionProps) {
             {/* Call Us Button */}
             <a
               href="tel:9566123876"
-              className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               {/* Phone Icon */}
               <svg

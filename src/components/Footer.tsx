@@ -47,14 +47,14 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Right Buttons: Chat on WhatsApp & Call Us */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
+            {/* Right Buttons: Chat on WhatsApp & Call Us (Exact same horizontal size on mobile) */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 shrink-0">
               {/* WhatsApp Button */}
               <a
                 href="https://wa.me/919566123876"
                 target="_blank"
                 rel="noreferrer"
-                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean WhatsApp Vector Icon */}
                 <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ export default function Footer() {
               {/* Call Us Button (Same dimensions & styling as Chat on WhatsApp) */}
               <a
                 href="tel:9566123876"
-                className="interactive-btn inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
+                className="interactive-btn inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean Telephone Vector Icon */}
                 <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
