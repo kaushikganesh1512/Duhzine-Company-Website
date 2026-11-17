@@ -32,6 +32,7 @@ export default function ServicesRecentWorks({
       title: "Bringing Authentic Flavours Online",
       description:
         "A responsive restaurant website designed to showcase authentic Arabian Mandi and biryani dishes, highlight the food menu, and simplify customer enquiries.",
+      link: "https://www.varunkuttymandhibiriyani.in/",
     },
     {
       image: "/images/services/work_4.jpg",
@@ -39,6 +40,7 @@ export default function ServicesRecentWorks({
       title: "Little Minds, Bright Futures",
       description:
         "A responsive preschool website designed to showcase early learning programs, build parent trust, and simplify school admission enquiries in Chennai",
+      link: "https://www.quriouslilmindz.com/",
     },
     {
       image: "/images/services/work_5.jpg",
@@ -79,6 +81,13 @@ export default function ServicesRecentWorks({
           {projects.map((proj, index) => (
             <div
               key={index}
+              onClick={() => {
+                if (proj.link) {
+                  window.open(proj.link, "_blank", "noopener,noreferrer");
+                } else {
+                  onProjectClick?.(proj.title);
+                }
+              }}
               className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
@@ -114,14 +123,27 @@ export default function ServicesRecentWorks({
 
                 {/* Footer Action Link */}
                 <div className="mt-5 pt-3">
-                  <button
-                    type="button"
-                    onClick={() => onProjectClick?.(proj.title)}
-                    className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
-                  >
-                    <span>View our work</span>
-                    <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-                  </button>
+                  {proj.link ? (
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>View our work</span>
+                      <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => onProjectClick?.(proj.title)}
+                      className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>View our work</span>
+                      <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

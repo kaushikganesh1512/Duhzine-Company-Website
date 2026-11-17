@@ -18,6 +18,7 @@ export default function PortfolioProjects({
       title: "Business Solutions That Connect",
       description:
         "A responsive B2B website designed to showcase office supplies, IT solutions, and enterprise services while simplifying business enquiries",
+      link: "https://ontime-office-g4gn.vercel.app/",
     },
     {
       image: "/images/portfolio/work_2.jpg",
@@ -25,6 +26,7 @@ export default function PortfolioProjects({
       title: "Shopping Made Simple",
       description:
         "A responsive housekeeping products website designed to showcase cleaning essentials, simplify product discovery, and boost customer enquiries",
+      link: "https://www.rvcorporateneeds.com/",
     },
     {
       image: "/images/portfolio/work_3.jpg",
@@ -32,6 +34,7 @@ export default function PortfolioProjects({
       title: "Shopping Made Simple",
       description:
         "A responsive website designed to showcase housekeeping and cleaning products, simplify product discovery, and generate customer enquiries.",
+      link: "https://st-sai-solutions.vercel.app/",
     },
     {
       image: "/images/portfolio/work_4.jpg",
@@ -53,6 +56,7 @@ export default function PortfolioProjects({
       title: "Bringing Authentic Flavours Online",
       description:
         "A responsive restaurant website designed to showcase authentic Arabian Mandi and biryani dishes, highlight the food menu, and simplify customer enquiries.",
+      link: "https://www.varunkuttymandhibiriyani.in/",
     },
     {
       image: "/images/portfolio/work_7.jpg",
@@ -60,6 +64,7 @@ export default function PortfolioProjects({
       title: "Little Minds, Bright Futures",
       description:
         "A responsive preschool website designed to showcase early learning programs, build parent trust, and simplify school admission enquiries in Chennai",
+      link: "https://www.quriouslilmindz.com/",
     },
     {
       image: "/images/portfolio/work_8.jpg",
@@ -99,6 +104,13 @@ export default function PortfolioProjects({
           {projects.map((proj, index) => (
             <div
               key={index}
+              onClick={() => {
+                if (proj.link) {
+                  window.open(proj.link, "_blank", "noopener,noreferrer");
+                } else {
+                  onProjectClick?.(proj.title);
+                }
+              }}
               className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
@@ -134,14 +146,27 @@ export default function PortfolioProjects({
 
                 {/* Footer Action Link */}
                 <div className="mt-5 pt-3">
-                  <button
-                    type="button"
-                    onClick={() => onProjectClick?.(proj.title)}
-                    className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
-                  >
-                    <span>View our work</span>
-                    <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-                  </button>
+                  {proj.link ? (
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>View our work</span>
+                      <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => onProjectClick?.(proj.title)}
+                      className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm underline cursor-pointer group-hover:translate-x-1 transition-transform"
+                    >
+                      <span>View our work</span>
+                      <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

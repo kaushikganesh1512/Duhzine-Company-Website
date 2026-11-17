@@ -17,6 +17,7 @@ type Project = {
   imagePosition: "left" | "right";
   contentClassName?: string;
   descriptionClassName?: string;
+  link?: string;
 };
 
 const projects: Project[] = [
@@ -58,6 +59,7 @@ const projects: Project[] = [
     imageAlt: "Qurious Little Mindz preschool educational website interface",
     imageClassName: "w-[420px] lg:w-[460px] xl:w-[500px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     imagePosition: "right",
+    link: "https://www.quriouslilmindz.com/",
   },
   {
     category: "Varankutty Mandhi Biriyani",
@@ -78,29 +80,53 @@ const projects: Project[] = [
     imageAlt: "Varunkutty Mandhi Biriyani restaurant website and menu interface",
     imageClassName: "w-[360px] lg:w-[400px] xl:w-[440px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     imagePosition: "left",
+    link: "https://www.varunkuttymandhibiriyani.in/",
   },
 ];
 
 const ArrowLink = ({
   label,
+  href,
   onClick,
 }: {
   label: string;
+  href?: string;
   onClick?: () => void;
-}) => (
-  <button
-    type="button"
-    onClick={onClick}
-    className="inline-flex items-center gap-1.5 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
-  >
-    <span className="font-semibold text-blue-600 text-sm sm:text-base tracking-tight leading-normal group-hover:underline">
-      {label}
-    </span>
-    <span className="text-blue-600 text-base font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-      ↗
-    </span>
-  </button>
-);
+}) => {
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="inline-flex items-center gap-1.5 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
+      >
+        <span className="font-semibold text-blue-600 text-sm sm:text-base tracking-tight leading-normal group-hover:underline">
+          {label}
+        </span>
+        <span className="text-blue-600 text-base font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+          ↗
+        </span>
+      </a>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="inline-flex items-center gap-1.5 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
+    >
+      <span className="font-semibold text-blue-600 text-sm sm:text-base tracking-tight leading-normal group-hover:underline">
+        {label}
+      </span>
+      <span className="text-blue-600 text-base font-semibold group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+        ↗
+      </span>
+    </button>
+  );
+};
 
 export default function PortfolioSection({
   onProjectClick,
@@ -160,6 +186,13 @@ export default function PortfolioSection({
           return (
             <article
               key={project.title}
+              onClick={() => {
+                if (project.link) {
+                  window.open(project.link, "_blank", "noopener,noreferrer");
+                } else {
+                  onProjectClick?.(project.title);
+                }
+              }}
               className="stagger-item hover-expand-card group flex flex-col lg:flex-row items-center justify-between relative self-stretch w-full p-8 sm:p-10 lg:p-12 xl:p-14 gap-8 lg:gap-12 xl:gap-16 cursor-pointer"
               aria-label={`${project.category} - ${project.title}`}
             >
@@ -194,6 +227,7 @@ export default function PortfolioSection({
                   <div className="pt-2 flex justify-start w-full">
                     <ArrowLink
                       label="View Project"
+                      href={project.link}
                       onClick={() => onProjectClick?.(project.title)}
                     />
                   </div>
@@ -218,6 +252,7 @@ export default function PortfolioSection({
                   <div className="flex justify-end pt-2 w-full">
                     <ArrowLink
                       label="View Project"
+                      href={project.link}
                       onClick={() => onProjectClick?.(project.title)}
                     />
                   </div>
