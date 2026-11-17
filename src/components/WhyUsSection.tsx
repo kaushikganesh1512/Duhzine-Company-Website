@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Layers, Handshake, Award } from "lucide-react";
 
 interface WhyUsSectionProps {
   title?: string;
@@ -14,16 +15,19 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
   const features = [
     {
       title: "One-Stop Solution",
+      icon: Layers,
       description:
         "From strategy and design to development and quality assurance, we offer end-to-end technology services under one roof.",
     },
     {
       title: "Customer-Centric",
+      icon: Handshake,
       description:
         "We prioritize your goals, ensuring tailored solutions, transparent communication, and long-term partnership.",
     },
     {
       title: "Leverage Expertise",
+      icon: Award,
       description:
         "We combine deep industry experience and a skilled global team to deliver reliable, high-quality IT solutions that businesses trust.",
     },
@@ -67,7 +71,7 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
         </h2>
 
         {/* Subtitle */}
-        <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance]">
+        <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
           We design, develop, and implement digital solutions that help businesses
           work smarter, operate efficiently, and grow with confidence.
         </p>
@@ -75,37 +79,28 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
 
       {/* 3 Cards Grid (Spacious, balanced, consistent) */}
       <div className="stagger-container grid grid-cols-1 md:grid-cols-3 gap-8 relative self-stretch w-full mt-2 z-20">
-        {features.map((item) => (
-          <div
-            key={item.title}
-            className="stagger-item interactive-card group flex flex-col items-start gap-5 p-9 sm:p-11 bg-white rounded-3xl shadow-xs border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all relative cursor-pointer"
-          >
-            {/* Person Icon in soft light-blue circle matching design */}
-            <div className="w-14 h-14 rounded-full bg-[#edf5ff] group-hover:bg-blue-600 flex items-center justify-center text-blue-600 group-hover:text-white mb-2 shadow-xs group-hover:scale-110 transition-all duration-300">
-              <svg
-                className="w-7 h-7 currentColor transition-colors duration-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.8}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
+        {features.map((item) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.title}
+              className="stagger-item interactive-card group flex flex-col items-start gap-5 p-9 sm:p-11 bg-white rounded-3xl shadow-xs border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all relative cursor-pointer"
+            >
+              {/* Unique Professional Lucide Icon in soft light-blue circle */}
+              <div className="w-14 h-14 rounded-full bg-[#edf5ff] group-hover:bg-blue-600 flex items-center justify-center text-blue-600 group-hover:text-white mb-2 shadow-xs group-hover:scale-110 transition-all duration-300">
+                <Icon className="w-7 h-7 stroke-[1.8] transition-colors duration-300" />
+              </div>
+
+              <h3 className="font-semibold text-black text-2xl tracking-tight leading-snug group-hover:text-blue-600 transition-colors duration-200">
+                {item.title}
+              </h3>
+
+              <p className="font-normal text-gray-600 text-sm sm:text-base leading-relaxed">
+                {item.description}
+              </p>
             </div>
-
-            <h3 className="font-semibold text-black text-2xl tracking-tight leading-snug group-hover:text-blue-600 transition-colors duration-200">
-              {item.title}
-            </h3>
-
-            <p className="font-normal text-gray-600 text-sm sm:text-base leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -45,7 +45,7 @@ export default function ServicesTechGrid({
             Technology That Adapts to Different Business Needs
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance] italic">
             We provide digital solutions for businesses across multiple industries, helping organizations streamline operations, improve customer experiences, and strengthen their digital presence.
           </p>
         </div>

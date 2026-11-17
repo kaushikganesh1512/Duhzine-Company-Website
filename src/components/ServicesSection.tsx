@@ -152,7 +152,7 @@ export default function ServicesSection({
           >
             Our Core Digital Services
           </h2>
-          <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl">
+          <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl italic">
             We design, develop, and scale digital solutions that help businesses
             improve their online presence, streamline operations, engage
             customers, and achieve measurable growth.

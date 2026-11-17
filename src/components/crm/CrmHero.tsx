@@ -26,7 +26,7 @@ export default function CrmHero({ onStartProject }: CrmHeroProps) {
         </h1>
 
         {/* Subtitle */}
-        <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4 [text-wrap:balance]">
+        <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4 [text-wrap:balance] italic">
           <p>
             Powerful, ready-to-use CRM and business management software designed for service-based businesses. From salons and gyms to clinics, our platforms help you manage customers, appointments, memberships, payments, staff, and daily operations from one intelligent system.
           </p>

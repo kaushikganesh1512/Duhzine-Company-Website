@@ -26,7 +26,7 @@ export default function ServicesHero({ onStartProject }: ServicesHeroProps) {
         </h1>
 
         {/* Subtitle */}
-        <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4">
+        <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4 italic">
           <p>
             Duhzine IT Solutions provides custom software development, website development, mobile app development, digital marketing, CRM solutions, e-commerce, UI/UX design, and quality assurance services for businesses in Chennai, India, and international markets.
           </p>

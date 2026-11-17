@@ -29,7 +29,7 @@ export default function AboutHero({ onStartProject }: AboutHeroProps) {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 font-normal leading-relaxed max-w-4xl mx-auto mb-10 [text-wrap:balance]">
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 [text-wrap:balance] italic">
           Duhzine IT Solutions Pvt. Ltd. is a software and digital technology company helping businesses build, launch, and grow through custom software development, web development, mobile applications, digital marketing, SaaS solutions, and business automation.
         </p>
 

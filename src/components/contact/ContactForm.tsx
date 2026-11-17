@@ -46,7 +46,7 @@ export default function ContactForm() {
             Tell Us About Your Project
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance] italic">
             Whether you need a website, custom software, mobile application, CRM solution, e-commerce platform, or digital marketing service, tell us what you want to build.
           </p>
         </div>

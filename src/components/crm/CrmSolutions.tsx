@@ -75,7 +75,7 @@ export default function CrmSolutions({ onContactClick }: CrmSolutionsProps) {
             Business Management Software Built for Your Industry
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance] italic">
             Every business has different workflows and customer management requirements. Our industry-focused CRM solutions provide the tools you need to manage everyday operations from one centralized platform.
           </p>
         </div>

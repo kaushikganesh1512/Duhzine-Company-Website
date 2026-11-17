@@ -53,7 +53,7 @@ export default function AboutTeam() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight [text-wrap:balance]">
               Meet Our Core Team
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 font-normal mt-4 leading-relaxed [text-wrap:balance]">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 font-normal mt-4 leading-relaxed [text-wrap:balance] italic">
               Our team of designers, developers, technology specialists, marketers, and business professionals works together to deliver practical digital solutions that help businesses grow.
             </p>
           </div>

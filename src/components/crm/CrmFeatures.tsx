@@ -77,7 +77,7 @@ export default function CrmFeatures() {
             One Platform. Multiple Business Operations.
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance] italic">
             Duhzine&apos;s CRM solutions bring essential business operations together in one easy-to-use platform, helping teams reduce manual work and manage customer relationships more effectively.
           </p>
         </div>

@@ -66,7 +66,7 @@ export default function AboutFaq() {
             Frequently Asked Questions
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-2xl mx-auto leading-relaxed [text-wrap:balance] italic">
             Find answers to common questions about our services and digital solutions
           </p>
         </div>

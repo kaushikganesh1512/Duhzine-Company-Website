@@ -49,7 +49,7 @@ export default function PortfolioHero({
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl mx-auto mb-10">
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl mx-auto mb-10 italic">
           Explore a selection of our work showcasing innovative solutions, scalable products, and impactful digital experiences built for growing businesses.
         </p>
 

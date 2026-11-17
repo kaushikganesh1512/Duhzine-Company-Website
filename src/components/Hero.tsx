@@ -62,7 +62,7 @@ export default function Hero({ onStartProject }: HeroProps) {
         </h1>
 
         {/* Subtitle description - EXACT words on each line */}
-        <p className="text-gray-700 text-base sm:text-lg md:text-[18px] lg:text-[19px] leading-[28px] sm:leading-[32px] max-w-[940px] mx-auto mb-10 font-normal">
+        <p className="text-gray-700 text-base sm:text-lg md:text-[18px] lg:text-[19px] leading-[28px] sm:leading-[32px] max-w-[940px] mx-auto mb-10 font-normal italic">
           Duhzine IT Solutions Pvt. Ltd. is a software and digital technology company helping<br className="hidden md:inline" />{" "}
           businesses build, launch, and grow through custom software, high-performance websites,<br className="hidden md:inline" />{" "}
           mobile apps, SaaS solutions, cloud technologies, and digital marketing.

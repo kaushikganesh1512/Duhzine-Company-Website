@@ -73,7 +73,7 @@ export default function ServicesRecentWorks({
             Recent Works
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-base sm:text-lg text-gray-700 font-normal max-w-2xl mx-auto leading-relaxed [text-wrap:balance] italic">
             A showcase of impactful digital solutions crafted to drive growth, enhance user experience, and deliver measurable results.
           </p>
         </div>
