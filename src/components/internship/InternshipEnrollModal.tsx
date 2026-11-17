@@ -27,6 +27,7 @@ export default function InternshipEnrollModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    window.open("https://razorpay.me/@duhzineitsolutionsprivatelimi", "_blank", "noopener,noreferrer");
   };
 
   const handleReset = () => {

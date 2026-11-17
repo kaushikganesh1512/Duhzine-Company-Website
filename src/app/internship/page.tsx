@@ -20,7 +20,7 @@ export default function InternshipPage() {
 
   const handlePayNow = (programTitle: string) => {
     setSelectedProgram(programTitle);
-    setEnrollModalOpen(true);
+    window.open("https://razorpay.me/@duhzineitsolutionsprivatelimi", "_blank", "noopener,noreferrer");
   };
 
   const handleTalkToTeam = () => {

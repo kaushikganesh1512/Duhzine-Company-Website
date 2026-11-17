@@ -140,14 +140,16 @@ export default function InternshipPrograms({
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3">
-                    <button
-                      type="button"
-                      onClick={() => onPayNow(program.title)}
+                    <a
+                      href="https://razorpay.me/@duhzineitsolutionsprivatelimi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => onPayNow?.(program.title)}
                       className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     >
                       <span>Pay Now</span>
                       <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    </a>
 
                     <button
                       type="button"

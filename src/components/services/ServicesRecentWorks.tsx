@@ -48,6 +48,7 @@ export default function ServicesRecentWorks({
       title: "Inspiring Young Learners",
       description:
         "A modern, responsive school website designed to highlight nursery and primary education, showcase learning programs, and make admission enquiries easier for parents",
+      link: "https://littel-star-nursery-and-primary-sch.vercel.app/",
     },
     {
       image: "/images/services/work_6.jpg",
@@ -55,6 +56,7 @@ export default function ServicesRecentWorks({
       title: "Where Learning Meets Care",
       description:
         "A responsive preschool website designed to highlight play-based learning, showcase childcare programs, build parent trust, and simplify admission enquiries in Chennai.",
+      link: "https://arudra-s-six.vercel.app/",
     },
   ];
 
