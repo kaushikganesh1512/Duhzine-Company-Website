@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, CheckCircle2, Rocket, ArrowRight, Code2, Smartphone, BarChart3, Database } from "lucide-react";
+import { X, CheckCircle2, Rocket, ArrowRight, Code2, Smartphone, BarChart3, Database, MessageCircle } from "lucide-react";
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -38,6 +38,24 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+
+    const messageLines = [
+      `*New Project Inquiry - Duhzine IT Solutions*`,
+      `---------------------------------`,
+      `*Project Type:* ${selectedService}`,
+      `*Estimated Budget Range:* ${budget}`,
+      `*Client Name:* ${formData.name}`,
+      `*Email Address:* ${formData.email}`,
+      `*Phone Number:* ${formData.phone || "Not provided"}`,
+      `*Project Scope / Vision:* ${formData.description || "None provided"}`,
+      `---------------------------------`,
+      `_Sent from Duhzine Project Inquiry Portal_`,
+    ];
+
+    const message = messageLines.join("\n");
+    const encoded = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919841483195?text=${encoded}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleReset = () => {
@@ -73,19 +91,44 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
         <div className="p-6 max-h-[80vh] overflow-y-auto">
           {submitted ? (
             <div className="text-center py-10">
-              <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4 border border-blue-100 shadow-inner">
+              <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-100 shadow-inner">
                 <CheckCircle2 className="w-9 h-9" />
               </div>
               <h4 className="text-xl font-bold text-slate-900">Project Inquiry Received!</h4>
               <p className="text-sm text-slate-600 mt-2 max-w-sm mx-auto">
-                Thanks, <span className="font-semibold text-slate-900">{formData.name}</span>. A Duhzine technical manager will review your project requirements and connect via <span className="font-semibold text-blue-600">{formData.email}</span>.
+                Thanks, <span className="font-semibold text-slate-900">{formData.name}</span>. Your project specifications have been forwarded to our technical team via WhatsApp at <span className="font-semibold text-emerald-600">+91 98414 83195</span>.
               </p>
-              <button
-                onClick={handleReset}
-                className="mt-6 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-semibold transition-all shadow-md shadow-blue-500/20"
-              >
-                Close
-              </button>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={`https://wa.me/919841483195?text=${encodeURIComponent(
+                    [
+                      `*New Project Inquiry - Duhzine IT Solutions*`,
+                      `---------------------------------`,
+                      `*Project Type:* ${selectedService}`,
+                      `*Estimated Budget Range:* ${budget}`,
+                      `*Client Name:* ${formData.name}`,
+                      `*Email Address:* ${formData.email}`,
+                      `*Phone Number:* ${formData.phone || "Not provided"}`,
+                      `*Project Scope / Vision:* ${formData.description || "None provided"}`,
+                      `---------------------------------`,
+                      `_Sent from Duhzine Project Inquiry Portal_`,
+                    ].join("\n")
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-semibold transition-all shadow-md shadow-emerald-500/20 inline-flex items-center justify-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Open WhatsApp Directly</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="w-full sm:w-auto px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-full text-xs font-semibold transition-all"
+                >
+                  Done
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">

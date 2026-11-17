@@ -229,7 +229,7 @@ export default function ServicesSection({
                 </div>
               ) : (
                 /* Card 2 & 4: Content on Left (All left-aligned: badge, title, desc, link) */
-                <div className="flex-1 flex flex-col items-start gap-4 text-left w-full max-w-[540px] xl:max-w-[580px]">
+                <div className="order-2 lg:order-1 flex-1 flex flex-col items-start gap-4 text-left w-full max-w-[540px] xl:max-w-[580px]">
                   <div className="flex items-center justify-start w-full">
                     <span className="inline-flex items-center px-4 py-1.5 bg-blue-600 rounded-[22px] font-medium text-white text-[13px] sm:text-sm tracking-tight leading-none shadow-xs">
                       {service.category}
@@ -274,7 +274,7 @@ export default function ServicesSection({
                 </div>
               ) : (
                 /* Card 2 & 4: Image on Right */
-                <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-[480px] xl:max-w-[520px]">
+                <div className="order-1 lg:order-2 flex-1 flex justify-center lg:justify-end items-center w-full max-w-[480px] xl:max-w-[520px]">
                   <Image
                     src={service.image}
                     alt={service.imageAlt}

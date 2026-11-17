@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowDown, Check, CheckCircle2 } from "lucide-react";
+import { ArrowDown, Check, CheckCircle2, MessageCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,6 +35,24 @@ export default function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+
+    const messageLines = [
+      `*New Project Inquiry - Duhzine IT Solutions*`,
+      `---------------------------------`,
+      `*Client Name:* ${formData.name}`,
+      `*Company / Organization:* ${formData.company || "Not provided"}`,
+      `*Phone Number:* ${formData.phone || "Not provided"}`,
+      `*Estimated Budget:* ${formData.budget || "Not specified"}`,
+      `*Services Needed:* ${selectedServices.join(", ") || "General Inquiry"}`,
+      `*Message / Project Details:* ${formData.message || "None provided"}`,
+      `---------------------------------`,
+      `_Sent from Duhzine Contact Page_`,
+    ];
+
+    const message = messageLines.join("\n");
+    const encoded = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919841483195?text=${encoded}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -60,18 +78,42 @@ export default function ContactForm() {
                 Thank you for reaching out!
               </h3>
               <p className="text-base text-gray-600 max-w-md">
-                We have received your project details. Our team will review your requirements and get in touch with you shortly.
+                We have received your project details and forwarded them directly to our technical consultants on WhatsApp at <span className="font-semibold text-emerald-600">+91 98414 83195</span>.
               </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSubmitted(false);
-                  setFormData({ name: "", budget: "", company: "", phone: "", message: "" });
-                }}
-                className="mt-4 px-6 py-2.5 rounded-full bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition-colors"
-              >
-                Send Another Message
-              </button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+                <a
+                  href={`https://wa.me/919841483195?text=${encodeURIComponent(
+                    [
+                      `*New Project Inquiry - Duhzine IT Solutions*`,
+                      `---------------------------------`,
+                      `*Client Name:* ${formData.name}`,
+                      `*Company / Organization:* ${formData.company || "Not provided"}`,
+                      `*Phone Number:* ${formData.phone || "Not provided"}`,
+                      `*Estimated Budget:* ${formData.budget || "Not specified"}`,
+                      `*Services Needed:* ${selectedServices.join(", ") || "General Inquiry"}`,
+                      `*Message / Project Details:* ${formData.message || "None provided"}`,
+                      `---------------------------------`,
+                      `_Sent from Duhzine Contact Page_`,
+                    ].join("\n")
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all shadow-md shadow-emerald-500/20"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Open WhatsApp Directly</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({ name: "", budget: "", company: "", phone: "", message: "" });
+                  }}
+                  className="px-6 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors"
+                >
+                  Send Another Message
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6 sm:gap-8">

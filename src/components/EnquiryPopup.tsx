@@ -47,7 +47,7 @@ export default function EnquiryPopup({
       }}
     >
       {/* Modal Card - Appears gracefully above the home page */}
-      <div className="relative w-full max-w-[430px] bg-gradient-to-br from-[#0c1222] via-[#090f20] to-[#040713] rounded-[24px] p-6 sm:p-7 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.12)] shadow-[0px_25px_60px_0px_rgba(0,0,0,0.65)] overflow-hidden text-left animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
+      <div className="relative w-full max-w-[430px] bg-gradient-to-br from-[#0c1222] via-[#090f20] to-[#040713] rounded-[24px] p-5 sm:p-7 shadow-[0px_0px_0px_1px_rgba(255,255,255,0.12)] shadow-[0px_25px_60px_0px_rgba(0,0,0,0.65)] overflow-hidden text-left animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
         {/* Top-Right Warm Orange/Amber Glow */}
         <div className="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-orange-500/35 via-amber-500/15 to-transparent rounded-full blur-2xl pointer-events-none" />
 
@@ -58,17 +58,17 @@ export default function EnquiryPopup({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all cursor-pointer z-20 group"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 border border-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all cursor-pointer z-20 group"
           aria-label="Close popup"
         >
-          <X className="w-4 h-4 transition-transform group-hover:scale-110" />
+          <X className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:scale-110" />
         </button>
 
         {/* Content Container */}
         <div className="relative z-10 flex flex-col items-start">
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-gradient-to-r from-teal-400 to-emerald-300 shadow-sm mb-4 sm:mb-5">
-            <span className="text-emerald-950 text-xs font-bold tracking-tight">
+          <div className="inline-flex items-center justify-center px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-teal-400 to-emerald-300 shadow-sm mb-4 sm:mb-5 max-w-[calc(100%-38px)] sm:max-w-none">
+            <span className="text-emerald-950 text-[10px] sm:text-xs font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
               Chennai’s Best Software Development Company
             </span>
           </div>
@@ -76,13 +76,13 @@ export default function EnquiryPopup({
           {/* Heading */}
           <h2
             id="enquiry-popup-title"
-            className="text-white text-xl sm:text-[22px] font-bold tracking-tight leading-snug mb-3"
+            className="text-white text-lg sm:text-[22px] font-bold tracking-tight leading-snug mb-3 pr-2 sm:pr-0"
           >
             Your Website Starts With an Enquiry!!!
           </h2>
 
           {/* Description */}
-          <p className="text-white/75 text-sm font-normal leading-relaxed mb-6 sm:mb-7">
+          <p className="text-white/75 text-xs sm:text-sm font-normal leading-relaxed mb-5 sm:mb-7">
             Whether you need a business website, e-commerce store, or a custom
             web solution, we’re here to turn your ideas into a powerful online
             presence..
