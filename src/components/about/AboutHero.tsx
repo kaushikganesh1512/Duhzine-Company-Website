@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import TypingHeroTitle from "@/components/TypingHeroTitle";
 
 interface AboutHeroProps {
   onStartProject: () => void;
@@ -21,12 +22,15 @@ export default function AboutHero({ onStartProject }: AboutHeroProps) {
           <span className="sm:hidden">About Duhzine IT Solutions</span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1px] sm:tracking-[-1.5px] leading-[1.15] sm:leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]">
-          Chennai’s{" "}
-          <span className="text-[#2563eb]">Best Software Development</span>{" "}
-          Company
-        </h1>
+        {/* Main Headline with Typing Effect */}
+        <TypingHeroTitle
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1px] sm:tracking-[-1.5px] leading-[1.15] sm:leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]"
+          segments={[
+            { text: "Chennai’s " },
+            { text: "Best Software Development", highlight: true, className: "text-[#2563eb]" },
+            { text: " Company" },
+          ]}
+        />
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 [text-wrap:balance] italic">

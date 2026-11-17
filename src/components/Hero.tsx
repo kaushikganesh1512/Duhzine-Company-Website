@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import TypingHeroTitle from "./TypingHeroTitle";
 
 interface HeroProps {
   onStartProject: () => void;
@@ -53,13 +54,14 @@ export default function Hero({ onStartProject }: HeroProps) {
           <span>Best Software Development Company in Chennai</span>
         </div>
 
-        {/* Main Headline (Clean balanced lines on mobile & desktop) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold text-black tracking-[-1px] sm:tracking-[-2px] leading-[1.18] sm:leading-[1.12] mb-6 sm:mb-7">
-          <span className="block sm:inline">Build a Website </span>
-          <span className="block sm:inline">That Attracts,</span>
-          <br className="hidden sm:inline" />
-          <span className="text-[#2563eb] block sm:inline">Engages &amp; Converts.</span>
-        </h1>
+        {/* Main Headline (Clean balanced lines on mobile & desktop with typing effect) */}
+        <TypingHeroTitle
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold text-black tracking-[-1px] sm:tracking-[-2px] leading-[1.18] sm:leading-[1.12] mb-6 sm:mb-7"
+          segments={[
+            { text: "Build a Website That Attracts, " },
+            { text: "Engages & Converts.", highlight: true, className: "text-[#2563eb]" },
+          ]}
+        />
 
         {/* Subtitle description - EXACT words on each line */}
         <p className="text-gray-700 text-base sm:text-lg md:text-[18px] lg:text-[19px] leading-[28px] sm:leading-[32px] max-w-[940px] mx-auto mb-10 font-normal italic">

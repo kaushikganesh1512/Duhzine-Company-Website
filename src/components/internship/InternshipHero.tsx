@@ -2,6 +2,7 @@
 
 import React from "react";
 import { UserCheck, Award, TrendingUp } from "lucide-react";
+import TypingHeroTitle from "@/components/TypingHeroTitle";
 
 export default function InternshipHero() {
   const stats = [
@@ -45,10 +46,14 @@ export default function InternshipHero() {
             <span>Internship Program for Students &amp; Freshers</span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.15] [text-wrap:balance]">
-            Launch Your <span className="text-blue-600">Career with Duhzine</span>
-          </h1>
+          {/* Main Headline with Typing Effect */}
+          <TypingHeroTitle
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-neutral-900 tracking-tight leading-[1.15] [text-wrap:balance]"
+            segments={[
+              { text: "Launch Your " },
+              { text: "Career with Duhzine", highlight: true, className: "text-blue-600" },
+            ]}
+          />
 
           {/* Description */}
           <p className="mt-6 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
