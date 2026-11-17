@@ -2,114 +2,116 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 
-export interface TitleSegment {
-  text: string;
-  highlight?: boolean;
-  className?: string;
+interface TypingHeroTitleProps {
+  children: React.ReactNode;
+  speed?: number;
+  delay?: number;
 }
 
-interface TypingHeroTitleProps {
-  segments: TitleSegment[];
-  className?: string;
-  as?: "h1" | "h2" | "div";
-  speed?: number; // ms per character (default 26ms)
-  startDelay?: number; // ms before typing starts (default 180ms)
+function countCharacters(node: React.ReactNode): number {
+  if (typeof node === "string") return node.length;
+  if (typeof node === "number") return String(node).length;
+  if (!node) return 0;
+  if (Array.isArray(node)) {
+    return node.reduce((acc, child) => acc + countCharacters(child), 0);
+  }
+  if (React.isValidElement(node) && node.props && (node.props as { children?: React.ReactNode }).children !== undefined) {
+    return countCharacters((node.props as { children?: React.ReactNode }).children);
+  }
+  return 0;
 }
 
 export default function TypingHeroTitle({
-  segments,
-  className = "",
-  as: Component = "h1",
-  speed = 26,
-  startDelay = 180,
+  children,
+  speed = 28,
+  delay = 120,
 }: TypingHeroTitleProps) {
-  // Pre-calculate total characters
-  const totalLength = useMemo(() => {
-    return segments.reduce((acc, seg) => acc + seg.text.length, 0);
-  }, [segments]);
+  const [mounted, setMounted] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
 
-  // Start with 0 visible characters on client mount for typing effect
-  const [visibleCount, setVisibleCount] = useState<number>(0);
-  const [showCursor, setShowCursor] = useState<boolean>(true);
-  const [cursorFading, setCursorFading] = useState<boolean>(false);
+  const totalChars = useMemo(() => countCharacters(children), [children]);
 
   useEffect(() => {
-    let current = 0;
-    let timer: NodeJS.Timeout;
+    setMounted(true);
 
     const startTimer = setTimeout(() => {
-      timer = setInterval(() => {
-        current++;
-        setVisibleCount(current);
-        if (current >= totalLength) {
-          clearInterval(timer);
-          // Let cursor blink for 1.8s after typing ends, then softly fade out
-          setTimeout(() => {
-            setCursorFading(true);
-            setTimeout(() => setShowCursor(false), 600);
-          }, 1800);
-        }
+      const interval = setInterval(() => {
+        setVisibleCount((prev) => {
+          if (prev < totalChars) {
+            return prev + 1;
+          }
+          clearInterval(interval);
+          // Keep blinking cursor for 2 seconds after typing completes, then softly hide
+          setTimeout(() => setShowCursor(false), 2000);
+          return prev;
+        });
       }, speed);
-    }, startDelay);
 
-    return () => {
-      clearTimeout(startTimer);
-      if (timer) clearInterval(timer);
-    };
-  }, [totalLength, speed, startDelay]);
+      return () => clearInterval(interval);
+    }, delay);
 
-  // Group characters back into segments for clean DOM representation
-  let charCounter = 0;
+    return () => clearTimeout(startTimer);
+  }, [totalChars, speed, delay]);
 
-  return (
-    <Component className={`${className} relative select-none`} aria-label={segments.map((s) => s.text).join("")}>
-      {segments.map((seg, segIdx) => {
-        const segStartIdx = charCounter;
-        charCounter += seg.text.length;
+  const renderTypedNode = (
+    node: React.ReactNode,
+    state: { currentIdx: number }
+  ): React.ReactNode => {
+    if (typeof node === "string" || typeof node === "number") {
+      const str = String(node);
+      const chars = str.split("");
 
-        const defaultHighlightClass = "text-[#2563eb]";
-        const appliedColorClass = seg.highlight
-          ? seg.className || defaultHighlightClass
-          : seg.className || "";
+      return chars.map((char, i) => {
+        const charIdx = state.currentIdx++;
+        // If not mounted (SSR/initial render), character is invisible so layout is preserved without mismatch
+        const isVisible = mounted && charIdx < visibleCount;
+        const isCurrent =
+          mounted &&
+          showCursor &&
+          (charIdx === visibleCount - 1 || (visibleCount === 0 && charIdx === 0));
 
         return (
-          <span key={segIdx} className={appliedColorClass}>
-            {Array.from(seg.text).map((ch, chIdx) => {
-              const globalIdx = segStartIdx + chIdx;
-              const isVisible = globalIdx < visibleCount;
-              const isLastVisible = globalIdx === visibleCount - 1;
-
-              return (
-                <span
-                  key={chIdx}
-                  className={`inline transition-opacity duration-75 ${
-                    isVisible ? "opacity-100" : "opacity-0 pointer-events-none select-none"
-                  }`}
-                >
-                  {ch}
-                  {/* Blinking typing caret directly after the current typing character */}
-                  {showCursor && isLastVisible && (
-                    <span
-                      aria-hidden="true"
-                      className={`inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-blue-600 ml-[1px] -mb-[0.05em] align-baseline animate-pulse transition-opacity duration-500 ${
-                        cursorFading ? "opacity-0" : "opacity-100"
-                      }`}
-                    />
-                  )}
-                </span>
-              );
-            })}
+          <span
+            key={i}
+            className={`transition-opacity duration-75 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            } ${isCurrent ? "shadow-[2.5px_0_0_0_#2563eb]" : ""}`}
+          >
+            {char}
           </span>
         );
-      })}
+      });
+    }
 
-      {/* If 0 characters typed yet, show initial blinking cursor */}
-      {showCursor && visibleCount === 0 && (
-        <span
-          aria-hidden="true"
-          className="inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-blue-600 -mb-[0.05em] align-baseline animate-pulse"
-        />
-      )}
-    </Component>
-  );
+    if (!node) return node;
+
+    if (Array.isArray(node)) {
+      return node.map((child, i) => (
+        <React.Fragment key={i}>
+          {renderTypedNode(child, state)}
+        </React.Fragment>
+      ));
+    }
+
+    if (React.isValidElement(node)) {
+      const props = node.props as { children?: React.ReactNode; [key: string]: unknown };
+      // Self-closing elements like <br />
+      if (props.children === undefined) {
+        return node;
+      }
+
+      return React.cloneElement(
+        node as React.ReactElement<{ children?: React.ReactNode }>,
+        {},
+        renderTypedNode(props.children, state)
+      );
+    }
+
+    return node;
+  };
+
+  const state = { currentIdx: 0 };
+
+  return <>{renderTypedNode(children, state)}</>;
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import TypingHeroTitle from "@/components/TypingHeroTitle";
@@ -13,18 +12,8 @@ interface CrmHeroProps {
 export default function CrmHero({ onStartProject }: CrmHeroProps) {
   return (
     <section className="relative w-full bg-[#f4f7ff] pt-14 pb-16 md:pt-20 md:pb-20 overflow-hidden">
-      {/* Centered 3D Iridescent Dome Background (Matching Image 5 Reference) */}
-      <div className="absolute top-[32%] sm:top-[29%] md:top-[26%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] sm:w-[280px] md:w-[320px] lg:w-[350px] pointer-events-none select-none z-0">
-        <Image
-          src="/images/crm_hero_dome.png"
-          alt="Decorative 3D Iridescent Dome"
-          width={333}
-          height={370}
-          priority
-          quality={100}
-          className="w-full h-auto object-contain mx-auto"
-        />
-      </div>
+      {/* Centered Iridescent Ambient Ring Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-purple-400/15 via-blue-500/20 to-pink-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         {/* Top Pill Badge */}
@@ -32,15 +21,12 @@ export default function CrmHero({ onStartProject }: CrmHeroProps) {
           <span>CRM &amp; Business Management Software</span>
         </div>
 
-        {/* Main Headline with Typing Effect */}
-        <TypingHeroTitle
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1px] sm:tracking-[-1.5px] leading-[1.15] sm:leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]"
-          segments={[
-            { text: "Industry-Focused " },
-            { text: "CRM Software", highlight: true, className: "text-[#2563eb]" },
-            { text: " for Growing Businesses" },
-          ]}
-        />
+        {/* Main Headline */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1px] sm:tracking-[-1.5px] leading-[1.15] sm:leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]">
+          <TypingHeroTitle>
+            Industry-Focused <span className="text-[#2563eb]">CRM Software</span> for Growing Businesses
+          </TypingHeroTitle>
+        </h1>
 
         {/* Subtitle */}
         <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4 [text-wrap:balance] italic">

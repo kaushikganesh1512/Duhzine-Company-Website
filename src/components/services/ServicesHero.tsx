@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import TypingHeroTitle from "@/components/TypingHeroTitle";
@@ -13,18 +12,8 @@ interface ServicesHeroProps {
 export default function ServicesHero({ onStartProject }: ServicesHeroProps) {
   return (
     <section className="relative w-full bg-[#f4f7ff] pt-14 pb-14 md:pt-20 md:pb-16 overflow-hidden">
-      {/* Centered 3D Iridescent Ring Background (Matching Image 3 Reference) */}
-      <div className="absolute top-[32%] sm:top-[30%] md:top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[480px] md:w-[560px] lg:w-[620px] pointer-events-none select-none z-0">
-        <Image
-          src="/images/service_hero_ring.png"
-          alt="Decorative 3D Iridescent Ring"
-          width={656}
-          height={330}
-          priority
-          quality={100}
-          className="w-full h-auto object-contain mx-auto"
-        />
-      </div>
+      {/* Centered Iridescent Ambient Ring Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] sm:w-[850px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-purple-400/15 via-blue-500/20 to-pink-400/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         {/* Top Pill Badge */}
@@ -32,14 +21,12 @@ export default function ServicesHero({ onStartProject }: ServicesHeroProps) {
           <span>Software &amp; Digital Solutions</span>
         </div>
 
-        {/* Main Headline with Typing Effect */}
-        <TypingHeroTitle
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto"
-          segments={[
-            { text: "Our " },
-            { text: "Core Services", highlight: true, className: "text-[#2563eb]" },
-          ]}
-        />
+        {/* Main Headline */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto">
+          <TypingHeroTitle>
+            Our <span className="text-[#2563eb]">Core Services</span>
+          </TypingHeroTitle>
+        </h1>
 
         {/* Subtitle */}
         <div className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 space-y-4 italic">

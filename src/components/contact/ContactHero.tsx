@@ -21,14 +21,12 @@ export default function ContactHero({ onContactClick }: ContactHeroProps) {
           <span>Contact Duhzine IT Solutions</span>
         </div>
 
-        {/* Main Headline with Typing Effect */}
-        <TypingHeroTitle
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]"
-          segments={[
-            { text: "Let’s Build " },
-            { text: "Something Great Together.", highlight: true, className: "text-[#2563eb]" },
-          ]}
-        />
+        {/* Main Headline */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]">
+          <TypingHeroTitle>
+            Let’s Build <span className="text-[#2563eb]">Something Great Together.</span>
+          </TypingHeroTitle>
+        </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl mx-auto mb-10 italic [text-wrap:balance]">
