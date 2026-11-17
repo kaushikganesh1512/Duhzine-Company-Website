@@ -86,7 +86,7 @@ export default function Footer() {
               {/* Duhzine Logo */}
               <div className="mb-5">
                 <Image
-                  src="/images/logo_white@2x.png"
+                  src="/images/duhzine_logo_v3.png"
                   alt="Duhzine IT Solutions Pvt. Ltd."
                   width={180}
                   height={52}

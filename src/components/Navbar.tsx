@@ -85,7 +85,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
         {/* Duhzine Brand Logo (White with Blue dot on Black Navbar) */}
         <Link href="/" className="flex items-center select-none py-1 group">
           <Image
-            src="/images/logo_white@2x.png"
+            src="/images/duhzine_logo_v3.png"
             alt="Duhzine IT Solutions"
             width={140}
             height={42}

@@ -21,20 +21,15 @@ export default function Home() {
   const [projectModalOpen, setProjectModalOpen] = useState(false);
 
   useEffect(() => {
-    // Only show the enquiry popup once when the website opens, not on every page transition
-    const hasShownPopup = sessionStorage.getItem("duhzine_enquiry_shown");
-    if (!hasShownPopup) {
-      const timer = setTimeout(() => {
-        setEnquiryPopupOpen(true);
-        sessionStorage.setItem("duhzine_enquiry_shown", "true");
-      }, 800);
-      return () => clearTimeout(timer);
-    }
+    // Show enquiry popup reliably on page load
+    const timer = setTimeout(() => {
+      setEnquiryPopupOpen(true);
+    }, 900);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleCloseEnquiry = () => {
     setEnquiryPopupOpen(false);
-    sessionStorage.setItem("duhzine_enquiry_shown", "true");
   };
 
   return (

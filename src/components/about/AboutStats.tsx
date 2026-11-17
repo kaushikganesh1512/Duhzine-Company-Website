@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function AboutStats() {
   const row1 = [
@@ -31,7 +32,7 @@ export default function AboutStats() {
                 }`}
               >
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 tracking-tight font-sans">
-                  {item.number}
+                  <AnimatedCounter value={item.number} duration={1800} />
                 </div>
                 <div className="text-xs sm:text-sm md:text-base font-medium text-gray-800 mt-2">
                   {item.label}
@@ -50,7 +51,7 @@ export default function AboutStats() {
                 }`}
               >
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 tracking-tight font-sans">
-                  {item.number}
+                  <AnimatedCounter value={item.number} duration={1800} />
                 </div>
                 <div className="text-xs sm:text-sm md:text-base font-medium text-gray-800 mt-2">
                   {item.label}
