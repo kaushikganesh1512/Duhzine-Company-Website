@@ -61,12 +61,12 @@ export default function ServicesRecentWorks({
   ];
 
   return (
-    <section className="w-full bg-[#f4f7ff] py-16 md:py-24">
+    <section className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="reveal-on-scroll text-center mb-14 sm:mb-16">
           <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
-            <span>Recent Works</span>
+            <span>Our Design</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 [text-wrap:balance]">
@@ -93,7 +93,7 @@ export default function ServicesRecentWorks({
               className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
-              <div className="w-full h-56 sm:h-64 relative overflow-hidden bg-gray-50 border-b border-gray-100">
+              <div className="w-full h-52 sm:h-60 relative overflow-hidden border-b border-gray-100 bg-white">
                 <Image
                   src={proj.image}
                   alt={proj.title}

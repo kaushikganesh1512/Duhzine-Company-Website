@@ -69,7 +69,7 @@ export default function ServicesGrid({ onSelectService }: ServicesGridProps) {
   ];
 
   return (
-    <section className="w-full bg-[#f4f7ff] pb-20 md:pb-28">
+    <section className="w-full bg-[#f4f7ff] pb-6 md:pb-8">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="stagger-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {services.map((service, index) => {

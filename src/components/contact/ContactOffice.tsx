@@ -7,7 +7,7 @@ export default function ContactOffice() {
   const directionsUrl = "https://maps.app.goo.gl/LqtuPnL2SJShiA4T9";
 
   return (
-    <section className="w-full bg-[#f4f7ff] py-14 md:py-20">
+    <section className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12">

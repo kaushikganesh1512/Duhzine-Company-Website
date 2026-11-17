@@ -16,7 +16,7 @@ export default function AboutWorkspace() {
   const marqueeList = [...workspaceImages, ...workspaceImages, ...workspaceImages];
 
   return (
-    <section className="w-full bg-[#f4f7ff] py-16 md:py-24 overflow-hidden">
+    <section className="w-full bg-[#f4f7ff] py-12 md:py-16 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center mb-12">
         {/* Pill Badge */}
         <div className="inline-flex items-center justify-center px-3.5 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap max-w-full">

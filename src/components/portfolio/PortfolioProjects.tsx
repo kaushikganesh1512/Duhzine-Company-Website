@@ -85,7 +85,7 @@ export default function PortfolioProjects({
   ];
 
   return (
-    <section id="portfolio-works" className="w-full bg-[#f4f7ff] pb-20 md:pb-28">
+    <section id="portfolio-works" className="w-full bg-[#f4f7ff] pb-12 md:pb-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="reveal-on-scroll text-center mb-14 sm:mb-16">
@@ -116,7 +116,7 @@ export default function PortfolioProjects({
               className="stagger-item interactive-card bg-white rounded-2xl sm:rounded-3xl border border-zinc-200/90 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               {/* Image Preview */}
-              <div className="w-full h-56 sm:h-64 relative overflow-hidden bg-gray-50 border-b border-gray-100">
+              <div className="w-full h-52 sm:h-60 relative overflow-hidden border-b border-gray-100 bg-white">
                 <Image
                   src={proj.image}
                   alt={proj.title}

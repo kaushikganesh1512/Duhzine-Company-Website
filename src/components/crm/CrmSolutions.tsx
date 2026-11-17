@@ -63,7 +63,7 @@ export default function CrmSolutions({ onContactClick }: CrmSolutionsProps) {
   ];
 
   return (
-    <section className="w-full bg-[#f4f7ff] py-16 md:py-24">
+    <section className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Header */}
         <div className="reveal-on-scroll text-center mb-14 sm:mb-16">

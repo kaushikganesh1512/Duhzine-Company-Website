@@ -38,7 +38,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact-form-section" className="w-full bg-[#f4f7ff] py-14 md:py-24">
+    <section id="contact-form-section" className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="reveal-on-scroll text-center mb-12 sm:mb-16">

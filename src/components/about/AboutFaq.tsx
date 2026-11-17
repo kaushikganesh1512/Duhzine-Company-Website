@@ -54,7 +54,7 @@ export default function AboutFaq() {
   };
 
   return (
-    <section className="w-full bg-[#f4f7ff] py-16 md:py-24">
+    <section className="w-full bg-[#f4f7ff] py-12 md:py-16">
       <div className="w-full max-w-4xl mx-auto px-6 sm:px-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">

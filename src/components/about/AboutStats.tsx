@@ -18,7 +18,7 @@ export default function AboutStats() {
   ];
 
   return (
-    <section className="w-full bg-[#f4f7ff] pb-20 overflow-hidden">
+    <section className="w-full bg-[#f4f7ff] pb-12 md:pb-16 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col gap-10 sm:gap-14">
           {/* Row 1 */}

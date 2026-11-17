@@ -32,7 +32,7 @@ export default function InternshipStudents({ onJoinClick }: InternshipStudentsPr
   const marqueeStudents = [...students, ...students];
 
   return (
-    <section className="py-16 md:py-24 bg-[#f8faff] relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-[#f8faff] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-10">
