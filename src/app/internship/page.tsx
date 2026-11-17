@@ -23,6 +23,11 @@ export default function InternshipPage() {
     window.open("https://razorpay.me/@duhzineitsolutionsprivatelimi", "_blank", "noopener,noreferrer");
   };
 
+  const handleApply = (programTitle: string) => {
+    setSelectedProgram(programTitle);
+    setEnrollModalOpen(true);
+  };
+
   const handleTalkToTeam = () => {
     setProjectModalOpen(true);
   };
@@ -39,6 +44,7 @@ export default function InternshipPage() {
       <InternshipPrograms
         onPayNow={handlePayNow}
         onTalkToTeam={handleTalkToTeam}
+        onApply={handleApply}
       />
 
       {/* 4-Step Intern Hiring Process */}

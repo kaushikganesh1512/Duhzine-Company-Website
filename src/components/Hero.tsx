@@ -20,10 +20,10 @@ export default function Hero({ onStartProject }: HeroProps) {
       <div className="hidden lg:block absolute left-0 top-6 xl:top-8 w-[160px] xl:w-[220px] 2xl:w-[260px] pointer-events-auto select-none z-10">
         <div className="animate-float-vertical cursor-pointer">
           <Image
-            src="/images/side_hero_left_v2.png"
-            alt="Abstract 3D Chrome Torus Artwork"
-            width={732}
-            height={1218}
+            src="/images/side_hero_left_v3.png"
+            alt="Futuristic 3D Glass Ring with Blue Floating Sphere"
+            width={588}
+            height={951}
             priority
             quality={100}
             className="w-full h-auto object-contain object-left block"
@@ -35,10 +35,10 @@ export default function Hero({ onStartProject }: HeroProps) {
       <div className="hidden lg:block absolute right-0 top-6 xl:top-8 w-[180px] xl:w-[240px] 2xl:w-[280px] pointer-events-auto select-none z-10">
         <div className="animate-float-vertical-reverse cursor-pointer">
           <Image
-            src="/images/side_hero_right_v2.png"
-            alt="Abstract 3D Glassmorphic Interface Artwork"
-            width={865}
-            height={1218}
+            src="/images/side_hero_right_v3.png"
+            alt="Futuristic 3D Glass Interface Browser Window"
+            width={576}
+            height={948}
             priority
             quality={100}
             className="w-full h-auto object-contain object-right block"

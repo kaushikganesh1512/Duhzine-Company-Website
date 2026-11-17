@@ -6,11 +6,13 @@ import { PenTool, Megaphone, Code2, Check, ArrowUpRight } from "lucide-react";
 interface InternshipProgramsProps {
   onPayNow: (programTitle: string) => void;
   onTalkToTeam: (programTitle: string) => void;
+  onApply?: (programTitle: string) => void;
 }
 
 export default function InternshipPrograms({
   onPayNow,
   onTalkToTeam,
+  onApply,
 }: InternshipProgramsProps) {
   const programs = [
     {
@@ -159,6 +161,16 @@ export default function InternshipPrograms({
                       <span>Talk to Our Team</span>
                     </button>
                   </div>
+
+                  {/* Full width To Apply button matching design reference */}
+                  <button
+                    type="button"
+                    onClick={() => onApply ? onApply(program.title) : onPayNow(program.title)}
+                    className="w-full mt-3 inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
+                  >
+                    <span>To Apply</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             );
