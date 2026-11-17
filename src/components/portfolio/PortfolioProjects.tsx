@@ -15,71 +15,71 @@ export default function PortfolioProjects({
     {
       image: "/images/portfolio/work_1.jpg",
       category: "B2B Website Development",
-      title: "Business Solutions That Connect",
+      title: "Empowering Businesses Through Reliable Digital Solutions.",
       description:
-        "A responsive B2B website designed to showcase office supplies, IT solutions, and enterprise services while simplifying business enquiries",
+        "A professional B2B website designed to showcase business services, highlight industry expertise, strengthen brand credibility, and simplify business enquiries through a seamless digital experience.",
       link: "https://ontime-office-g4gn.vercel.app/",
     },
     {
       image: "/images/portfolio/work_2.jpg",
       category: "E-Commerce Website Development",
-      title: "Shopping Made Simple",
+      title: "Creating Seamless Shopping Experiences for Modern Customers",
       description:
-        "A responsive housekeeping products website designed to showcase cleaning essentials, simplify product discovery, and boost customer enquiries",
+        "A responsive e-commerce website designed to showcase diverse products, simplify product discovery, improve shopping experiences, and drive online sales through intuitive navigation and engaging interfaces",
       link: "https://www.rvcorporateneeds.com/",
     },
     {
       image: "/images/portfolio/work_3.jpg",
       category: "E-Commerce Website Development",
-      title: "Shopping Made Simple",
+      title: "Simplifying Everyday Shopping Through Digital Experiences",
       description:
-        "A responsive website designed to showcase housekeeping and cleaning products, simplify product discovery, and generate customer enquiries.",
+        "A modern e-commerce website designed to showcase household cleaning products, highlight product benefits, simplify online purchasing, and improve customer engagement through organized product categories",
       link: "https://st-sai-solutions.vercel.app/",
     },
     {
       image: "/images/portfolio/work_4.jpg",
       category: "Business Website Development",
-      title: "Building Trust Through Digital Presence",
+      title: "Delivering Sustainable Cocopeat Solutions for Global Agriculture",
       description:
-        "A responsive business website designed to showcase company offerings, strengthen brand credibility, and simplify customer enquiries",
+        "A professional business website designed to showcase premium cocopeat products, strengthen brand credibility, highlight product offerings, and connect agricultural businesses with global markets",
     },
     {
       image: "/images/portfolio/work_5.jpg",
-      category: "E-Commerce Development",
-      title: "Commerce That Converts",
+      category: "Packers & Movers Website Development",
+      title: "Moving Your Belongings Safely, Smoothly, and Stress-Free.",
       description:
-        "Secure, scalable online stores built to maximize sales and customer satisfaction.",
+        "A responsive website designed to showcase professional packing and moving services, build customer trust, highlight service offerings, and simplify relocation enquiries through clear navigation and engaging visuals",
     },
     {
       image: "/images/portfolio/work_6.jpg",
       category: "Restaurant Website Development",
-      title: "Bringing Authentic Flavours Online",
+      title: "Showcasing Authentic Cuisine Through Engaging Digital Experiences",
       description:
-        "A responsive restaurant website designed to showcase authentic Arabian Mandi and biryani dishes, highlight the food menu, and simplify customer enquiries.",
+        "A responsive restaurant website designed to showcase authentic cuisine, highlight signature dishes, present restaurant menus, and simplify customer enquiries through an engaging digital experience",
       link: "https://www.varunkuttymandhibiriyani.in/",
     },
     {
       image: "/images/portfolio/work_7.jpg",
       category: "Preschool Website Development",
-      title: "Little Minds, Bright Futures",
+      title: "Nurturing Young Minds Through Engaging Learning Experiences",
       description:
-        "A responsive preschool website designed to showcase early learning programs, build parent trust, and simplify school admission enquiries in Chennai",
+        "A responsive preschool website designed to showcase early learning programs, highlight creative activities, build parent trust, and simplify school admission enquiries through accessible navigation",
       link: "https://www.quriouslilmindz.com/",
     },
     {
       image: "/images/portfolio/work_8.jpg",
       category: "School Website Development",
-      title: "Inspiring Young Learners",
+      title: "Building Brighter Futures Through Quality Education",
       description:
-        "A modern, responsive school website designed to highlight nursery and primary education, showcase learning programs, and make admission enquiries easier for parents",
+        "A modern school website designed to highlight academic excellence, showcase educational programs, communicate institutional values, and strengthen parent engagement through accessible information and responsive layouts",
       link: "https://littel-star-nursery-and-primary-sch.vercel.app/",
     },
     {
       image: "/images/portfolio/work_9.jpg",
       category: "Preschool & Daycare Website Development",
-      title: "Where Learning Meets Care",
+      title: "Creating Safe Spaces for Learning and Growth",
       description:
-        "A responsive preschool website designed to highlight play-based learning, showcase childcare programs, build parent trust, and simplify admission enquiries in Chennai.",
+        "A responsive preschool and daycare website designed to showcase childcare programs, highlight learning activities, build parent confidence, and simplify admissions through intuitive navigation and engaging visuals",
       link: "https://arudra-s-six.vercel.app/",
     },
   ];
@@ -89,9 +89,6 @@ export default function PortfolioProjects({
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="reveal-on-scroll text-center mb-14 sm:mb-16">
-          <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform">
-            <span>Recent Works</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black tracking-tight mb-4 [text-wrap:balance]">
             Recent Works
           </h2>
@@ -141,7 +138,7 @@ export default function PortfolioProjects({
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed">
                     {proj.description}
                   </p>
                 </div>
@@ -182,7 +179,7 @@ export default function PortfolioProjects({
             onClick={() => onProjectClick?.("Recent Works Portfolio")}
             className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-base underline cursor-pointer hover:scale-105 transition-transform"
           >
-            <span>View our work</span>
+            <span>View all work</span>
             <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
           </button>
         </div>

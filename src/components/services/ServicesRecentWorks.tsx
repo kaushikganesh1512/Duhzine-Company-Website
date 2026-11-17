@@ -15,47 +15,47 @@ export default function ServicesRecentWorks({
     {
       image: "/images/services/work_1.jpg",
       category: "Business Website Development",
-      title: "Building Trust Through Digital Presence",
+      title: "Delivering Sustainable Cocopeat Solutions for Global Agriculture",
       description:
-        "A responsive business website designed to showcase company offerings, strengthen brand credibility, and simplify customer enquiries",
+        "A professional business website designed to showcase premium cocopeat products, strengthen brand credibility, highlight product offerings, and connect agricultural businesses with global markets",
     },
     {
       image: "/images/services/work_2.jpg",
-      category: "E-Commerce Development",
-      title: "Commerce That Converts",
+      category: "Packers & Movers Website Development",
+      title: "Moving Your Belongings Safely, Smoothly, and Stress-Free.",
       description:
-        "Secure, scalable online stores built to maximize sales and customer satisfaction.",
+        "A responsive website designed to showcase professional packing and moving services, build customer trust, highlight service offerings, and simplify relocation enquiries through clear navigation and engaging visuals",
     },
     {
       image: "/images/services/work_3.jpg",
       category: "Restaurant Website Development",
-      title: "Bringing Authentic Flavours Online",
+      title: "Showcasing Authentic Cuisine Through Engaging Digital Experiences",
       description:
-        "A responsive restaurant website designed to showcase authentic Arabian Mandi and biryani dishes, highlight the food menu, and simplify customer enquiries.",
+        "A responsive restaurant website designed to showcase authentic cuisine, highlight signature dishes, present restaurant menus, and simplify customer enquiries through an engaging digital experience",
       link: "https://www.varunkuttymandhibiriyani.in/",
     },
     {
       image: "/images/services/work_4.jpg",
       category: "Preschool Website Development",
-      title: "Little Minds, Bright Futures",
+      title: "Nurturing Young Minds Through Engaging Learning Experiences",
       description:
-        "A responsive preschool website designed to showcase early learning programs, build parent trust, and simplify school admission enquiries in Chennai",
+        "A responsive preschool website designed to showcase early learning programs, highlight creative activities, build parent trust, and simplify school admission enquiries through accessible navigation",
       link: "https://www.quriouslilmindz.com/",
     },
     {
       image: "/images/services/work_5.jpg",
       category: "School Website Development",
-      title: "Inspiring Young Learners",
+      title: "Building Brighter Futures Through Quality Education",
       description:
-        "A modern, responsive school website designed to highlight nursery and primary education, showcase learning programs, and make admission enquiries easier for parents",
+        "A modern school website designed to highlight academic excellence, showcase educational programs, communicate institutional values, and strengthen parent engagement through accessible information and responsive layouts",
       link: "https://littel-star-nursery-and-primary-sch.vercel.app/",
     },
     {
       image: "/images/services/work_6.jpg",
       category: "Preschool & Daycare Website Development",
-      title: "Where Learning Meets Care",
+      title: "Creating Safe Spaces for Learning and Growth",
       description:
-        "A responsive preschool website designed to highlight play-based learning, showcase childcare programs, build parent trust, and simplify admission enquiries in Chennai.",
+        "A responsive preschool and daycare website designed to showcase childcare programs, highlight learning activities, build parent confidence, and simplify admissions through intuitive navigation and engaging visuals",
       link: "https://arudra-s-six.vercel.app/",
     },
   ];
@@ -118,7 +118,7 @@ export default function ServicesRecentWorks({
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed">
                     {proj.description}
                   </p>
                 </div>

@@ -39,18 +39,19 @@ export default function PortfolioHero({
 
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 text-center relative z-10">
         {/* Top Pill Badge */}
-        <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-8 hover:scale-[1.02] transition-transform">
-          <span>Portfolio</span>
+        <div className="inline-flex items-center justify-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-8 hover:scale-[1.02] transition-transform max-w-full">
+          <span>Website Development Projects That Drive Business Growth</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto">
-          Turning Vision Into Reality
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black tracking-[-1.5px] leading-[1.12] mb-6 max-w-5xl mx-auto [text-wrap:balance]">
+          Creative Web Design &amp; Custom Digital{" "}
+          <span className="text-[#2563eb]">Solutions for Modern Businesses</span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-3xl mx-auto mb-10 italic">
-          Explore a selection of our work showcasing innovative solutions, scalable products, and impactful digital experiences built for growing businesses.
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 font-normal leading-relaxed max-w-4xl mx-auto mb-10 italic [text-wrap:balance]">
+          At Duhzine IT Solutions, we create professional, responsive, and SEO-friendly websites for diverse industries. Our portfolio showcases business and e-commerce projects, combining creative design and modern technology to help brands grow digitally.
         </p>
 
         {/* CTA Buttons */}
