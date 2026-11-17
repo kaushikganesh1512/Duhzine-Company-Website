@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import TypingHeroTitle from "@/components/TypingHeroTitle";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 interface PortfolioHeroProps {
   onContactClick: () => void;
@@ -87,7 +88,7 @@ export default function PortfolioHero({
               }`}
             >
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 tracking-tight font-sans">
-                {item.number}
+                <AnimatedCounter value={item.number} duration={1800} />
               </div>
               <div className="text-xs sm:text-sm md:text-base font-medium text-gray-800 mt-2">
                 {item.label}

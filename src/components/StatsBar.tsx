@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const stats = [
   { value: "800+", label: "Completed Projects" },
@@ -35,11 +36,15 @@ const row2Logos = [
 ];
 
 export default function StatsBar() {
+  // Repeat items for seamless continuous looping in infinite marquee
+  const repeatedRow1 = [...row1Logos, ...row1Logos, ...row1Logos, ...row1Logos];
+  const repeatedRow2 = [...row2Logos, ...row2Logos, ...row2Logos, ...row2Logos];
+
   return (
-    <section className="w-full py-10 md:py-14 bg-[#f4f7ff] relative overflow-hidden">
+    <section className="w-full py-12 md:py-16 bg-[#f4f7ff] relative overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        {/* Key Numerical Stats Row */}
-        <div className="stagger-container grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-8 md:gap-0 pb-10">
+        {/* Key Numerical Stats Row with Smooth Counted Effect on First View */}
+        <div className="stagger-container grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-8 md:gap-0 pb-12">
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
@@ -47,8 +52,8 @@ export default function StatsBar() {
                 idx < stats.length - 1 ? "md:border-r md:border-gray-300" : ""
               }`}
             >
-              <span className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-blue-600 tracking-tight leading-none mb-3 group-hover:scale-105 transition-transform duration-300 inline-block">
-                {stat.value}
+              <span className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-blue-600 tracking-tight leading-none mb-3 group-hover:scale-105 transition-transform duration-300 inline-block font-sans">
+                <AnimatedCounter value={stat.value} duration={1800} />
               </span>
               <span className="text-sm sm:text-base font-medium text-gray-700 leading-snug">
                 {stat.label}
@@ -57,91 +62,57 @@ export default function StatsBar() {
           ))}
         </div>
 
-        {/* Section Heading */}
-        <div className="reveal-on-scroll text-center pt-2 pb-8">
+        {/* Section Subheading */}
+        <div className="text-center pt-2 pb-8">
           <p className="text-base sm:text-lg font-semibold text-gray-700 tracking-tight">
             Over 50+ Business Trust Us
           </p>
         </div>
+      </div>
 
-        {/* Partner Logos: Mobile 4-in-a-row + 2-centered, Desktop 2 rows of 9 */}
-        <div className="stagger-container w-full flex flex-col items-center">
-          {/* Mobile Layout (< md): 4 per line continuously + last 2 centered in final line */}
-          <div className="flex md:hidden flex-col items-center w-full max-w-[340px] sm:max-w-[400px] mx-auto">
-            {/* First 16 logos (4 rows of 4) */}
-            <div className="grid grid-cols-4 gap-2.5 sm:gap-3 justify-items-center w-full">
-              {[...row1Logos, ...row2Logos].slice(0, 16).map((logo, idx) => (
-                <div
-                  key={`m-grid-${idx}`}
-                  className="stagger-item interactive-card w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 active:scale-95 transition-all cursor-pointer"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={76}
-                    height={76}
-                    className="w-full h-full object-contain rounded-xl"
-                  />
-                </div>
-              ))}
-            </div>
+      {/* Brand Logos Continuous Scrolling Motion Showcase */}
+      <div className="relative w-full overflow-hidden flex flex-col gap-4 sm:gap-6 py-2">
+        {/* Left & Right Gradient Shadows for Soft Fade Effect */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-40 bg-gradient-to-r from-[#f4f7ff] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-40 bg-gradient-to-l from-[#f4f7ff] to-transparent z-10" />
 
-            {/* Last 2 logos centered in the last line */}
-            <div className="flex items-center justify-center gap-2.5 sm:gap-3 w-full mt-2.5 sm:mt-3">
-              {[...row1Logos, ...row2Logos].slice(16, 18).map((logo, idx) => (
-                <div
-                  key={`m-last-${idx}`}
-                  className="stagger-item interactive-card w-[68px] h-[68px] sm:w-[76px] sm:h-[76px] rounded-2xl bg-white flex items-center justify-center p-2 shadow-xs border border-gray-100/90 active:scale-95 transition-all cursor-pointer"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={76}
-                    height={76}
-                    className="w-full h-full object-contain rounded-xl"
-                  />
-                </div>
-              ))}
-            </div>
+        {/* First Line: Scrolls continuously to the LEFT */}
+        <div className="flex w-full overflow-hidden">
+          <div className="animate-marquee flex items-center gap-3 sm:gap-5 lg:gap-6 shrink-0 pr-3 sm:pr-5 lg:pr-6">
+            {repeatedRow1.map((logo, idx) => (
+              <div
+                key={`scroll-left-${idx}`}
+                className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={88}
+                  height={88}
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Desktop Layout (>= md): 2 Rows of 9 Partner Logos */}
-          <div className="hidden md:flex flex-col gap-5 sm:gap-6 items-center w-full">
-            {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
-              {row1Logos.map((logo, idx) => (
-                <div
-                  key={`r1-${idx}`}
-                  className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={88}
-                    height={88}
-                    className="w-full h-full object-contain rounded-xl"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 w-full">
-              {row2Logos.map((logo, idx) => (
-                <div
-                  key={`r2-${idx}`}
-                  className="stagger-item interactive-card w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={88}
-                    height={88}
-                    className="w-full h-full object-contain rounded-xl"
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Second Line: Scrolls continuously to the RIGHT */}
+        <div className="flex w-full overflow-hidden">
+          <div className="animate-marquee-reverse flex items-center gap-3 sm:gap-5 lg:gap-6 shrink-0 pr-3 sm:pr-5 lg:pr-6">
+            {repeatedRow2.map((logo, idx) => (
+              <div
+                key={`scroll-right-${idx}`}
+                className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-2xl bg-white flex items-center justify-center p-2.5 shadow-xs border border-gray-100/90 hover:scale-110 hover:shadow-md transition-all duration-300 cursor-pointer"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={88}
+                  height={88}
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
