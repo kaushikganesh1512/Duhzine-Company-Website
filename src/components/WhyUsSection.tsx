@@ -71,7 +71,7 @@ export default function WhyUsSection({ title, highlight }: WhyUsSectionProps) {
         </h2>
 
         {/* Subtitle */}
-        <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
+        <p className="text-gray-700 font-normal text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
           We design, develop, and implement digital solutions that help businesses
           work smarter, operate efficiently, and grow with confidence.
         </p>

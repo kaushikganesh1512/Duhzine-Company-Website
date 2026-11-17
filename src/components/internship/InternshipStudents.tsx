@@ -44,7 +44,7 @@ export default function InternshipStudents({ onJoinClick }: InternshipStudentsPr
             Helping 1,000+ Students Build Successful Careers
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance]">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             Over 1,000 students have successfully completed their internships at Duhzine,
             gaining hands-on experience, expert mentorship, and industry-ready skills to launch
             successful careers in technology.

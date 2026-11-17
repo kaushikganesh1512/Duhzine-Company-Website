@@ -152,7 +152,7 @@ export default function PortfolioSection({
           >
             Real Projects. Digital Solutions.
           </h2>
-          <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl italic">
+          <p className="text-gray-700 font-normal text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl italic">
             Explore selected projects that demonstrate our experience in creating
             professional websites, e-commerce platforms, and digital experiences
             for businesses across different industries.

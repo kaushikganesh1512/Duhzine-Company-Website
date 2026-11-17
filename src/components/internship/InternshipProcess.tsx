@@ -43,7 +43,7 @@ export default function InternshipProcess() {
             Our Simple &amp; Transparent Hiring Process
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             We believe in hiring talented individuals through a fair, efficient, and
             candidate-friendly process. From your application to joining our team, every step is
             designed to help you showcase your skills and find the right opportunity at Duhzine.

@@ -38,7 +38,7 @@ export default function InternshipInstitutes({ onPartnerClick }: InternshipInsti
             Supporting Students Through Industry Exposure
           </h2>
 
-          <div className="mt-4 space-y-3 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance]">
+          <div className="mt-4 space-y-3 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             <p>
               Duhzine IT Solutions collaborates with 20+ educational institutes to provide
               students with opportunities to gain practical exposure to technology and digital

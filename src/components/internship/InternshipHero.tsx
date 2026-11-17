@@ -51,7 +51,7 @@ export default function InternshipHero() {
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-sm sm:text-base lg:text-[17px] text-neutral-600 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
+          <p className="mt-6 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             Gain practical industry exposure by working on real-world technology projects at
             Duhzine IT Solutions. Our internship programs are designed for college students,
             recent graduates, and freshers who want to develop practical skills, gain

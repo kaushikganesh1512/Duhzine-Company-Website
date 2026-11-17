@@ -29,7 +29,7 @@ export default function AboutWorkspace() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance]">
+        <p className="text-base sm:text-lg text-gray-700 font-normal max-w-3xl mx-auto leading-relaxed [text-wrap:balance] italic">
           At Duhzine IT Solutions, our workspace is more than just an office — it&apos;s a place where ideas come to life, creativity thrives, and innovation drives us forward.
         </p>
       </div>

@@ -99,7 +99,7 @@ export default function ProcessSection(): React.ReactNode {
             >
               From Idea to Launch - A Clear Development Process
             </h2>
-            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
+            <p className="text-gray-700 font-normal text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
               We follow a structured approach that keeps your project
               focused, transparent, and aligned with your business
               objectives.

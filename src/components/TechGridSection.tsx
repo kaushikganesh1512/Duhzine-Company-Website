@@ -50,7 +50,7 @@ export default function TechGridSection({ onIndustryClick }: TechGridSectionProp
             >
               Technology That Adapts to Different Business Needs
             </h2>
-            <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
+            <p className="text-gray-700 font-normal text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
               We provide digital solutions for businesses across multiple
               industries, helping organizations streamline operations, improve
               customer experiences, and strengthen their digital presence.

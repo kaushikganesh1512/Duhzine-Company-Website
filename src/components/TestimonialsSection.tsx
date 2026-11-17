@@ -62,7 +62,7 @@ export default function TestimonialsSection({
           >
             What Our Clients Say
           </h2>
-          <p className="font-medium text-black text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
+          <p className="text-gray-700 font-normal text-base sm:text-lg md:text-[19px] tracking-[-0.36px] leading-[28px] sm:leading-[30px] max-w-3xl [text-wrap:balance] italic">
             Our clients value our professional approach, understanding of their
             requirements, quality of delivery, and commitment to creating
             practical digital solutions.
