@@ -31,20 +31,20 @@ export default function CareersProcess() {
   ];
 
   return (
-    <section className="relative w-full bg-[#f8faff] py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full bg-[#f8faff] py-12 md:py-16 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           {/* Pill Badge */}
-          <div className="inline-flex items-center justify-center px-5 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-5 hover:scale-[1.02] transition-transform">
+          <div className="inline-flex items-center justify-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap">
             <span>Hiring Process</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-tight mb-4 [text-wrap:balance]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug mb-4 [text-wrap:balance]">
             Our Simple &amp; Transparent Hiring Process
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal leading-relaxed italic [text-wrap:balance]">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             We believe in hiring talented individuals through a fair, efficient, and candidate-friendly process. From your application to joining our team, every step is designed to help you showcase your skills and find the right opportunity at Duhzine.
           </p>
         </div>
@@ -58,10 +58,10 @@ export default function CareersProcess() {
             {steps.map((step, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col items-center text-center bg-white p-6 sm:p-7 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+                className="group flex flex-col items-center text-center bg-white p-6 sm:p-7 rounded-3xl border border-neutral-100 shadow-[0_2px_12px_-2px_rgba(16,24,40,0.06)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
               >
                 {/* Number Circle Badge */}
-                <div className="w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-extrabold text-base flex items-center justify-center shadow-md mb-6 relative group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-white border-2 border-blue-600 text-blue-600 font-extrabold text-lg flex items-center justify-center shadow-md mb-6 relative group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-[0px_0px_0px_6px_rgba(37,99,235,0.25)] transition-all duration-300">
                   <span>{step.number}</span>
                 </div>
 
@@ -71,7 +71,7 @@ export default function CareersProcess() {
                 </h3>
 
                 {/* Step Description */}
-                <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-gray-700 font-normal leading-relaxed italic">
                   {step.description}
                 </p>
               </div>

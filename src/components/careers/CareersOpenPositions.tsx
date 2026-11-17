@@ -140,20 +140,17 @@ interface CareersOpenPositionsProps {
 export default function CareersOpenPositions({
   onApply,
 }: CareersOpenPositionsProps) {
-  // Track expanded cards
-  const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({});
+  // Synchronized view state across all cards
+  const [isExpandedAll, setIsExpandedAll] = useState(false);
 
-  const toggleExpand = (id: string) => {
-    setExpandedCards((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+  const toggleExpandAll = () => {
+    setIsExpandedAll((prev) => !prev);
   };
 
   return (
     <section
       id="open-positions"
-      className="relative w-full bg-[#f4f7fc] py-16 md:py-24 overflow-hidden"
+      className="relative w-full bg-[#f4f7fc] py-12 md:py-16 overflow-hidden"
     >
       {/* Decorative 3D Crystal Disco Sphere (Right Side - Matching Image 3 Reference) */}
       <div className="hidden xl:block absolute right-0 bottom-10 w-[180px] 2xl:w-[220px] pointer-events-none select-none z-10 scale-x-[-1] opacity-90">
@@ -170,31 +167,30 @@ export default function CareersOpenPositions({
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">
           {/* Pill Badge */}
-          <div className="inline-flex items-center justify-center px-5 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-5 hover:scale-[1.02] transition-transform">
+          <div className="inline-flex items-center justify-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap">
             <span>Open Positions</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-tight mb-4 [text-wrap:balance]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug mb-4 [text-wrap:balance]">
             Full-Time Opportunities at Duhzine
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal leading-relaxed italic [text-wrap:balance]">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             Explore our current openings and find a role that matches your skills and career goals.
           </p>
         </div>
 
-        {/* 6 Role Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        {/* 6 Role Cards Grid - Equal height cards aligned at start and end */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {jobRoles.map((role) => {
             const Icon = role.icon;
-            const isExpanded = !!expandedCards[role.id];
 
             return (
               <div
                 key={role.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-gray-100/90 shadow-[0px_2px_12px_rgba(16,24,40,0.06)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                className="h-full flex flex-col justify-between bg-white rounded-3xl p-7 lg:p-8 border border-neutral-100 shadow-[0_2px_12px_-2px_rgba(16,24,40,0.06)] hover:shadow-xl transition-all duration-300"
               >
-                <div>
+                <div className="flex-1 flex flex-col">
                   {/* Icon & Title Row */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-12 h-12 rounded-full bg-[#edf5ff] flex items-center justify-center text-blue-600 shadow-xs">
@@ -210,13 +206,13 @@ export default function CareersOpenPositions({
                     {role.title}
                   </h3>
 
-                  {/* Short Summary Description */}
-                  <p className="text-sm text-gray-600 font-normal leading-relaxed mb-4 italic">
+                  {/* Short Summary Description with consistent height across rows */}
+                  <p className="text-sm text-gray-700 font-normal leading-relaxed mb-4 italic min-h-[72px] sm:min-h-[80px]">
                     {role.description}
                   </p>
 
-                  {/* Expanded Breakdown (Image 5 Display) */}
-                  {isExpanded && (
+                  {/* Expanded Breakdown (Synchronized across all cards) */}
+                  {isExpandedAll && (
                     <div className="pt-4 border-t border-gray-100 space-y-4 animate-in fade-in duration-200">
                       <div>
                         <h4 className="text-xs uppercase font-bold text-gray-900 tracking-wider mb-2">
@@ -239,7 +235,7 @@ export default function CareersOpenPositions({
                         <h4 className="text-xs uppercase font-bold text-gray-900 tracking-wider mb-1.5">
                           Tools &amp; Technologies:
                         </h4>
-                        <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed">
+                        <p className="text-xs sm:text-sm text-gray-600 font-normal leading-relaxed min-h-[36px]">
                           {role.tools}
                         </p>
                       </div>
@@ -247,18 +243,18 @@ export default function CareersOpenPositions({
                   )}
                 </div>
 
-                {/* Bottom Actions */}
-                <div className="mt-6 pt-3 flex flex-col gap-3">
-                  {/* View More / View Less Link */}
+                {/* Bottom Actions - Aligned at same bottom baseline */}
+                <div className="mt-auto pt-6 flex flex-col gap-3">
+                  {/* View More / View Less Link (Synchronized) */}
                   <button
                     type="button"
-                    onClick={() => toggleExpand(role.id)}
+                    onClick={toggleExpandAll}
                     className="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 underline cursor-pointer self-start transition-colors"
                   >
-                    <span>{isExpanded ? "View less" : "View more"}</span>
+                    <span>{isExpandedAll ? "View less" : "View more"}</span>
                     <ArrowUpRight
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        isExpanded ? "rotate-180" : ""
+                        isExpandedAll ? "rotate-180" : ""
                       }`}
                     />
                   </button>

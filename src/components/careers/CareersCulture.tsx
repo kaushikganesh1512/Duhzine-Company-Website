@@ -26,20 +26,20 @@ export default function CareersCulture() {
   ];
 
   return (
-    <section className="relative w-full bg-[#f8faff] py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full bg-[#f8faff] py-12 md:py-16 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14">
           {/* Pill Badge */}
-          <div className="inline-flex items-center justify-center px-5 py-1.5 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-5 hover:scale-[1.02] transition-transform">
+          <div className="inline-flex items-center justify-center px-4 sm:px-6 py-1.5 sm:py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-6 hover:scale-[1.02] transition-transform whitespace-nowrap">
             <span>Work • Learn • Grow</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight leading-tight mb-4 [text-wrap:balance]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-neutral-900 tracking-tight leading-snug mb-4 [text-wrap:balance]">
             Build a Meaningful Career at Duhzine
           </h2>
 
-          <p className="text-base sm:text-lg text-gray-700 font-normal leading-relaxed italic [text-wrap:balance]">
+          <p className="mt-4 text-sm sm:text-base lg:text-[17px] text-gray-700 font-normal leading-relaxed max-w-3xl [text-wrap:balance] italic">
             More than just a job — it’s a place to gain real experience, learn from experts, and grow your career in the digital industry.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function CareersCulture() {
             return (
               <div
                 key={idx}
-                className="stagger-item interactive-card group bg-white rounded-3xl p-8 sm:p-9 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-start cursor-pointer"
+                className="stagger-item interactive-card group bg-white rounded-3xl p-8 sm:p-9 border border-neutral-100 shadow-[0_2px_12px_-2px_rgba(16,24,40,0.06)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-start cursor-pointer"
               >
                 <div className="w-14 h-14 rounded-full bg-[#edf5ff] group-hover:bg-blue-600 flex items-center justify-center text-blue-600 group-hover:text-white mb-6 shadow-xs group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-7 h-7 stroke-[1.8] transition-colors duration-300" />
@@ -59,7 +59,7 @@ export default function CareersCulture() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors duration-200">
                   {card.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed italic">
+                <p className="text-sm sm:text-base text-gray-700 font-normal leading-relaxed italic">
                   {card.description}
                 </p>
               </div>
