@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ScrollAnimationProvider from "@/components/ScrollAnimationProvider";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const viewport: Viewport = {
   themeColor: "#2563eb",
@@ -56,6 +58,8 @@ export default function RootLayout({
         <ScrollAnimationProvider>
           {children}
         </ScrollAnimationProvider>
+        <WhatsAppFloatingButton />
+        <ScrollToTopButton />
       </body>
     </html>
   );

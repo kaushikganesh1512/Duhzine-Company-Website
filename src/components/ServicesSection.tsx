@@ -134,10 +134,35 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 relative bg-[#f4f7ff] px-4 sm:px-6 lg:px-8 py-12 md:py-16 overflow-hidden"
+      className="relative w-full bg-[#f4f7ff] py-12 md:py-16 overflow-hidden"
       aria-labelledby="services-heading"
     >
-      {/* Header */}
+      {/* Decorative 3D Disco Sphere (Left - aligned vertically with top service card) */}
+      <div className="hidden lg:block absolute left-0 top-[220px] xl:top-[260px] 2xl:top-[280px] w-[130px] xl:w-[170px] 2xl:w-[200px] pointer-events-none select-none z-10">
+        <Image
+          src="/images/services_disco_left.png"
+          alt="Decorative 3D Crystal Disco Sphere"
+          width={200}
+          height={570}
+          className="w-full h-auto object-contain object-left block"
+          priority
+        />
+      </div>
+
+      {/* Decorative 3D Iridescent Dome (Right - aligned vertically with bottom service card) */}
+      <div className="hidden lg:block absolute right-0 bottom-[80px] xl:bottom-[120px] 2xl:bottom-[150px] w-[160px] xl:w-[220px] 2xl:w-[260px] pointer-events-none select-none z-10">
+        <Image
+          src="/images/services_dome_right.png"
+          alt="Decorative 3D Iridescent Dome"
+          width={336}
+          height={380}
+          className="w-full h-auto object-contain object-right block"
+        />
+      </div>
+
+      {/* Inner Container */}
+      <div className="flex flex-col w-full max-w-7xl mx-auto items-center gap-14 px-4 sm:px-6 lg:px-8 relative z-20">
+        {/* Header */}
       <div className="reveal-on-scroll flex flex-col items-center gap-6 relative self-stretch w-full text-center">
         {/* Pill Badge */}
         <div className="inline-flex items-center justify-center px-6 py-2 rounded-full bg-blue-600 text-white text-xs sm:text-sm font-semibold tracking-wide shadow-sm shadow-blue-500/20 mb-2 hover:scale-[1.02] transition-transform">
@@ -263,6 +288,7 @@ export default function ServicesSection({
             </article>
           );
         })}
+      </div>
       </div>
     </section>
   );

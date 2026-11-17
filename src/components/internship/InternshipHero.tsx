@@ -86,15 +86,15 @@ export default function InternshipHero() {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-7 lg:p-8 border border-neutral-100 shadow-[0_2px_12px_-2px_rgba(16,24,40,0.06)] hover:shadow-[0_12px_28px_-6px_rgba(16,24,40,0.1)] transition-all duration-300 flex flex-col items-start"
+                className="stagger-item interactive-card group bg-white rounded-3xl p-7 lg:p-9 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-start cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 stroke-[2.2]" />
+                <div className="w-14 h-14 rounded-2xl bg-[#edf5ff] group-hover:bg-blue-600 flex items-center justify-center text-blue-600 group-hover:text-white mb-6 shadow-xs group-hover:scale-110 transition-all duration-300">
+                  <Icon className="w-7 h-7 stroke-[1.8] transition-colors duration-300" />
                 </div>
-                <h3 className="text-lg lg:text-xl font-bold text-neutral-900 tracking-tight mb-3">
+                <h3 className="text-lg lg:text-xl font-bold text-neutral-900 tracking-tight mb-3 group-hover:text-blue-600 transition-colors duration-200">
                   {card.title}
                 </h3>
-                <p className="text-sm text-neutral-600 font-normal leading-relaxed">
+                <p className="text-sm text-neutral-600 font-normal leading-relaxed italic">
                   {card.description}
                 </p>
               </div>

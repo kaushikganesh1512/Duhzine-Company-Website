@@ -92,7 +92,7 @@ export default function CrmSolutions({ onContactClick }: CrmSolutionsProps) {
                 <div>
                   {/* Top Icon and Category Pill */}
                   <div className="flex flex-col items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-indigo-50 text-blue-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-indigo-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300">
                       <Icon className="w-6 h-6 stroke-[2]" />
                     </div>
 

@@ -26,6 +26,26 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+
+    const messageLines = [
+      `*New Strategy Call Booking - Duhzine IT Solutions*`,
+      `---------------------------------`,
+      `*Name:* ${formData.name}`,
+      `*Work Email:* ${formData.email}`,
+      `*Phone Number:* ${formData.phone || "Not provided"}`,
+      `*Company / Organization:* ${formData.company || "Not provided"}`,
+      `*Preferred Date:* ${formData.date || "Not specified"}`,
+      `*Preferred Time:* ${formData.time}`,
+      `*Primary Area of Interest:* ${formData.service}`,
+      `*Project Overview:* ${formData.notes ? formData.notes : "None"}`,
+      `---------------------------------`,
+      `_Sent from Duhzine Website (Book a Call)_`,
+    ];
+
+    const message = messageLines.join("\n");
+    const encoded = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919841483195?text=${encoded}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleReset = () => {
@@ -62,16 +82,29 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4 border border-emerald-100 shadow-inner">
                 <CheckCircle2 className="w-9 h-9" />
               </div>
-              <h4 className="text-xl font-bold text-slate-900">Call Scheduled!</h4>
-              <p className="text-sm text-slate-600 mt-2 max-w-xs mx-auto">
-                Thank you, <span className="font-semibold text-slate-800">{formData.name}</span>. Our team in Navalur, Chennai will confirm your invite at <span className="font-medium text-blue-600">{formData.email}</span>.
+              <h4 className="text-xl font-bold text-slate-900">Booking Details Sent!</h4>
+              <p className="text-sm text-slate-600 mt-2 max-w-sm mx-auto">
+                Thank you, <span className="font-semibold text-slate-800">{formData.name}</span>. Your details have been forwarded directly to our team via WhatsApp at <span className="font-semibold text-emerald-600">+91 98414 83195</span>.
               </p>
-              <button
-                onClick={handleReset}
-                className="mt-6 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-semibold transition-all shadow-md shadow-blue-500/20"
-              >
-                Done
-              </button>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={`https://wa.me/919841483195?text=${encodeURIComponent(
+                    `*New Strategy Call Booking - Duhzine IT Solutions*\n---------------------------------\n*Name:* ${formData.name}\n*Work Email:* ${formData.email}\n*Phone Number:* ${formData.phone || "Not provided"}\n*Company:* ${formData.company || "Not provided"}\n*Preferred Date:* ${formData.date || "Not specified"}\n*Preferred Time:* ${formData.time}\n*Area of Interest:* ${formData.service}\n*Project Overview:* ${formData.notes || "None"}\n---------------------------------\n_Sent from Duhzine Website (Book a Call)_`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-sm font-semibold transition-all shadow-md shadow-emerald-500/20 inline-flex items-center justify-center gap-2"
+                >
+                  <span>Open WhatsApp</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="w-full sm:w-auto px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm font-semibold transition-all shadow-md shadow-blue-500/20"
+                >
+                  Done
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
