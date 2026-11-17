@@ -45,7 +45,7 @@ export default function AboutFaq() {
     },
     {
       q: "10. How can I contact Duhzine?",
-      a: "You can reach us directly via phone at +91 98414 83195 or 9566123876, chat with our experts on WhatsApp, or email us at info@duhzineitsolutions.com. We are available 24/7 for project enquiries.",
+      a: "You can reach us directly via phone or WhatsApp at +91 98414 83195, or email us at info@duhzineitsolutions.com. We are available 24/7 for project enquiries.",
     },
   ];
 

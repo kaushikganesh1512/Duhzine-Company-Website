@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 shrink-0">
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/919566123876"
+                href="https://wa.me/919841483195"
                 target="_blank"
                 rel="noreferrer"
                 className="interactive-btn inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-emerald-900/30 active:scale-[0.98] cursor-pointer"
@@ -65,14 +65,14 @@ export default function Footer() {
 
               {/* Call Us Button (Same dimensions & styling as Chat on WhatsApp) */}
               <a
-                href="tel:9566123876"
+                href="tel:+919841483195"
                 className="interactive-btn inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold text-xs sm:text-base whitespace-nowrap transition-all shadow-md shadow-sky-900/30 active:scale-[0.98] cursor-pointer"
               >
                 {/* Clean Telephone Vector Icon */}
                 <svg className="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24">
                   <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.057 15.057 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 3.93c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.55c0-.55-.45-1-.99-1z" />
                 </svg>
-                <span>Call Us: 9566123876</span>
+                <span>Call Us: 98414 83195</span>
               </a>
             </div>
           </div>
@@ -103,7 +103,12 @@ export default function Footer() {
               {/* Contact Info List with Exact Icons from User Reference */}
               <div className="flex flex-col gap-3.5 text-xs sm:text-sm text-gray-300">
                 {/* Location with Google Maps white rounded tile */}
-                <div className="flex items-center gap-3">
+                <a
+                  href="https://maps.app.goo.gl/LqtuPnL2SJShiA4T9"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 hover:text-blue-400 transition-colors group"
+                >
                   <div className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 relative">
                     <Image
                       src="/images/footer_icons/icon_map.png"
@@ -115,8 +120,10 @@ export default function Footer() {
                       unoptimized
                     />
                   </div>
-                  <span className="font-normal text-gray-200">OMR, Navalur, Chennai - 600130</span>
-                </div>
+                  <span className="font-normal text-gray-200 group-hover:text-blue-400 transition-colors">
+                    OMR, Navalur, Chennai - 600130
+                  </span>
+                </a>
 
                 {/* Phone with dark navy blue rounded tile */}
                 <div className="flex items-center gap-3">
@@ -165,7 +172,7 @@ export default function Footer() {
               <div className="flex items-center gap-3.5 sm:gap-4 mt-6">
                 {/* LinkedIn */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/company/duhzine-it-solutions/"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
@@ -203,7 +210,7 @@ export default function Footer() {
 
                 {/* Facebook */}
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61594229581363"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"
@@ -222,7 +229,7 @@ export default function Footer() {
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/duhzinewebsite?vrfl=MWllcjdoNzZoNmgyYw=="
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 relative transition-transform duration-200 hover:scale-105 active:scale-95 cursor-pointer"

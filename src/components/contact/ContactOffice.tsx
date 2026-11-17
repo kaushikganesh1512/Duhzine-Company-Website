@@ -4,8 +4,7 @@ import React from "react";
 import { MapPin, Navigation } from "lucide-react";
 
 export default function ContactOffice() {
-  const directionsUrl =
-    "https://www.google.com/maps/dir//Duhzine+IT+Solutions+Private+Limited,+Gks+Complex,+Navalur,+Tamil+Nadu+600130/@12.8647168,80.2208208,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a525b91275de61b:0xf821d17ca667095a!2m2!1d80.2270656!2d12.8434055";
+  const directionsUrl = "https://maps.app.goo.gl/LqtuPnL2SJShiA4T9";
 
   return (
     <section className="w-full bg-[#f4f7ff] py-14 md:py-20">

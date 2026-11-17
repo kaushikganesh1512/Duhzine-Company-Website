@@ -32,7 +32,7 @@ export default function CtaSection({}: CtaSectionProps) {
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 shrink-0">
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/919566123876"
+              href="https://wa.me/919841483195"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
@@ -46,7 +46,7 @@ export default function CtaSection({}: CtaSectionProps) {
 
             {/* Call Us Button */}
             <a
-              href="tel:9566123876"
+              href="tel:+919841483195"
               className="inline-flex items-center justify-center gap-2.5 w-[205px] sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs sm:text-sm whitespace-nowrap transition-all shadow-md hover:scale-[1.02] active:scale-[0.98]"
             >
               {/* Phone Icon */}
@@ -61,7 +61,7 @@ export default function CtaSection({}: CtaSectionProps) {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span>Call Us: 9566123876</span>
+              <span>Call Us: 98414 83195</span>
             </a>
           </div>
         </div>
