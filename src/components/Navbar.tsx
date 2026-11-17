@@ -18,6 +18,8 @@ export default function Navbar({ onBookCall }: NavbarProps) {
   const isPortfolioPage = pathname === "/portfolio";
   const isContactPage = pathname === "/contact";
   const isInternshipPage = pathname === "/internship";
+  const isFullTimePage = pathname === "/careers" || pathname === "/careers/full-time";
+  const isCareersPage = isInternshipPage || isFullTimePage;
 
   const activeNavigation = (() => {
     if (isAboutPage) return "About";
@@ -25,7 +27,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     if (isCrmPage) return "CRM";
     if (isPortfolioPage) return "Portfolio";
     if (isContactPage) return "Contact";
-    if (isInternshipPage) return "Careers";
+    if (isCareersPage) return "Careers";
     return "Home";
   })();
 
@@ -61,10 +63,10 @@ export default function Navbar({ onBookCall }: NavbarProps) {
     { label: "CRM", href: "/crm" },
     {
       label: "Careers",
-      href: "/internship",
+      href: "/careers",
       isDropdown: true,
       children: [
-        { label: "Full time", href: "#" },
+        { label: "Full time", href: "/careers" },
         { label: "Internship", href: "/internship" },
       ],
     },
@@ -112,13 +114,13 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     aria-expanded={careersDropdownOpen}
                     aria-haspopup="true"
                     className={`inline-flex items-center text-sm md:text-base font-medium font-['Figtree',sans-serif] leading-4 transition-colors relative py-1 focus:outline-none cursor-pointer ${
-                      isActive || isInternshipPage
+                      isActive || isCareersPage
                         ? "text-blue-500 font-semibold"
                         : "text-white hover:text-blue-400"
                     }`}
                   >
                     <span>{item.label}</span>
-                    {(isActive || isInternshipPage) && (
+                    {(isActive || isCareersPage) && (
                       <span className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500 rounded-full" />
                     )}
                   </button>
@@ -131,17 +133,20 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                     role="menu"
                   >
                     <div className="bg-neutral-950 border border-neutral-800 rounded-xl shadow-2xl py-1.5 px-1">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault();
+                      <Link
+                        href="/careers"
+                        onClick={() => {
                           setCareersDropdownOpen(false);
                         }}
-                        className="w-full text-left block px-3.5 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-neutral-900 rounded-lg transition-colors cursor-pointer"
+                        className={`block px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                          isFullTimePage
+                            ? "text-blue-400 bg-blue-950/60 font-semibold"
+                            : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                        }`}
                         role="menuitem"
                       >
                         Full time
-                      </button>
+                      </Link>
 
                       <Link
                         href="/internship"
@@ -150,7 +155,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                         }}
                         className={`block px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
                           isInternshipPage
-                            ? "text-blue-400 bg-blue-950/50 font-semibold"
+                            ? "text-blue-400 bg-blue-950/60 font-semibold"
                             : "text-neutral-300 hover:text-white hover:bg-neutral-900"
                         }`}
                         role="menuitem"
@@ -220,7 +225,7 @@ export default function Navbar({ onBookCall }: NavbarProps) {
                       type="button"
                       onClick={() => setMobileCareersOpen((prev) => !prev)}
                       className={`w-full flex items-center justify-between text-base font-medium py-2 px-3 rounded-lg transition-colors cursor-pointer ${
-                        activeNavigation === item.label || isInternshipPage
+                        activeNavigation === item.label || isCareersPage
                           ? "text-blue-400 bg-blue-950/50 font-semibold"
                           : "text-neutral-200 hover:text-white hover:bg-neutral-900"
                       }`}
@@ -236,16 +241,19 @@ export default function Navbar({ onBookCall }: NavbarProps) {
 
                     {mobileCareersOpen && (
                       <div className="pl-6 pt-1 pb-1 flex flex-col space-y-1">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
+                        <Link
+                          href="/careers"
+                          onClick={() => {
                             setMobileMenuOpen(false);
                           }}
-                          className="w-full text-left text-sm font-medium py-2 px-3 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-900 transition-colors cursor-pointer"
+                          className={`text-sm font-medium py-2 px-3 rounded-md transition-colors ${
+                            isFullTimePage
+                              ? "text-blue-400 bg-blue-950/60 font-semibold"
+                              : "text-neutral-300 hover:text-white hover:bg-neutral-900"
+                          }`}
                         >
                           Full time
-                        </button>
+                        </Link>
                         <Link
                           href="/internship"
                           onClick={() => {
