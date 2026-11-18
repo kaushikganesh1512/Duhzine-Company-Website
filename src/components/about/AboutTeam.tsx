@@ -8,22 +8,22 @@ export default function AboutTeam() {
     {
       name: "Bhuvaneswari U",
       role: "Director of Duhzine",
-      image: "/images/about/team_member_1.png",
+      image: "/images/about/bhuvaneswari.png",
     },
     {
       name: "Saran Madhivannan",
       role: "Co-Founder",
-      image: "/images/about/team_member_2.png",
+      image: "/images/about/saran_co_founder.png",
     },
     {
       name: "Santhosh Kumar",
-      role: "Digital Marketing Manger",
-      image: "/images/about/team_member_1.png",
+      role: "Digital Marketing Manager",
+      image: "/images/about/santhosh_kumar.png",
     },
     {
       name: "Prathika Murugan",
       role: "Sr HR Recruiter",
-      image: "/images/about/team_member_2.png",
+      image: "/images/about/prathika_murugan.png",
     },
     {
       name: "Ajith P",
@@ -70,8 +70,8 @@ export default function AboutTeam() {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={100}
-                    height={100}
+                    width={160}
+                    height={180}
                     unoptimized
                     className="w-full h-full object-contain object-bottom"
                   />

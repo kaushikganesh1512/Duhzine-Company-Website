@@ -82,10 +82,10 @@ export default function Navbar({ onBookCall }: NavbarProps) {
       aria-label="Primary navigation"
     >
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-[64px] flex items-center justify-between">
-        {/* Duhzine Brand Logo (White with Blue dot on Black Navbar) */}
+        {/* Duhzine Brand Logo (Solid White text with Blue dot on Black Navbar) */}
         <Link href="/" className="flex items-center select-none py-1 group">
           <Image
-            src="/images/duhzine_logo_v3.png"
+            src="/images/duhzine_logo_white.png"
             alt="Duhzine IT Solutions"
             width={140}
             height={42}
