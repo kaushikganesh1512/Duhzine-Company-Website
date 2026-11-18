@@ -83,10 +83,10 @@ export default function Footer() {
           <div className="stagger-container relative z-10 px-8 sm:px-12 py-12 lg:py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {/* Column 1: Brand & Contact Info */}
             <div className="stagger-item flex flex-col items-start">
-              {/* Duhzine Logo (Solid White text with Blue dot) */}
+              {/* Duhzine Logo (Official High-Res White with Blue Dot) */}
               <div className="mb-5">
                 <Image
-                  src="/images/duhzine_logo_white.png"
+                  src="/images/duhzine_logo_v6.png"
                   alt="Duhzine IT Solutions Pvt. Ltd."
                   width={180}
                   height={52}

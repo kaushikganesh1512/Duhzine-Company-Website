@@ -45,7 +45,7 @@ export default function PortfolioProjects({
       link: "https://dannyenterprises.co.in",
     },
     {
-      image: "/images/portfolio/work_5.jpg",
+      image: "/images/portfolio/bk_packers_mockup.jpg",
       category: "Packers & Movers Website Development",
       title: "Moving Your Belongings Safely, Smoothly, and Stress-Free.",
       description:

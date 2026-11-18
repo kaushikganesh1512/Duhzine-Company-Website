@@ -21,7 +21,7 @@ export default function ServicesRecentWorks({
       link: "https://dannyenterprises.co.in",
     },
     {
-      image: "/images/services/work_2.jpg",
+      image: "/images/services/bk_packers_mockup.jpg",
       category: "Packers & Movers Website Development",
       title: "Moving Your Belongings Safely, Smoothly, and Stress-Free.",
       description:
