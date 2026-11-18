@@ -28,12 +28,12 @@ export default function AboutTeam() {
     {
       name: "Ajith P",
       role: "Sr HR Recruiter",
-      image: "/images/about/team_member_2.png",
+      image: "/images/about/ajith_p.png",
     },
     {
       name: "Gopinath",
       role: "Digital Marketing & Admin",
-      image: "/images/about/team_member_1.png",
+      image: "/images/about/gopinath.png",
     },
   ];
 
@@ -63,29 +63,33 @@ export default function AboutTeam() {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="stagger-item interactive-card bg-white rounded-[32px] p-8 shadow-lg flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group cursor-pointer"
+                className="stagger-item interactive-card bg-white rounded-[32px] p-6 sm:p-7 shadow-lg flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group cursor-pointer"
               >
-                {/* Blue Container with Avatar */}
-                <div className="w-28 h-32 bg-blue-600 rounded-[28px] relative flex items-end justify-center overflow-hidden mb-6 shadow-inner group-hover:scale-105 transition-transform duration-300">
+                {/* Large Professional Avatar Container (Big person image instead of small blue box) */}
+                <div className="w-full max-w-[240px] h-[250px] sm:h-[270px] rounded-2xl sm:rounded-3xl bg-slate-50/80 border border-slate-100/70 relative flex items-end justify-center overflow-hidden mb-5 group-hover:scale-[1.02] transition-transform duration-300">
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={160}
-                    height={180}
+                    width={380}
+                    height={440}
                     unoptimized
-                    className="w-full h-full object-contain object-bottom"
+                    className="w-full h-full object-contain object-bottom transition-transform duration-300 group-hover:scale-105"
+                    priority={index < 3}
                   />
                 </div>
 
-                {/* Name */}
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
-                  {member.name}
-                </h3>
+                {/* Member Info */}
+                <div className="flex flex-col items-center">
+                  {/* Name */}
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+                    {member.name}
+                  </h3>
 
-                {/* Role */}
-                <p className="text-sm font-semibold text-gray-600 mt-1.5 leading-snug">
-                  {member.role}
-                </p>
+                  {/* Role */}
+                  <p className="text-sm font-semibold text-gray-600 mt-1.5 leading-snug">
+                    {member.role}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

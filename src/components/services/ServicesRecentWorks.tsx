@@ -18,6 +18,7 @@ export default function ServicesRecentWorks({
       title: "Delivering Sustainable Cocopeat Solutions for Global Agriculture",
       description:
         "A professional business website designed to showcase premium cocopeat products, strengthen brand credibility, highlight product offerings, and connect agricultural businesses with global markets",
+      link: "https://dannyenterprises.co.in",
     },
     {
       image: "/images/services/work_2.jpg",
@@ -25,6 +26,7 @@ export default function ServicesRecentWorks({
       title: "Moving Your Belongings Safely, Smoothly, and Stress-Free.",
       description:
         "A responsive website designed to showcase professional packing and moving services, build customer trust, highlight service offerings, and simplify relocation enquiries through clear navigation and engaging visuals",
+      link: "https://bkpackersandmovers.in",
     },
     {
       image: "/images/services/work_3.jpg",

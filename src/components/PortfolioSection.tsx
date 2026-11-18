@@ -40,6 +40,7 @@ const projects: Project[] = [
     imageAlt: "Danny Enterprises Agri-Tech responsive website presentation",
     imageClassName: "w-[460px] lg:w-[500px] xl:w-[540px] max-w-full h-auto object-contain rounded-2xl drop-shadow-sm",
     imagePosition: "left",
+    link: "https://dannyenterprises.co.in",
   },
   {
     category: "Quriouslilmindz - Preschool",
